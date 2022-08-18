@@ -1,0 +1,3 @@
+C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CGPrakt6_Clion/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir
+C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CGPrakt6_Clion/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CGPrakt6_Clion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
