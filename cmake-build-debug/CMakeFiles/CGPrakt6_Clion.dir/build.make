@@ -46,10 +46,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion
+CMAKE_SOURCE_DIR = C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles\CGPrakt6_Clion.dir\depend.make
@@ -62,477 +62,477 @@ include CMakeFiles\CGPrakt6_Clion.dir\flags.make
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShadowMapGenerator.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShadowMapGenerator.cpp.obj: ..\source\utils\Lights\ShadowMapGenerator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Lights/ShadowMapGenerator.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Lights/ShadowMapGenerator.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShadowMapGenerator.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Lights\ShadowMapGenerator.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShadowMapGenerator.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Lights\ShadowMapGenerator.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShadowMapGenerator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/Lights/ShadowMapGenerator.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShadowMapGenerator.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Lights\ShadowMapGenerator.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Lights\ShadowMapGenerator.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShadowMapGenerator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/Lights/ShadowMapGenerator.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShadowMapGenerator.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Lights\ShadowMapGenerator.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShadowMapGenerator.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Lights\ShadowMapGenerator.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShaderLightMapper.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShaderLightMapper.cpp.obj: ..\source\utils\Lights\ShaderLightMapper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Lights/ShaderLightMapper.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Lights/ShaderLightMapper.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShaderLightMapper.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Lights\ShaderLightMapper.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShaderLightMapper.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Lights\ShaderLightMapper.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShaderLightMapper.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/Lights/ShaderLightMapper.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShaderLightMapper.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Lights\ShaderLightMapper.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Lights\ShaderLightMapper.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShaderLightMapper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/Lights/ShaderLightMapper.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShaderLightMapper.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Lights\ShaderLightMapper.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShaderLightMapper.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Lights\ShaderLightMapper.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\PhongShader.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\PhongShader.cpp.obj: ..\source\utils\Shader\PhongShader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/PhongShader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/PhongShader.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\PhongShader.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Shader\PhongShader.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\PhongShader.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Shader\PhongShader.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\PhongShader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/PhongShader.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\PhongShader.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Shader\PhongShader.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Shader\PhongShader.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\PhongShader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/PhongShader.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\PhongShader.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Shader\PhongShader.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\PhongShader.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Shader\PhongShader.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Framebuffer.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\Framebuffer.cpp.obj: ..\source\Framebuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/Framebuffer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/Framebuffer.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\Framebuffer.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Framebuffer.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\Framebuffer.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Framebuffer.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Framebuffer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/Framebuffer.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\Framebuffer.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Framebuffer.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Framebuffer.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Framebuffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/Framebuffer.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\Framebuffer.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Framebuffer.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\Framebuffer.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Framebuffer.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Aabb.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Aabb.cpp.obj: ..\source\utils\Models\Aabb.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/Aabb.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/Aabb.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Aabb.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\Aabb.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Aabb.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\Aabb.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Aabb.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/Aabb.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Aabb.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\Aabb.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\Aabb.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Aabb.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/Aabb.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Aabb.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\Aabb.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Aabb.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\Aabb.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Application.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\Application.cpp.obj: ..\source\Application.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/Application.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/Application.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\Application.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Application.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\Application.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Application.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Application.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/Application.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\Application.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Application.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Application.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Application.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/Application.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\Application.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Application.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\Application.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Application.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\BaseModel.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\BaseModel.cpp.obj: ..\source\utils\Models\BaseModel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/BaseModel.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/BaseModel.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\BaseModel.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\BaseModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\BaseModel.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\BaseModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\BaseModel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/BaseModel.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\BaseModel.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\BaseModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\BaseModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\BaseModel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/BaseModel.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\BaseModel.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\BaseModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\BaseModel.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\BaseModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\BaseShader.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\BaseShader.cpp.obj: ..\source\utils\Shader\BaseShader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/BaseShader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/BaseShader.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\BaseShader.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Shader\BaseShader.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\BaseShader.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Shader\BaseShader.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\BaseShader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/BaseShader.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\BaseShader.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Shader\BaseShader.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Shader\BaseShader.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\BaseShader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/BaseShader.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\BaseShader.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Shader\BaseShader.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\BaseShader.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Shader\BaseShader.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Camera.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\Camera.cpp.obj: ..\source\Camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/Camera.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/Camera.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\Camera.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Camera.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\Camera.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Camera.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/Camera.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\Camera.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Camera.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Camera.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/Camera.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\Camera.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Camera.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\Camera.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Camera.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\color.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\color.cpp.obj: ..\source\utils\YourClasses\color.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/color.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/color.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\color.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\YourClasses\color.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\color.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\YourClasses\color.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\color.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/color.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\color.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\YourClasses\color.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\YourClasses\color.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\color.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/color.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\color.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\YourClasses\color.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\color.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\YourClasses\color.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ConstantShader.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ConstantShader.cpp.obj: ..\source\utils\Shader\ConstantShader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/ConstantShader.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/ConstantShader.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ConstantShader.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Shader\ConstantShader.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ConstantShader.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Shader\ConstantShader.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ConstantShader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/ConstantShader.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ConstantShader.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Shader\ConstantShader.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Shader\ConstantShader.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ConstantShader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/ConstantShader.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ConstantShader.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Shader\ConstantShader.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ConstantShader.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Shader\ConstantShader.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\IndexBuffer.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\IndexBuffer.cpp.obj: ..\source\IndexBuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/IndexBuffer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/IndexBuffer.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\IndexBuffer.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\IndexBuffer.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\IndexBuffer.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\IndexBuffer.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\IndexBuffer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/IndexBuffer.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\IndexBuffer.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\IndexBuffer.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\IndexBuffer.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\IndexBuffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/IndexBuffer.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\IndexBuffer.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\IndexBuffer.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\IndexBuffer.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\IndexBuffer.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LineBoxModel.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LineBoxModel.cpp.obj: ..\source\utils\Models\LineBoxModel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/LineBoxModel.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/LineBoxModel.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LineBoxModel.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\LineBoxModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LineBoxModel.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\LineBoxModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LineBoxModel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/LineBoxModel.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LineBoxModel.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\LineBoxModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\LineBoxModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LineBoxModel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/LineBoxModel.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LineBoxModel.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\LineBoxModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LineBoxModel.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\LineBoxModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LinePlaneModel.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LinePlaneModel.cpp.obj: ..\source\utils\Models\LinePlaneModel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/LinePlaneModel.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/LinePlaneModel.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LinePlaneModel.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\LinePlaneModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LinePlaneModel.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\LinePlaneModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LinePlaneModel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/LinePlaneModel.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LinePlaneModel.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\LinePlaneModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\LinePlaneModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LinePlaneModel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/LinePlaneModel.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LinePlaneModel.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\LinePlaneModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\LinePlaneModel.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\LinePlaneModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Matrix.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\Matrix.cpp.obj: ..\source\Matrix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/Matrix.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/Matrix.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\Matrix.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Matrix.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\Matrix.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Matrix.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Matrix.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/Matrix.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\Matrix.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Matrix.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Matrix.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Matrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/Matrix.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\Matrix.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Matrix.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\Matrix.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Matrix.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Model.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Model.cpp.obj: ..\source\utils\Models\Model.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/Model.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/Model.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Model.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\Model.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Model.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\Model.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Model.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/Model.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Model.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\Model.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\Model.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Model.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/Model.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Model.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\Model.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\Model.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\Model.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\rgbimage.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\rgbimage.cpp.obj: ..\source\utils\YourClasses\rgbimage.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/rgbimage.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/rgbimage.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\rgbimage.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\YourClasses\rgbimage.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\rgbimage.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\YourClasses\rgbimage.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\rgbimage.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/rgbimage.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\rgbimage.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\YourClasses\rgbimage.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\YourClasses\rgbimage.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\rgbimage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/rgbimage.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\rgbimage.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\YourClasses\rgbimage.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\rgbimage.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\YourClasses\rgbimage.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Texture.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\Texture.cpp.obj: ..\source\Texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/Texture.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/Texture.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\Texture.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Texture.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\Texture.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Texture.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Texture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/Texture.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\Texture.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Texture.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Texture.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/Texture.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\Texture.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Texture.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\Texture.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Texture.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleBoxModel.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleBoxModel.cpp.obj: ..\source\utils\Models\TriangleBoxModel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TriangleBoxModel.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TriangleBoxModel.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleBoxModel.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\TriangleBoxModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleBoxModel.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\TriangleBoxModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleBoxModel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TriangleBoxModel.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleBoxModel.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\TriangleBoxModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\TriangleBoxModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleBoxModel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TriangleBoxModel.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleBoxModel.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\TriangleBoxModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleBoxModel.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\TriangleBoxModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TrianglePlaneModel.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TrianglePlaneModel.cpp.obj: ..\source\utils\Models\TrianglePlaneModel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TrianglePlaneModel.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TrianglePlaneModel.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TrianglePlaneModel.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\TrianglePlaneModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TrianglePlaneModel.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\TrianglePlaneModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TrianglePlaneModel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TrianglePlaneModel.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TrianglePlaneModel.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\TrianglePlaneModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\TrianglePlaneModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TrianglePlaneModel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TrianglePlaneModel.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TrianglePlaneModel.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\TrianglePlaneModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TrianglePlaneModel.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\TrianglePlaneModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleSphereModel.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleSphereModel.cpp.obj: ..\source\utils\Models\TriangleSphereModel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TriangleSphereModel.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TriangleSphereModel.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleSphereModel.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\TriangleSphereModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleSphereModel.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\TriangleSphereModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleSphereModel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TriangleSphereModel.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleSphereModel.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\TriangleSphereModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\TriangleSphereModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleSphereModel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TriangleSphereModel.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleSphereModel.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\Models\TriangleSphereModel.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Models\TriangleSphereModel.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\Models\TriangleSphereModel.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\vector.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\vector.cpp.obj: ..\source\utils\YourClasses\vector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/vector.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/vector.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\vector.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\YourClasses\vector.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\vector.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\YourClasses\vector.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\vector.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/vector.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\vector.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\YourClasses\vector.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\YourClasses\vector.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\vector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/vector.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\vector.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\utils\YourClasses\vector.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\vector.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\utils\YourClasses\vector.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\VertexBuffer.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\VertexBuffer.cpp.obj: ..\source\VertexBuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/VertexBuffer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/VertexBuffer.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\VertexBuffer.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\VertexBuffer.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\VertexBuffer.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\VertexBuffer.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\VertexBuffer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/VertexBuffer.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\VertexBuffer.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\VertexBuffer.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\VertexBuffer.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\VertexBuffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/VertexBuffer.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\VertexBuffer.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\VertexBuffer.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\VertexBuffer.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\VertexBuffer.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\main.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\main.cpp.obj: ..\source\main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/main.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\main.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\main.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\main.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\main.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/main.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\main.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\main.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\main.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/main.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\main.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\main.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\main.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\main.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Spaceship.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
 CMakeFiles\CGPrakt6_Clion.dir\source\Spaceship.cpp.obj: ..\source\Spaceship.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/Spaceship.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/Spaceship.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\Spaceship.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Spaceship.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\CGPrakt6_Clion.dir\source\Spaceship.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Spaceship.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Spaceship.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/Spaceship.cpp.i"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\Spaceship.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Spaceship.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Spaceship.cpp
 <<
 
 CMakeFiles\CGPrakt6_Clion.dir\source\Spaceship.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/Spaceship.cpp.s"
 	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\Spaceship.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\source\Spaceship.cpp
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\Spaceship.cpp.s /c C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\source\Spaceship.cpp
 <<
 
 # Object files for target CGPrakt6_Clion
@@ -593,9 +593,9 @@ CGPrakt6_Clion.exe: CMakeFiles\CGPrakt6_Clion.dir\source\main.cpp.obj
 CGPrakt6_Clion.exe: CMakeFiles\CGPrakt6_Clion.dir\source\Spaceship.cpp.obj
 CGPrakt6_Clion.exe: CMakeFiles\CGPrakt6_Clion.dir\build.make
 CGPrakt6_Clion.exe: CMakeFiles\CGPrakt6_Clion.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable CGPrakt6_Clion.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable CGPrakt6_Clion.exe"
 	"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\CGPrakt6_Clion.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\CGPrakt6_Clion.dir\objects1.rsp @<<
- /out:CGPrakt6_Clion.exe /implib:CGPrakt6_Clion.lib /pdb:C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CGPrakt6_Clion.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console  opengl32.lib glu32.lib ../libraries/glfw/lib/glfw3.lib ../libraries/glew/lib/glew32.lib ../libraries/freeimage/lib/FreeImage.lib ../libraries/assimp/lib/assimp-vc140-mt.lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
+ /out:CGPrakt6_Clion.exe /implib:CGPrakt6_Clion.lib /pdb:C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CGPrakt6_Clion.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console  opengl32.lib glu32.lib ../libraries/glfw/lib/glfw3.lib ../libraries/glew/lib/glew32.lib ../libraries/freeimage/lib/FreeImage.lib ../libraries/assimp/lib/assimp-vc140-mt.lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<
 
 # Rule to build all files generated by this target.
@@ -608,6 +608,6 @@ CMakeFiles\CGPrakt6_Clion.dir\clean:
 .PHONY : CMakeFiles\CGPrakt6_Clion.dir\clean
 
 CMakeFiles\CGPrakt6_Clion.dir\depend:
-	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CGPrakt6_Clion\cmake-build-debug\CMakeFiles\CGPrakt6_Clion.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\CMakeFiles\CGPrakt6_Clion.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles\CGPrakt6_Clion.dir\depend
 

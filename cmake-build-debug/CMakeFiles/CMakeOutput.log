@@ -21,7 +21,7 @@ Compilation of the C compiler identification source "CMakeCCompilerId.c" produce
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.obj"
 
-The C compiler identification is MSVC, found in "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CGPrakt6_Clion/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.exe"
+The C compiler identification is MSVC, found in "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.exe"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29910/bin/Hostx86/x86/cl.exe 
@@ -45,29 +45,29 @@ Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" p
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
 
-The CXX compiler identification is MSVC, found in "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CGPrakt6_Clion/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.exe"
+The CXX compiler identification is MSVC, found in "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.exe"
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CGPrakt6_Clion/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_a3614\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_a3614.dir\build.make /nologo -L                  CMakeFiles\cmTC_a3614.dir\build
-Building C object CMakeFiles/cmTC_a3614.dir/CMakeCCompilerABI.c.obj
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @C:\Users\aazat\AppData\Local\Temp\nmDA25.tmp
+Run Build Command(s):nmake /nologo cmTC_87dd2\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_87dd2.dir\build.make /nologo -L                  CMakeFiles\cmTC_87dd2.dir\build
+Building C object CMakeFiles/cmTC_87dd2.dir/CMakeCCompilerABI.c.obj
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @C:\Users\aazat\AppData\Local\Temp\nm2E93.tmp
 CMakeCCompilerABI.c
-Linking C executable cmTC_a3614.exe
-	"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_a3614.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_a3614.dir\objects1.rsp @C:\Users\aazat\AppData\Local\Temp\nmDB01.tmp
+Linking C executable cmTC_87dd2.exe
+	"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_87dd2.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_87dd2.dir\objects1.rsp @C:\Users\aazat\AppData\Local\Temp\nm3115.tmp
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CGPrakt6_Clion/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):nmake /nologo cmTC_f383a\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_f383a.dir\build.make /nologo -L                  CMakeFiles\cmTC_f383a.dir\build
-Building CXX object CMakeFiles/cmTC_f383a.dir/CMakeCXXCompilerABI.cpp.obj
-	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @C:\Users\aazat\AppData\Local\Temp\nmDED8.tmp
+Run Build Command(s):nmake /nologo cmTC_60c65\fast && 	"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\bin\HostX86\x86\nmake.exe"  -f CMakeFiles\cmTC_60c65.dir\build.make /nologo -L                  CMakeFiles\cmTC_60c65.dir\build
+Building CXX object CMakeFiles/cmTC_60c65.dir/CMakeCXXCompilerABI.cpp.obj
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\cl.exe @C:\Users\aazat\AppData\Local\Temp\nm3941.tmp
 CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_f383a.exe
-	"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_f383a.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_f383a.dir\objects1.rsp @C:\Users\aazat\AppData\Local\Temp\nmDFD3.tmp
+Linking CXX executable cmTC_60c65.exe
+	"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_60c65.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1428~1.299\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\cmTC_60c65.dir\objects1.rsp @C:\Users\aazat\AppData\Local\Temp\nm3AE8.tmp
 
 
 

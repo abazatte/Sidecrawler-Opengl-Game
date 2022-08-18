@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.16)
 # Projektnamen anpassen
 project(CGPrakt6_Clion)
 set(CMAKE_CXX_STANDARD 20)
-
+#hier
 #Inhalt des source-Ordners auflisten
 add_executable(${CMAKE_PROJECT_NAME}
         source/utils/Lights/ShadowMapGenerator.h
