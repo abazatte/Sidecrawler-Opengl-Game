@@ -25,6 +25,7 @@ class Application
 {
 public:
     typedef std::vector<LineBoxModel*> HitboxVector;
+    typedef std::vector<BaseModel*> MonsterVector;
     typedef std::list<BaseModel*> ModelList;
     typedef std::vector<BaseModel*> LaserVector;
     Application(GLFWwindow* pWin);
@@ -32,7 +33,9 @@ public:
     void update(float dtime);
     void draw();
     void end();
+
 protected:
+    void updateMonster(float dtime);
     void createScene();
     void createNormalTestScene();
     void createShadowTestScene();
@@ -40,6 +43,7 @@ protected:
     static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
     Camera Cam;
     ModelList Models;
+    MonsterVector MonsterModels;
     LineBoxModel* hitboxModel;
     HitboxVector hitboxList;
     LaserVector LaserModels;

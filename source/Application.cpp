@@ -119,6 +119,7 @@ void Application::update(float dtime)
     pSpaceship->update(dtime);
 
     updateLaser(dtime);
+    updateMonster(dtime);
     Cam.update();
     if(laserTimer > -1000){
         laserTimer--;
@@ -280,6 +281,17 @@ void Application::createScene()
         Models.push_back(hitboxModel);
         hitboxList.push_back(hitboxModel);
     }
+    for (int i = 0;i<15;i++){
+        std::cout << i << ". Monster wird erstellt." << std::endl;
+        pModel = new Model(ASSET_DIRECTORY "Ghost.obj", false);
+        pModel->shader(new PhongShader(), false);
+        m.translation(0,0,15+15*i);
+        n.scale(0.01f);
+        o.rotationY(AI_DEG_TO_RAD(180.0f));
+        pModel->transform(m*n*o);
+        Models.push_back(pModel);
+        MonsterModels.push_back(pModel);
+    }
 }
 
 void Application::createNormalTestScene()
@@ -324,4 +336,14 @@ void Application::createShadowTestScene()
     sl->outerRadius(13);
     sl->castShadows(true);
     ShaderLightMapper::instance().addLight(sl);
+}
+void Application::updateMonster(float dtime){
+    Matrix TM, CP;
+    for (BaseModel * monster : MonsterModels)
+    {
+        CP = monster->transform();
+        TM.translation(0, 0, 50.0f * dtime);
+        monster->transform(CP * TM);
+        std::cout << "Posi Monster:" << monster->transform().translation().Z << std::endl;
+    }
 }
