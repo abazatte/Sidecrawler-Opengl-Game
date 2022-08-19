@@ -38,4 +38,7 @@ void BaseModel::draw(const BaseCamera& Cam)
     pShader->activate(Cam);
     
 }
+BaseModel* BaseModel::getBlockModel(){
+    return this;
+}
 

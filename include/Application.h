@@ -19,11 +19,12 @@
 #include "utils/Models/BaseModel.h"
 #include "utils/Lights/ShadowMapGenerator.h"
 #include "Spaceship.h"
-
+#include "utils/Models/LineBoxModel.h"
 
 class Application
 {
 public:
+    typedef std::vector<LineBoxModel*> HitboxVector;
     typedef std::list<BaseModel*> ModelList;
     typedef std::vector<BaseModel*> LaserVector;
     Application(GLFWwindow* pWin);
@@ -39,12 +40,15 @@ protected:
     static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
     Camera Cam;
     ModelList Models;
+    LineBoxModel* hitboxModel;
+    HitboxVector hitboxList;
     LaserVector LaserModels;
     GLFWwindow* pWindow;
     BaseModel* pModel;
     Spaceship* pSpaceship;
     ShadowMapGenerator ShadowGenerator;
     int pCurrentLaser;
+    int laserTimer;
 };
 
 #endif /* Application_hpp */

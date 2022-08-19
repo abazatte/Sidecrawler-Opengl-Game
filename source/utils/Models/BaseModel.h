@@ -28,6 +28,7 @@ public:
     virtual const AABB& boundingBox() const { return AABB::unitBox(); }
 	bool shadowCaster() const { return ShadowCaster; }
 	void shadowCaster(bool sc) { ShadowCaster = sc; }
+    BaseModel* getBlockModel();
 protected:
     Matrix Transform;
     BaseShader* pShader;

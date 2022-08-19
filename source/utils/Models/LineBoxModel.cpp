@@ -65,6 +65,52 @@ LineBoxModel::LineBoxModel(float Width, float Height, float Depth) {
     VB.end();
 }
 
+LineBoxModel::LineBoxModel(Vector max, Vector min)
+{
+    //TODO use index buffer
+
+    //Ground lvl
+    VB.begin();
+
+    VB.addVertex(min);
+    VB.addVertex(min.X,min.Y,max.Z);
+
+    VB.addVertex(min);
+    VB.addVertex(max.X, min.Y, min.Z);
+
+    VB.addVertex(max.X, min.Y, min.Z);
+    VB.addVertex(max.X, min.Y, max.Z);
+
+    VB.addVertex(min.X, min.Y, max.Z);
+    VB.addVertex(max.X, min.Y, max.Z);
+    //Lines ground to top
+    VB.addVertex(min);
+    VB.addVertex(min.X, max.Y, min.Z);
+
+    VB.addVertex(min.X, min.Y, max.Z);
+    VB.addVertex(min.X, max.Y, max.Z);
+
+    VB.addVertex(max.X, min.Y, min.Z);
+    VB.addVertex(max.X, max.Y, min.Z);
+
+    VB.addVertex(max.X, min.Y, max.Z);
+    VB.addVertex(max);
+    //Top lvl
+    VB.addVertex(min.X, max.Y, min.Z);
+    VB.addVertex(min.X, max.Y, max.Z);
+
+    VB.addVertex(min.X, max.Y, min.Z);
+    VB.addVertex(max.X, max.Y, min.Z);
+
+    VB.addVertex(max.X, max.Y, min.Z);
+    VB.addVertex(max);
+
+    VB.addVertex(min.X, max.Y, max.Z);
+    VB.addVertex(max);
+
+    VB.end();
+}
+
 void LineBoxModel::draw(const BaseCamera &Cam) {
     // TODO: Add your code (Exercise 1) DONE
     BaseModel::draw(Cam);

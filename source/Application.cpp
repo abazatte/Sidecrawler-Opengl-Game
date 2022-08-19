@@ -62,6 +62,7 @@ void Application::start()
 
 void Application::update(float dtime)
 {
+
     int upState = glfwGetKey(pWindow, GLFW_KEY_W);
     int downState = glfwGetKey(pWindow, GLFW_KEY_S);
     int positionState = glfwGetKey(pWindow, GLFW_KEY_P);
@@ -71,6 +72,7 @@ void Application::update(float dtime)
     //int backward = glfwGetKey(pWindow, GLFW_KEY_A);
     float upDown = 0.0f;
     //float forwardBackward = 0.0f;
+
 
     float f = pSpaceship->getTop()->transform().translation().Y;
     //std::cout << f << std:: endl;
@@ -83,22 +85,24 @@ void Application::update(float dtime)
     if (positionState == GLFW_PRESS) {
         std::cout << "x: " << pSpaceship->getTop()->transform().translation().X << "y: " << pSpaceship->getTop()->transform().translation().Y << "z: " << pSpaceship->getTop()->transform().translation().Z << std::endl;
     }
-    if (shot == GLFW_PRESS) {
+    if (shot == GLFW_PRESS && laserTimer<0) {
         Matrix CP;
+        laserTimer = 50;
         CP = pSpaceship->getTop()->transform();
         std::cout << pCurrentLaser << std::endl;
-
-        if (pCurrentLaser >= 14) {
+        if (pCurrentLaser >= 39) {
             pCurrentLaser = 0;
             LaserModels.at(pCurrentLaser)->transform(CP);
-            updateLaser(dtime);
-        }
-        else {
+            hitboxList.at(pCurrentLaser)->transform(CP);
+
+
+        } else {
             pCurrentLaser++;
             LaserModels.at(pCurrentLaser)->transform(CP);
-            updateLaser(dtime);
+            hitboxList.at(pCurrentLaser)->transform(CP);
         }
     }
+
 
     /*if (forwardStat == GLFW_PRESS && backward == GLFW_RELEASE) {
         std::cout << "vorn" << std::endl;
@@ -114,11 +118,17 @@ void Application::update(float dtime)
     //pSpaceship->fire(dtime, shooting);
     pSpaceship->update(dtime);
 
-
+    updateLaser(dtime);
     Cam.update();
+    if(laserTimer > -1000){
+        laserTimer--;
+    }
+
+    std::cout << laserTimer << std::endl;
 }
 
-/*void Application::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+/*
+    void Application::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
     if (key == GLFW_KEY_SPACE && action == GLFW_PRESS) {
         Matrix CP;
         CP = pSpaceship->getTop()->transform();
@@ -138,10 +148,35 @@ void Application::updateLaser(float dtime) {
     Matrix TM, CP;
     for (BaseModel * laser : LaserModels)
     {
+
         CP = laser->transform();
-        TM.translation(0, 0, 10.0f * dtime);
-        laser->transform(CP * TM);
-        std::cout << "Posi Laser:" << laser->transform().translation().Z << std::endl;
+        if(laser->transform().translation().Y > -13 && laser->transform().translation().Y < 14 ){
+            TM.translation(0, 0, 20.0f * dtime);
+            laser->transform(CP * TM);
+
+            std::cout << "Posi Laser:" << laser->transform().translation().Z << std::endl;
+
+        }
+        if(laser->transform().translation().Z > 90){
+            TM.translation(0,-40,0);
+            laser->transform(TM);
+        }//85 zurück auf Anfang
+    }
+    for (int (i) = 0; (i) < LaserModels.size(); ++(i)) {
+        CP = LaserModels.at(i)->transform();
+        if(LaserModels.at(i)->transform().translation().Y > -13 && LaserModels.at(i)->transform().translation().Y < 14 ){
+            TM.translation(0, 0, 20.0f * dtime);
+            LaserModels.at(i)->transform(CP * TM);
+            hitboxList.at(i)->transform(CP * TM);
+
+            std::cout << "Posi Laser:" << LaserModels.at(i)->transform().translation().Z << std::endl;
+
+        }
+        if(LaserModels.at(i)->transform().translation().Z > 90){
+            TM.translation(0,-40,0);
+            LaserModels.at(i)->transform(TM);
+            hitboxList.at(i)->transform(TM);
+        }
     }
 }
 
@@ -177,9 +212,11 @@ void Application::createScene()
     Matrix m, n, o;
     float rad;
     PhongShader* pPhongShader;
-
+    int modelsNumber = 40;
+    hitboxList.reserve(sizeof(BaseModel)*modelsNumber);
+    LaserModels.reserve(sizeof(BaseModel)*modelsNumber);
     pCurrentLaser = 0;
-
+    laserTimer = 50;
     pModel = new Model(ASSET_DIRECTORY "skybox.obj", false);
     pModel->shader(new PhongShader(), true);
     pModel->shadowCaster(false);
@@ -208,15 +245,12 @@ void Application::createScene()
 
     /*
     pSpaceship->shader(pPhongShader, true);
-
     m.translation(-20, 0, -10);
     rad = AI_DEG_TO_RAD(90);
     n.rotationX(rad);
     o.rotationY(rad);
     pSpaceship->transform(m * n * o);
-
     */
-
 
     // directional lights
     DirectionalLight* dl = new DirectionalLight();
@@ -225,16 +259,26 @@ void Application::createScene()
     dl->castShadows(true);
     ShaderLightMapper::instance().addLight(dl);
 
-    for (int i = 0;i<2;i++)
+    for (int i = 0;i<modelsNumber;i++)
     {
         std::cout << i << " wird erstellt." << std::endl;
-        pModel = new Model(ASSET_DIRECTORY "LaserShort.dae", false);
+        pModel = new Model(ASSET_DIRECTORY "LaserTry.obj", false);
         pModel->shader(new PhongShader(), false);
         //pModel->shadowCaster(false);
         m.translation(0, -40, 0);
         pModel->transform(m);
         Models.push_back(pModel);
         LaserModels.push_back(pModel);
+
+        ConstantShader* pConstShader;
+
+        hitboxModel = new LineBoxModel(pModel->getBlockModel()->boundingBox().Max, pModel->getBlockModel()->boundingBox().Min);
+        pConstShader = new ConstantShader();
+        pConstShader->color(Color(0, 1, 0));
+        hitboxModel->shader(pConstShader, true);
+        hitboxModel->transform(m);
+        Models.push_back(hitboxModel);
+        hitboxList.push_back(hitboxModel);
     }
 }
 
