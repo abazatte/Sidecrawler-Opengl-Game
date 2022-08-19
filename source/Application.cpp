@@ -111,7 +111,7 @@ void Application::update(float dtime)
     //pSpaceship->fire(dtime, shooting);
     pSpaceship->update(dtime);
     updateLaser(dtime);
-
+    GLFW
     Cam.update();
 }
 

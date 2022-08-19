@@ -9,3 +9,4 @@ void main()
     Position = ModelViewProjMat * VertexPos;
     gl_Position = Position;
 }
+

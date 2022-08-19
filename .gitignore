@@ -21,6 +21,9 @@
 # Fortran module files
 *.mod
 
+*.txt
+*.cmake
+
 # Compiled Static libraries
 *.lai
 *.la

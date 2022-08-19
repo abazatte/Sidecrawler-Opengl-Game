@@ -1,4 +1,3 @@
-
 #version 400
 layout(location=0) in vec4 VertexPos;
 layout(location=1) in vec4 VertexNormal;
@@ -23,7 +22,7 @@ void main()
     Position = (ModelMat * VertexPos).xyz;
     Normal = (ModelMat * vec4(VertexNormal.xyz,0)).xyz;
 
-    // Tangent und Bitangent neu
+     // Tangent und Bitangent neu
     Tangent = (ModelMat * vec4(VertexTangent,0)).xyz;
     Bitangent = (ModelMat * vec4(VertexBitangent,0)).xyz;
     Texcoord = VertexTexcoord;
