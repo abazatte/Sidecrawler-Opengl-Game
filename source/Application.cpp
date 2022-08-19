@@ -87,13 +87,16 @@ void Application::update(float dtime)
         Matrix CP;
         CP = pSpaceship->getTop()->transform();
         std::cout << pCurrentLaser << std::endl;
+
         if (pCurrentLaser >= 14) {
             pCurrentLaser = 0;
             LaserModels.at(pCurrentLaser)->transform(CP);
+            updateLaser(dtime);
         }
         else {
             pCurrentLaser++;
             LaserModels.at(pCurrentLaser)->transform(CP);
+            updateLaser(dtime);
         }
     }
 
@@ -110,12 +113,12 @@ void Application::update(float dtime)
     pSpaceship->steer(upDown);
     //pSpaceship->fire(dtime, shooting);
     pSpaceship->update(dtime);
-    updateLaser(dtime);
-    GLFW
+
+
     Cam.update();
 }
 
-void Application::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+/*void Application::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
     if (key == GLFW_KEY_SPACE && action == GLFW_PRESS) {
         Matrix CP;
         CP = pSpaceship->getTop()->transform();
@@ -130,7 +133,7 @@ void Application::key_callback(GLFWwindow* window, int key, int scancode, int ac
         }
     }
 }
-
+*/
 void Application::updateLaser(float dtime) {
     Matrix TM, CP;
     for (BaseModel * laser : LaserModels)
@@ -138,6 +141,7 @@ void Application::updateLaser(float dtime) {
         CP = laser->transform();
         TM.translation(0, 0, 10.0f * dtime);
         laser->transform(CP * TM);
+        std::cout << "Posi Laser:" << laser->transform().translation().Z << std::endl;
     }
 }
 
@@ -221,10 +225,10 @@ void Application::createScene()
     dl->castShadows(true);
     ShaderLightMapper::instance().addLight(dl);
 
-    for (int i = 0;i<15;i++)
+    for (int i = 0;i<2;i++)
     {
         std::cout << i << " wird erstellt." << std::endl;
-        pModel = new Model(ASSET_DIRECTORY "laser.dae", false);
+        pModel = new Model(ASSET_DIRECTORY "LaserShort.dae", false);
         pModel->shader(new PhongShader(), false);
         //pModel->shadowCaster(false);
         m.translation(0, -40, 0);
