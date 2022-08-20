@@ -158,6 +158,10 @@ void Application::loopCollision() {
                 TM.translation(0, -40, 0);
                 laserModels.at(i)->transform(TM);
                 hitboxListLaser.at(i)->transform(TM);
+                TM.translation(0, -50, 0);
+                monsterModels.at(j)->transform(TM);
+                hitboxListMonster.at(j)->transform(TM);
+
             }
 
         }
