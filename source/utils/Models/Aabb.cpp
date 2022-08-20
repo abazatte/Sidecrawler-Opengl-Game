@@ -107,7 +107,8 @@ const AABB& AABB::unitBox()
     return UnitBox;
 }
 /** Quelle: https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_collision_detection **/
-bool collision(const AABB& a, const AABB& b) {
+
+bool AABB::collision(const AABB& a, const AABB& b) {
     return (a.Min.X <= b.Max.X && a.Max.X >= b.Min.X) &&
            (a.Min.Y <= b.Max.Y && a.Max.Y >= b.Min.Y) &&
            (a.Min.Z <= b.Max.Z && a.Max.Z >= b.Min.Z);

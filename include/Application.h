@@ -24,7 +24,8 @@
 class Application
 {
 public:
-    typedef std::vector<LineBoxModel*> HitboxVector;
+    typedef std::vector<LineBoxModel*> HitboxVectorLaser;
+    typedef std::vector<LineBoxModel*> HitboxVectorMonster;
     typedef std::vector<BaseModel*> MonsterVector;
     typedef std::list<BaseModel*> ModelList;
     typedef std::vector<BaseModel*> LaserVector;
@@ -41,18 +42,20 @@ protected:
     void createShadowTestScene();
     void updateLaser(float dtime);
     static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
-    Camera Cam;
-    ModelList Models;
-    MonsterVector MonsterModels;
+    Camera cam;
+    ModelList models;
+    MonsterVector monsterModels;
     LineBoxModel* hitboxModel;
-    HitboxVector hitboxList;
-    LaserVector LaserModels;
+    HitboxVectorMonster hitboxListMonster;
+    HitboxVectorLaser hitboxListLaser;
+    LaserVector laserModels;
     GLFWwindow* pWindow;
     BaseModel* pModel;
     Spaceship* pSpaceship;
-    ShadowMapGenerator ShadowGenerator;
+    ShadowMapGenerator shadowGenerator;
     int pCurrentLaser;
     int laserTimer;
+    void loopCollision();
 };
 
 #endif /* Application_hpp */

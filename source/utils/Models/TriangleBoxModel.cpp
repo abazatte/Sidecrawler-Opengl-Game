@@ -219,7 +219,7 @@ TriangleBoxModel::TriangleBoxModel(float Width, float Height, float Depth) {
 }
 
 void TriangleBoxModel::draw(const BaseCamera &Cam) {
-    //BaseModel::draw(Cam);
+    //BaseModel::draw(cam);
 
     // TODO: Add your code (Exercise 2)
     BaseModel::draw(Cam);

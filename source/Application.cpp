@@ -40,7 +40,7 @@
 #endif
 
 
-Application::Application(GLFWwindow* pWin) : pWindow(pWin), Cam(pWin), pModel(NULL), ShadowGenerator(2048, 2048)
+Application::Application(GLFWwindow* pWin) : pWindow(pWin), cam(pWin), pModel(NULL), shadowGenerator(2048, 2048)
 {
 
     createScene();
@@ -92,107 +92,82 @@ void Application::update(float dtime)
         std::cout << pCurrentLaser << std::endl;
         if (pCurrentLaser >= 39) {
             pCurrentLaser = 0;
-            LaserModels.at(pCurrentLaser)->transform(CP);
-            hitboxList.at(pCurrentLaser)->transform(CP);
+            laserModels.at(pCurrentLaser)->transform(CP);
+            hitboxListLaser.at(pCurrentLaser)->transform(CP);
 
 
         } else {
             pCurrentLaser++;
-            LaserModels.at(pCurrentLaser)->transform(CP);
-            hitboxList.at(pCurrentLaser)->transform(CP);
+            laserModels.at(pCurrentLaser)->transform(CP);
+            hitboxListLaser.at(pCurrentLaser)->transform(CP);
         }
     }
-
-
-    /*if (forwardStat == GLFW_PRESS && backward == GLFW_RELEASE) {
-        std::cout << "vorn" << std::endl;
-        forwardBackward = 10.0f;
-    }
-    else if (backward == GLFW_PRESS && forwardStat == GLFW_RELEASE) {
-        std::cout << "hinten" << std::endl;
-        forwardBackward = -10.0f;
-    }*/
-
-
     pSpaceship->steer(upDown);
     //pSpaceship->fire(dtime, shooting);
     pSpaceship->update(dtime);
 
     updateLaser(dtime);
     updateMonster(dtime);
-    Cam.update();
+    cam.update();
     if(laserTimer > -1000){
         laserTimer--;
     }
 
     std::cout << laserTimer << std::endl;
 }
-
-/*
-    void Application::key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
-    if (key == GLFW_KEY_SPACE && action == GLFW_PRESS) {
-        Matrix CP;
-        CP = pSpaceship->getTop()->transform();
-        std::cout << pCurrentLaser << std::endl;
-        if (pCurrentLaser >= 14) {
-            pCurrentLaser = 0;
-            LaserModels.at(pCurrentLaser)->transform(CP);
-        }
-        else {
-            pCurrentLaser++;
-            LaserModels.at(pCurrentLaser)->transform(CP);
-        }
-    }
-}
-*/
 void Application::updateLaser(float dtime) {
     Matrix TM, CP;
-    for (BaseModel * laser : LaserModels)
-    {
-
-        CP = laser->transform();
-        if(laser->transform().translation().Y > -13 && laser->transform().translation().Y < 14 ){
+    for (int (i) = 0; (i) < laserModels.size(); ++(i)) {
+        CP = laserModels.at(i)->transform();
+        if(laserModels.at(i)->transform().translation().Y > -13 && laserModels.at(i)->transform().translation().Y < 14 ){
             TM.translation(0, 0, 20.0f * dtime);
-            laser->transform(CP * TM);
+            laserModels.at(i)->transform(CP * TM);
+            hitboxListLaser.at(i)->transform(CP * TM);
 
-            std::cout << "Posi Laser:" << laser->transform().translation().Z << std::endl;
+            std::cout << "Posi Laser:" << laserModels.at(i)->transform().translation().Z << std::endl;
 
         }
-        if(laser->transform().translation().Z > 90){
+        if(laserModels.at(i)->transform().translation().Z > 90){
             TM.translation(0,-40,0);
-            laser->transform(TM);
-        }//85 zurück auf Anfang
-    }
-    for (int (i) = 0; (i) < LaserModels.size(); ++(i)) {
-        CP = LaserModels.at(i)->transform();
-        if(LaserModels.at(i)->transform().translation().Y > -13 && LaserModels.at(i)->transform().translation().Y < 14 ){
-            TM.translation(0, 0, 20.0f * dtime);
-            LaserModels.at(i)->transform(CP * TM);
-            hitboxList.at(i)->transform(CP * TM);
+            laserModels.at(i)->transform(TM);
+            hitboxListLaser.at(i)->transform(TM);
 
-            std::cout << "Posi Laser:" << LaserModels.at(i)->transform().translation().Z << std::endl;
-
-        }
-        if(LaserModels.at(i)->transform().translation().Z > 90){
-            TM.translation(0,-40,0);
-            LaserModels.at(i)->transform(TM);
-            hitboxList.at(i)->transform(TM);
         }
     }
 }
+void Application::updateMonster(float dtime){
+    Matrix TM, CP;
+    for (int i = 0; i < monsterModels.size(); ++i) {
+
+        CP = monsterModels.at(i)->transform();
+        TM.translation(0, 0, 1.0f * dtime);
+        monsterModels.at(i)->transform(CP * TM);
+        std::cout << "Posi Monster:" << monsterModels.at(i)->transform().translation().Z << std::endl;
+        hitboxListMonster.at(i)->transform(CP * TM);
+    }
+}
+void Application::loopCollision(){
+    for (int i = 0; i < hitboxListLaser.size(); ++i) {
+
+        for (int j = 0; j < hitboxListMonster.size(); ++j) {
+            //hitboxListLaser.at(i)->boundingBox().
+        }
+    }
+}
+
 
 void Application::draw()
 {
-    ShadowGenerator.generate(Models);
+    shadowGenerator.generate(models);
 
     // 1. clear screen
     glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     ShaderLightMapper::instance().activate();
     // 2. setup shaders and draw models
-    for( ModelList::iterator it = Models.begin(); it != Models.end(); ++it )
+    for(ModelList::iterator it = models.begin(); it != models.end(); ++it )
     {
-        (*it)->draw(Cam);
+        (*it)->draw(cam);
     }
     ShaderLightMapper::instance().deactivate();
 
@@ -202,10 +177,9 @@ void Application::draw()
 }
 void Application::end()
 {
-    for( ModelList::iterator it = Models.begin(); it != Models.end(); ++it )
+    for(ModelList::iterator it = models.begin(); it != models.end(); ++it )
         delete *it;
-
-    Models.clear();
+    models.clear();
 }
 
 void Application::createScene()
@@ -214,44 +188,36 @@ void Application::createScene()
     float rad;
     PhongShader* pPhongShader;
     int modelsNumber = 40;
-    hitboxList.reserve(sizeof(BaseModel)*modelsNumber);
-    LaserModels.reserve(sizeof(BaseModel)*modelsNumber);
+    hitboxListLaser.reserve(sizeof(BaseModel) * modelsNumber);
+    laserModels.reserve(sizeof(BaseModel) * modelsNumber);
+    hitboxListMonster.reserve(sizeof(BaseModel) * modelsNumber);
     pCurrentLaser = 0;
     laserTimer = 50;
     pModel = new Model(ASSET_DIRECTORY "skybox.obj", false);
     pModel->shader(new PhongShader(), true);
     pModel->shadowCaster(false);
-    Models.push_back(pModel);
+    models.push_back(pModel);
 
 
     pPhongShader = new PhongShader();
     pSpaceship = new Spaceship(ASSET_DIRECTORY "spaceship.dae");
-    Models.push_back(pSpaceship->getTop());
+    models.push_back(pSpaceship->getTop());
 
     Vector v1 = pSpaceship->getTop()->transform().translation();
     Vector v2 = pSpaceship->getTop()->transform().translation();
     v1.Z += 30;
-    Cam.setTarget(v1);
+    cam.setTarget(v1);
     //v1.Z -= 30;
     v1.X -= 25;
-    Cam.setPosition(v1);
+    cam.setPosition(v1);
 
     pModel = new Model(ASSET_DIRECTORY "spaceship.dae", false);
     pModel->shader(new PhongShader(), true);
     m.translation(0,0,40);
     pModel->shadowCaster(false);
     pModel->transform(m);
-    Models.push_back(pModel);
+    models.push_back(pModel);
     //pSpaceship->loadModel(ASSET_DIRECTORY "spaceship.dae");
-
-    /*
-    pSpaceship->shader(pPhongShader, true);
-    m.translation(-20, 0, -10);
-    rad = AI_DEG_TO_RAD(90);
-    n.rotationX(rad);
-    o.rotationY(rad);
-    pSpaceship->transform(m * n * o);
-    */
 
     // directional lights
     DirectionalLight* dl = new DirectionalLight();
@@ -268,8 +234,8 @@ void Application::createScene()
         //pModel->shadowCaster(false);
         m.translation(0, -40, 0);
         pModel->transform(m);
-        Models.push_back(pModel);
-        LaserModels.push_back(pModel);
+        models.push_back(pModel);
+        laserModels.push_back(pModel);
 
         ConstantShader* pConstShader;
 
@@ -278,72 +244,28 @@ void Application::createScene()
         pConstShader->color(Color(0, 1, 0));
         hitboxModel->shader(pConstShader, true);
         hitboxModel->transform(m);
-        Models.push_back(hitboxModel);
-        hitboxList.push_back(hitboxModel);
+        models.push_back(hitboxModel);
+        hitboxListLaser.push_back(hitboxModel);
     }
     for (int i = 0;i<15;i++){
         std::cout << i << ". Monster wird erstellt." << std::endl;
-        pModel = new Model(ASSET_DIRECTORY "Ghost.obj", false);
+        pModel = new Model(ASSET_DIRECTORY "enemy.obj", false);
         pModel->shader(new PhongShader(), false);
         m.translation(0,0,15+15*i);
         n.scale(0.01f);
         o.rotationY(AI_DEG_TO_RAD(180.0f));
-        pModel->transform(m*n*o);
-        Models.push_back(pModel);
-        MonsterModels.push_back(pModel);
-    }
-}
+        pModel->transform(m*o);
+        models.push_back(pModel);
+        monsterModels.push_back(pModel);
 
-void Application::createNormalTestScene()
-{
-    pModel = new LinePlaneModel(10, 10, 10, 10);
-    ConstantShader* pConstShader = new ConstantShader();
-    pConstShader->color(Color(0, 0, 0));
-    pModel->shader(pConstShader, true);
-    // add to render list
-    Models.push_back(pModel);
+        ConstantShader* pConstShader;
 
-
-    pModel = new Model(ASSET_DIRECTORY "cube.obj", false);
-    pModel->shader(new PhongShader(), true);
-    Models.push_back(pModel);
-
-
-}
-
-void Application::createShadowTestScene()
-{
-    pModel = new Model(ASSET_DIRECTORY "shadowcube.obj", false);
-    pModel->shader(new PhongShader(), true);
-    Models.push_back(pModel);
-
-    pModel = new Model(ASSET_DIRECTORY "bunny.dae", false);
-    pModel->shader(new PhongShader(), true);
-    Models.push_back(pModel);
-
-    // directional lights
-    DirectionalLight* dl = new DirectionalLight();
-    dl->direction(Vector(0, -1, -1));
-    dl->color(Color(0.5, 0.5, 0.5));
-    dl->castShadows(true);
-    ShaderLightMapper::instance().addLight(dl);
-
-    SpotLight* sl = new SpotLight();
-    sl->position(Vector(2, 2, 0));
-    sl->color(Color(0.5, 0.5, 0.5));
-    sl->direction(Vector(-1, -1, 0));
-    sl->innerRadius(10);
-    sl->outerRadius(13);
-    sl->castShadows(true);
-    ShaderLightMapper::instance().addLight(sl);
-}
-void Application::updateMonster(float dtime){
-    Matrix TM, CP;
-    for (BaseModel * monster : MonsterModels)
-    {
-        CP = monster->transform();
-        TM.translation(0, 0, 50.0f * dtime);
-        monster->transform(CP * TM);
-        std::cout << "Posi Monster:" << monster->transform().translation().Z << std::endl;
+        hitboxModel = new LineBoxModel(pModel->getBlockModel()->boundingBox().Max, pModel->getBlockModel()->boundingBox().Min);
+        pConstShader = new ConstantShader();
+        pConstShader->color(Color(0, 1, 0));
+        hitboxModel->shader(pConstShader, true);
+        hitboxModel->transform(m*o);
+        models.push_back(hitboxModel);
+        hitboxListMonster.push_back(hitboxModel);
     }
 }

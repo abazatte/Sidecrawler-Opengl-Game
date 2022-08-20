@@ -67,8 +67,6 @@ LineBoxModel::LineBoxModel(float Width, float Height, float Depth) {
 
 LineBoxModel::LineBoxModel(Vector max, Vector min)
 {
-    //TODO use index buffer
-
     //Ground lvl
     VB.begin();
 
