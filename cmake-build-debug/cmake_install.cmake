@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte
+# Install script for directory: C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

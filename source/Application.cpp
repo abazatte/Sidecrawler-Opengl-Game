@@ -82,12 +82,12 @@ void Application::update(float dtime) {
     if (positionState == GLFW_PRESS) {
         //std::cout << "x: " << pSpaceship->getTop()->transform().translation().X << "y: " << pSpaceship->getTop()->transform().translation().Y << "z: " << pSpaceship->getTop()->transform().translation().Z << std::endl;
     }
-    if (shot == GLFW_PRESS && laserTimer < 0) {
+    if (shot == GLFW_PRESS && laserTimer <= 0) {
         Matrix CP;
-        laserTimer = 500;
+        laserTimer = 1;
         CP = pSpaceship->getTop()->transform();
         std::cout << pCurrentLaser << std::endl;
-        if (pCurrentLaser >= 39) {
+        if (pCurrentLaser >= laserModels.size()-1) {
             pCurrentLaser = 0;
             laserModels.at(pCurrentLaser)->transform(CP);
             hitboxListLaser.at(pCurrentLaser)->transform(CP);
@@ -99,6 +99,20 @@ void Application::update(float dtime) {
             hitboxListLaser.at(pCurrentLaser)->transform(CP);
         }
     }
+    if(monsterTimer <= 0){
+        Matrix CP;
+        monsterTimer = 10;
+        CP.translation(0,0,40);
+        if (pCurrentMonster >= monsterModels.size()-1){
+            pCurrentMonster = 0;
+            monsterModels.at(pCurrentMonster)->transform(CP);
+            hitboxListMonster.at(pCurrentMonster)->transform(CP);
+        } else {
+            pCurrentMonster++;
+            monsterModels.at(pCurrentMonster)->transform(CP);
+            hitboxListMonster.at(pCurrentMonster)->transform(CP);
+        }
+    }
     pSpaceship->steer(upDown);
     pSpaceship->update(dtime);
 
@@ -107,10 +121,13 @@ void Application::update(float dtime) {
     loopCollision();
     cam.update();
     if (laserTimer > -1000) {
-        laserTimer--;
+        laserTimer = laserTimer-(dtime*4);
     }
 
-    //std::cout << laserTimer << std::endl;
+    if (monsterTimer > -1000) {
+        monsterTimer = monsterTimer-(dtime*4);
+    }
+    std::cout << laserTimer << std::endl;
 }
 
 void Application::updateLaser(float dtime) {
@@ -140,7 +157,7 @@ void Application::updateMonster(float dtime) {
     for (int i = 0; i < monsterModels.size(); ++i) {
 
         CP = monsterModels.at(i)->transform();
-        TM.translation(0, 0, 0); //1.0f * dtime
+        TM.translation(0, 0, -10.0f * dtime); //1.0f * dtime
         monsterModels.at(i)->transform(CP * TM);
         //std::cout << "Posi Monster:" << monsterModels.at(i)->transform().translation().Z << std::endl;
         hitboxListMonster.at(i)->transform(CP * TM);
@@ -163,7 +180,6 @@ void Application::loopCollision() {
                 hitboxListMonster.at(j)->transform(TM);
 
             }
-
         }
     }
 }
@@ -204,6 +220,7 @@ void Application::draw() {
 void Application::end() {
     for (ModelList::iterator it = models.begin(); it != models.end(); ++it)
         delete *it;
+
     models.clear();
 }
 
@@ -216,7 +233,8 @@ void Application::createScene() {
     laserModels.reserve(sizeof(BaseModel) * modelsNumber);
     hitboxListMonster.reserve(sizeof(BaseModel) * modelsNumber);
     pCurrentLaser = 0;
-    laserTimer = 50;
+    laserTimer = 0;
+    monsterTimer = 3;
     pModel = new Model(ASSET_DIRECTORY "skybox.obj", false);
     pModel->shader(new PhongShader(), true);
     pModel->shadowCaster(false);
@@ -272,10 +290,9 @@ void Application::createScene() {
     }
     for (int i = 0; i < 2; i++) {
         std::cout << i << ". Monster wird erstellt." << std::endl;
-        pModel = new Model(ASSET_DIRECTORY "blockPlayer.obj", false);
+        pModel = new Model(ASSET_DIRECTORY "enemy.obj", false);
         pModel->shader(new PhongShader(), false);
-        m.translation(0, 0, 15 + 15 * i);
-        n.scale(0.01f);
+        m.translation(0, -50, 0);
         o.rotationY(AI_DEG_TO_RAD(180.0f));
         pModel->transform(m * o);
         models.push_back(pModel);

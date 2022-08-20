@@ -54,8 +54,10 @@ protected:
     Spaceship* pSpaceship;
     ShadowMapGenerator shadowGenerator;
     int pCurrentLaser;
-    int laserTimer;
+    float laserTimer;
+    float monsterTimer;
     void loopCollision();
+    int pCurrentMonster;
 };
 
 #endif /* Application_hpp */
