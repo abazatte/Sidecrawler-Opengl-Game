@@ -257,7 +257,7 @@ void Application::createScene()
         pModel->transform(m*o);
         models.push_back(pModel);
         monsterModels.push_back(pModel);
-
+//LOL
         ConstantShader* pConstShader;
 
         hitboxModel = new LineBoxModel(pModel->getBlockModel()->boundingBox().Max, pModel->getBlockModel()->boundingBox().Min);
