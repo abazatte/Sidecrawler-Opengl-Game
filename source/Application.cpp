@@ -40,8 +40,7 @@
 #endif
 
 
-Application::Application(GLFWwindow* pWin) : pWindow(pWin), cam(pWin), pModel(NULL), shadowGenerator(2048, 2048)
-{
+Application::Application(GLFWwindow *pWin) : pWindow(pWin), cam(pWin), pModel(NULL), shadowGenerator(2048, 2048) {
 
     createScene();
     //glfwSetKeyCallback(pWindow, key_callback);
@@ -50,18 +49,17 @@ Application::Application(GLFWwindow* pWin) : pWindow(pWin), cam(pWin), pModel(NU
 
 
 }
-void Application::start()
-{
-    glEnable (GL_DEPTH_TEST); // enable depth-testing
-    glDepthFunc (GL_LESS); // depth-testing interprets a smaller value as "closer"
+
+void Application::start() {
+    glEnable(GL_DEPTH_TEST); // enable depth-testing
+    glDepthFunc(GL_LESS); // depth-testing interprets a smaller value as "closer"
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
     glEnable(GL_BLEND);
-    glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
-void Application::update(float dtime)
-{
+void Application::update(float dtime) {
 
     int upState = glfwGetKey(pWindow, GLFW_KEY_W);
     int downState = glfwGetKey(pWindow, GLFW_KEY_S);
@@ -72,22 +70,21 @@ void Application::update(float dtime)
     //int backward = glfwGetKey(pWindow, GLFW_KEY_A);
     float upDown = 0.0f;
     //float forwardBackward = 0.0f;
-
+    // std::cout << dtime << std::endl;
 
     float f = pSpaceship->getTop()->transform().translation().Y;
     //std::cout << f << std:: endl;
     if (f < 13.5 && upState == GLFW_PRESS && downState == GLFW_RELEASE) {
         upDown = 17.5f;
-    }
-    else if (f > -12.4 && downState == GLFW_PRESS && upState == GLFW_RELEASE) {
+    } else if (f > -12.4 && downState == GLFW_PRESS && upState == GLFW_RELEASE) {
         upDown = -17.5f;
     }
     if (positionState == GLFW_PRESS) {
-        std::cout << "x: " << pSpaceship->getTop()->transform().translation().X << "y: " << pSpaceship->getTop()->transform().translation().Y << "z: " << pSpaceship->getTop()->transform().translation().Z << std::endl;
+        //std::cout << "x: " << pSpaceship->getTop()->transform().translation().X << "y: " << pSpaceship->getTop()->transform().translation().Y << "z: " << pSpaceship->getTop()->transform().translation().Z << std::endl;
     }
-    if (shot == GLFW_PRESS && laserTimer<0) {
+    if (shot == GLFW_PRESS && laserTimer < 0) {
         Matrix CP;
-        laserTimer = 50;
+        laserTimer = 500;
         CP = pSpaceship->getTop()->transform();
         std::cout << pCurrentLaser << std::endl;
         if (pCurrentLaser >= 39) {
@@ -103,90 +100,113 @@ void Application::update(float dtime)
         }
     }
     pSpaceship->steer(upDown);
-    //pSpaceship->fire(dtime, shooting);
     pSpaceship->update(dtime);
 
     updateLaser(dtime);
     updateMonster(dtime);
+    loopCollision();
     cam.update();
-    if(laserTimer > -1000){
+    if (laserTimer > -1000) {
         laserTimer--;
     }
 
-    std::cout << laserTimer << std::endl;
+    //std::cout << laserTimer << std::endl;
 }
+
 void Application::updateLaser(float dtime) {
     Matrix TM, CP;
     for (int (i) = 0; (i) < laserModels.size(); ++(i)) {
         CP = laserModels.at(i)->transform();
-        if(laserModels.at(i)->transform().translation().Y > -13 && laserModels.at(i)->transform().translation().Y < 14 ){
+        if (laserModels.at(i)->transform().translation().Y > -13 &&
+            laserModels.at(i)->transform().translation().Y < 14) {
             TM.translation(0, 0, 20.0f * dtime);
             laserModels.at(i)->transform(CP * TM);
             hitboxListLaser.at(i)->transform(CP * TM);
 
-            std::cout << "Posi Laser:" << laserModels.at(i)->transform().translation().Z << std::endl;
+            //std::cout << "Posi Laser:" << laserModels.at(i)->transform().translation().Z << std::endl;
 
         }
-        if(laserModels.at(i)->transform().translation().Z > 90){
-            TM.translation(0,-40,0);
+        if (laserModels.at(i)->transform().translation().Z > 90) {
+            TM.translation(0, -40, 0);
             laserModels.at(i)->transform(TM);
             hitboxListLaser.at(i)->transform(TM);
 
         }
     }
 }
-void Application::updateMonster(float dtime){
+
+void Application::updateMonster(float dtime) {
     Matrix TM, CP;
     for (int i = 0; i < monsterModels.size(); ++i) {
 
         CP = monsterModels.at(i)->transform();
-        TM.translation(0, 0, 1.0f * dtime);
+        TM.translation(0, 0, 0); //1.0f * dtime
         monsterModels.at(i)->transform(CP * TM);
-        std::cout << "Posi Monster:" << monsterModels.at(i)->transform().translation().Z << std::endl;
+        //std::cout << "Posi Monster:" << monsterModels.at(i)->transform().translation().Z << std::endl;
         hitboxListMonster.at(i)->transform(CP * TM);
     }
 }
-void Application::loopCollision(){
-    for (int i = 0; i < hitboxListLaser.size(); ++i) {
 
-        for (int j = 0; j < hitboxListMonster.size(); ++j) {
-            //hitboxListLaser.at(i)->boundingBox().
+void Application::loopCollision() {
+    Matrix TM, CP, CP2;
+    for (int i = 0; i < laserModels.size(); ++i) {
+        for (int j = 0; j < monsterModels.size(); ++j) {
+            CP = laserModels.at(i)->transform();
+            CP2 = monsterModels.at(j)->transform();
+            if (AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
+                                monsterModels.at(j)->boundingBox().transform(CP2))) {
+                TM.translation(0, -40, 0);
+                laserModels.at(i)->transform(TM);
+                hitboxListLaser.at(i)->transform(TM);
+            }
+
         }
     }
 }
 
+//std::cout << AABB::collision(laserModels.at(i)->boundingBox(), monsterModels.at(j)->boundingBox())
+//          << std::endl;
 
-void Application::draw()
-{
+/*
+std::cout << "minx: " << monsterModels.at(i)->boundingBox().transform().Min.X << "miny: "
+  << monsterModels.at(i)->boundingBox().Min.Y << "minz: " << monsterModels.at(i)->boundingBox().Min.Z
+  << "maxx: " << monsterModels.at(i)->boundingBox().Max.X
+  << "maxy: " << monsterModels.at(i)->boundingBox().Max.Y << "maxz: "
+  << monsterModels.at(i)->boundingBox().Max.Z << std::endl;
+  */
+
+//}
+
+
+
+void Application::draw() {
     shadowGenerator.generate(models);
 
     // 1. clear screen
-    glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     ShaderLightMapper::instance().activate();
     // 2. setup shaders and draw models
-    for(ModelList::iterator it = models.begin(); it != models.end(); ++it )
-    {
+    for (ModelList::iterator it = models.begin(); it != models.end(); ++it) {
         (*it)->draw(cam);
     }
     ShaderLightMapper::instance().deactivate();
 
     // 3. check once per frame for opengl errors
     GLenum Error = glGetError();
-    assert(Error==0);
+    assert(Error == 0);
 }
-void Application::end()
-{
-    for(ModelList::iterator it = models.begin(); it != models.end(); ++it )
+
+void Application::end() {
+    for (ModelList::iterator it = models.begin(); it != models.end(); ++it)
         delete *it;
     models.clear();
 }
 
-void Application::createScene()
-{
+void Application::createScene() {
     Matrix m, n, o;
     float rad;
-    PhongShader* pPhongShader;
+    PhongShader *pPhongShader;
     int modelsNumber = 40;
     hitboxListLaser.reserve(sizeof(BaseModel) * modelsNumber);
     laserModels.reserve(sizeof(BaseModel) * modelsNumber);
@@ -213,21 +233,20 @@ void Application::createScene()
 
     pModel = new Model(ASSET_DIRECTORY "spaceship.dae", false);
     pModel->shader(new PhongShader(), true);
-    m.translation(0,0,40);
+    m.translation(0, 0, 40);
     pModel->shadowCaster(false);
     pModel->transform(m);
     models.push_back(pModel);
     //pSpaceship->loadModel(ASSET_DIRECTORY "spaceship.dae");
 
     // directional lights
-    DirectionalLight* dl = new DirectionalLight();
+    DirectionalLight *dl = new DirectionalLight();
     dl->direction(Vector(0.2f, -1, 1));
     dl->color(Color(1, 1, 1));
     dl->castShadows(true);
     ShaderLightMapper::instance().addLight(dl);
 
-    for (int i = 0;i<modelsNumber;i++)
-    {
+    for (int i = 0; i < modelsNumber; i++) {
         std::cout << i << " wird erstellt." << std::endl;
         pModel = new Model(ASSET_DIRECTORY "LaserTry.obj", false);
         pModel->shader(new PhongShader(), false);
@@ -237,9 +256,9 @@ void Application::createScene()
         models.push_back(pModel);
         laserModels.push_back(pModel);
 
-        ConstantShader* pConstShader;
-
-        hitboxModel = new LineBoxModel(pModel->getBlockModel()->boundingBox().Max, pModel->getBlockModel()->boundingBox().Min);
+        ConstantShader *pConstShader;
+        hitboxModel = new LineBoxModel(pModel->getBlockModel()->boundingBox().Max,
+                                       pModel->getBlockModel()->boundingBox().Min);
         pConstShader = new ConstantShader();
         pConstShader->color(Color(0, 1, 0));
         hitboxModel->shader(pConstShader, true);
@@ -247,24 +266,23 @@ void Application::createScene()
         models.push_back(hitboxModel);
         hitboxListLaser.push_back(hitboxModel);
     }
-    for (int i = 0;i<15;i++){
+    for (int i = 0; i < 2; i++) {
         std::cout << i << ". Monster wird erstellt." << std::endl;
-        pModel = new Model(ASSET_DIRECTORY "enemy.obj", false);
+        pModel = new Model(ASSET_DIRECTORY "blockPlayer.obj", false);
         pModel->shader(new PhongShader(), false);
-        m.translation(0,0,15+15*i);
+        m.translation(0, 0, 15 + 15 * i);
         n.scale(0.01f);
         o.rotationY(AI_DEG_TO_RAD(180.0f));
-        pModel->transform(m*o);
+        pModel->transform(m * o);
         models.push_back(pModel);
         monsterModels.push_back(pModel);
-//LOL
-        ConstantShader* pConstShader;
 
-        hitboxModel = new LineBoxModel(pModel->getBlockModel()->boundingBox().Max, pModel->getBlockModel()->boundingBox().Min);
+        ConstantShader *pConstShader;
+        hitboxModel = new LineBoxModel(pModel->getBlockModel()->boundingBox().Max,pModel->getBlockModel()->boundingBox().Min);
         pConstShader = new ConstantShader();
         pConstShader->color(Color(0, 1, 0));
         hitboxModel->shader(pConstShader, true);
-        hitboxModel->transform(m*o);
+        hitboxModel->transform(m * o);
         models.push_back(hitboxModel);
         hitboxListMonster.push_back(hitboxModel);
     }

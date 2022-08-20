@@ -29,7 +29,7 @@ public:
 	void corners(Vector c[8]) const;
 	void fromPoints(const Vector* Points, unsigned int PointCount);
     static const AABB& unitBox();
-    bool collision(const AABB &a, const AABB &b);
+    static bool collision(const AABB &a, const AABB &b);
 protected:
     static AABB UnitBox;
 
