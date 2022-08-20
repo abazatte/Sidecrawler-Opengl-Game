@@ -48,7 +48,6 @@ void Spaceship::update(float dtime)
     TM.translation(0, m_upDown * dtime,0);
 
     pSpaceship->transform(CP * TM);
-
     /*
     // Zur ausrichung an MausCoords
     top.lookAt(this->t, bottom.up(), bottom.translation());

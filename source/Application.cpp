@@ -102,7 +102,8 @@ void Application::update(float dtime) {
     if(monsterTimer <= 0){
         Matrix CP;
         monsterTimer = 10;
-        CP.translation(0,0,40);
+        float tmp = randomFloat(12,-12);
+        CP.translation(0,tmp,90);
         if (pCurrentMonster >= monsterModels.size()-1){
             pCurrentMonster = 0;
             monsterModels.at(pCurrentMonster)->transform(CP);
@@ -115,6 +116,7 @@ void Application::update(float dtime) {
     }
     pSpaceship->steer(upDown);
     pSpaceship->update(dtime);
+    spaceship->transform(pSpaceship->transform());
 
     updateLaser(dtime);
     updateMonster(dtime);
@@ -127,7 +129,7 @@ void Application::update(float dtime) {
     if (monsterTimer > -1000) {
         monsterTimer = monsterTimer-(dtime*4);
     }
-    std::cout << laserTimer << std::endl;
+    //std::cout << laserTimer << std::endl;
 }
 
 void Application::updateLaser(float dtime) {
@@ -165,11 +167,16 @@ void Application::updateMonster(float dtime) {
 }
 
 void Application::loopCollision() {
-    Matrix TM, CP, CP2;
+    Matrix TM, CP, CP2, CP3;
     for (int i = 0; i < laserModels.size(); ++i) {
         for (int j = 0; j < monsterModels.size(); ++j) {
             CP = laserModels.at(i)->transform();
             CP2 = monsterModels.at(j)->transform();
+            CP3 = pSpaceship->transform();
+            if(AABB::collision(pSpaceship->boundingBox().transform(CP3),
+                               monsterModels.at(j)->boundingBox().transform(CP2)))   {
+                std::cout<< "du wurdest getroffen von Monster Nummer: " << j << std::endl;
+            }
             if (AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
                                 monsterModels.at(j)->boundingBox().transform(CP2))) {
                 TM.translation(0, -40, 0);
@@ -178,8 +185,9 @@ void Application::loopCollision() {
                 TM.translation(0, -50, 0);
                 monsterModels.at(j)->transform(TM);
                 hitboxListMonster.at(j)->transform(TM);
-
             }
+
+
         }
     }
 }
@@ -197,6 +205,13 @@ std::cout << "minx: " << monsterModels.at(i)->boundingBox().transform().Min.X <<
 
 //}
 
+/** https://stackoverflow.com/questions/5289613/generate-random-float-between-two-floats **/
+float Application::randomFloat(float a, float b) {
+    float random = ((float) rand()) / (float) RAND_MAX;
+    float diff = b - a;
+    float r = random * diff;
+    return a + r;
+}
 
 
 void Application::draw() {
@@ -244,14 +259,19 @@ void Application::createScene() {
     pPhongShader = new PhongShader();
     pSpaceship = new Spaceship(ASSET_DIRECTORY "spaceship.dae");
     models.push_back(pSpaceship->getTop());
-
     Vector v1 = pSpaceship->getTop()->transform().translation();
-    Vector v2 = pSpaceship->getTop()->transform().translation();
     v1.Z += 30;
     cam.setTarget(v1);
     //v1.Z -= 30;
     v1.X -= 25;
     cam.setPosition(v1);
+    ConstantShader *pConstShader;
+    spaceship = new LineBoxModel(pSpaceship->getTop()->getBlockModel()->boundingBox().Max,
+                                   pSpaceship->getTop()->getBlockModel()->boundingBox().Min);
+    pConstShader = new ConstantShader();
+    pConstShader->color(Color(0, 1, 0));
+    spaceship->shader(pConstShader, true);
+    models.push_back(spaceship);
 
     pModel = new Model(ASSET_DIRECTORY "spaceship.dae", false);
     pModel->shader(new PhongShader(), true);
@@ -288,7 +308,7 @@ void Application::createScene() {
         models.push_back(hitboxModel);
         hitboxListLaser.push_back(hitboxModel);
     }
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 10; i++) {
         std::cout << i << ". Monster wird erstellt." << std::endl;
         pModel = new Model(ASSET_DIRECTORY "enemy.obj", false);
         pModel->shader(new PhongShader(), false);
@@ -299,7 +319,8 @@ void Application::createScene() {
         monsterModels.push_back(pModel);
 
         ConstantShader *pConstShader;
-        hitboxModel = new LineBoxModel(pModel->getBlockModel()->boundingBox().Max,pModel->getBlockModel()->boundingBox().Min);
+        hitboxModel = new LineBoxModel(pModel->getBlockModel()->boundingBox().Max,
+                                       pModel->getBlockModel()->boundingBox().Min);
         pConstShader = new ConstantShader();
         pConstShader->color(Color(0, 1, 0));
         hitboxModel->shader(pConstShader, true);

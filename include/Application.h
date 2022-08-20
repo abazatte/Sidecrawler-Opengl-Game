@@ -46,6 +46,7 @@ protected:
     ModelList models;
     MonsterVector monsterModels;
     LineBoxModel* hitboxModel;
+    LineBoxModel* spaceship;
     HitboxVectorMonster hitboxListMonster;
     HitboxVectorLaser hitboxListLaser;
     LaserVector laserModels;
@@ -58,6 +59,8 @@ protected:
     float monsterTimer;
     void loopCollision();
     int pCurrentMonster;
+
+    float randomFloat(float a, float b);
 };
 
 #endif /* Application_hpp */
