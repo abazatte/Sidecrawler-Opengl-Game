@@ -34,7 +34,6 @@ public:
     void update(float dtime);
     void draw();
     void end();
-
 protected:
     void updateMonster(float dtime);
     void createScene();
@@ -59,7 +58,7 @@ protected:
     float monsterTimer;
     void loopCollision();
     int pCurrentMonster;
-
+    int score;
     float randomFloat(float a, float b);
 };
 

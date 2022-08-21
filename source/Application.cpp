@@ -43,6 +43,7 @@
 Application::Application(GLFWwindow *pWin) : pWindow(pWin), cam(pWin), pModel(NULL), shadowGenerator(2048, 2048) {
 
     createScene();
+
     //glfwSetKeyCallback(pWindow, key_callback);
     //createNormalTestScene();
     //createShadowTestScene();
@@ -86,7 +87,7 @@ void Application::update(float dtime) {
         Matrix CP;
         laserTimer = 1;
         CP = pSpaceship->getTop()->transform();
-        std::cout << pCurrentLaser << std::endl;
+        //std::cout << pCurrentLaser << std::endl;
         if (pCurrentLaser >= laserModels.size()-1) {
             pCurrentLaser = 0;
             laserModels.at(pCurrentLaser)->transform(CP);
@@ -116,7 +117,7 @@ void Application::update(float dtime) {
     }
     pSpaceship->steer(upDown);
     pSpaceship->update(dtime);
-    spaceship->transform(pSpaceship->transform());
+    spaceship->transform(pSpaceship->getTop()->transform());
 
     updateLaser(dtime);
     updateMonster(dtime);
@@ -157,12 +158,15 @@ void Application::updateLaser(float dtime) {
 void Application::updateMonster(float dtime) {
     Matrix TM, CP;
     for (int i = 0; i < monsterModels.size(); ++i) {
-
         CP = monsterModels.at(i)->transform();
-        TM.translation(0, 0, -10.0f * dtime); //1.0f * dtime
-        monsterModels.at(i)->transform(CP * TM);
-        //std::cout << "Posi Monster:" << monsterModels.at(i)->transform().translation().Z << std::endl;
-        hitboxListMonster.at(i)->transform(CP * TM);
+        if (monsterModels.at(i)->transform().translation().Y > -13 &&
+                monsterModels.at(i)->transform().translation().Y < 14) {
+            TM.translation(0, 0, -10.0f * dtime); //1.0f * dtime
+            monsterModels.at(i)->transform(CP * TM);
+            //std::cout << "Posi Monster:" << monsterModels.at(i)->transform().translation().Z << std::endl;
+            hitboxListMonster.at(i)->transform(CP * TM);
+            //std::cout << "Posi Laser:" << laserModels.at(i)->transform().translation().Z << std::endl;
+        }
     }
 }
 
@@ -172,10 +176,11 @@ void Application::loopCollision() {
         for (int j = 0; j < monsterModels.size(); ++j) {
             CP = laserModels.at(i)->transform();
             CP2 = monsterModels.at(j)->transform();
-            CP3 = pSpaceship->transform();
+            CP3 = pSpaceship->getTop()->transform();
             if(AABB::collision(pSpaceship->boundingBox().transform(CP3),
                                monsterModels.at(j)->boundingBox().transform(CP2)))   {
                 std::cout<< "du wurdest getroffen von Monster Nummer: " << j << std::endl;
+                score = 0;
             }
             if (AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
                                 monsterModels.at(j)->boundingBox().transform(CP2))) {
@@ -185,9 +190,9 @@ void Application::loopCollision() {
                 TM.translation(0, -50, 0);
                 monsterModels.at(j)->transform(TM);
                 hitboxListMonster.at(j)->transform(TM);
+                score++;
+                std::cout << score << std::endl;
             }
-
-
         }
     }
 }
@@ -250,6 +255,7 @@ void Application::createScene() {
     pCurrentLaser = 0;
     laserTimer = 0;
     monsterTimer = 3;
+    score = 0;
     pModel = new Model(ASSET_DIRECTORY "skybox.obj", false);
     pModel->shader(new PhongShader(), true);
     pModel->shadowCaster(false);
