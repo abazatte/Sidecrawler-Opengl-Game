@@ -7,7 +7,7 @@
 //
 
 #include "utils/Models/LineBoxModel.h"
-
+/*
 LineBoxModel::LineBoxModel(float Width, float Height, float Depth) {
     float base = 0.1f;
 
@@ -63,7 +63,7 @@ LineBoxModel::LineBoxModel(float Width, float Height, float Depth) {
     VB.addVertex(base, 0 + Height, base + Depth);
 
     VB.end();
-}
+}*/
 
 LineBoxModel::LineBoxModel(Vector max, Vector min)
 {

@@ -179,8 +179,12 @@ void Application::loopCollision() {
             CP3 = pSpaceship->getTop()->transform();
             if(AABB::collision(pSpaceship->boundingBox().transform(CP3),
                                monsterModels.at(j)->boundingBox().transform(CP2)))   {
-                std::cout<< "du wurdest getroffen von Monster Nummer: " << j << std::endl;
+                TM.translation(0, -50, 0);
+                monsterModels.at(j)->transform(TM);
+                hitboxListMonster.at(j)->transform(TM);
+                //std::cout<< "du wurdest getroffen von Monster Nummer: " << j << std::endl;
                 score = 0;
+
             }
             if (AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
                                 monsterModels.at(j)->boundingBox().transform(CP2))) {
@@ -263,7 +267,7 @@ void Application::createScene() {
 
 
     pPhongShader = new PhongShader();
-    pSpaceship = new Spaceship(ASSET_DIRECTORY "spaceship.dae");
+    pSpaceship = new Spaceship(ASSET_DIRECTORY "woodenObje.obj");
     models.push_back(pSpaceship->getTop());
     Vector v1 = pSpaceship->getTop()->transform().translation();
     v1.Z += 30;
@@ -272,8 +276,8 @@ void Application::createScene() {
     v1.X -= 25;
     cam.setPosition(v1);
     ConstantShader *pConstShader;
-    spaceship = new LineBoxModel(pSpaceship->getTop()->getBlockModel()->boundingBox().Max,
-                                   pSpaceship->getTop()->getBlockModel()->boundingBox().Min);
+    spaceship = new LineBoxModel(pSpaceship->getTop()->getBlockModel()->boundingBox().Min,
+                                   pSpaceship->getTop()->getBlockModel()->boundingBox().Max);
     pConstShader = new ConstantShader();
     pConstShader->color(Color(0, 1, 0));
     spaceship->shader(pConstShader, true);
