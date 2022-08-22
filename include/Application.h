@@ -59,7 +59,11 @@ protected:
     void loopCollision();
     int pCurrentMonster;
     int score;
+    std::vector<int> pSkill;
+    std::vector<int> pObenUnten;
+    std::vector<float> pVorher;
     float randomFloat(float a, float b);
+
 };
 
 #endif /* Application_hpp */

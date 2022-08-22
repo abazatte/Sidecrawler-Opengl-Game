@@ -88,7 +88,7 @@ void Application::update(float dtime) {
         laserTimer = 1;
         CP = pSpaceship->getTop()->transform();
         //std::cout << pCurrentLaser << std::endl;
-        if (pCurrentLaser >= laserModels.size()-1) {
+        if (pCurrentLaser >= laserModels.size() - 1) {
             pCurrentLaser = 0;
             laserModels.at(pCurrentLaser)->transform(CP);
             hitboxListLaser.at(pCurrentLaser)->transform(CP);
@@ -100,12 +100,12 @@ void Application::update(float dtime) {
             hitboxListLaser.at(pCurrentLaser)->transform(CP);
         }
     }
-    if(monsterTimer <= 0){
+    if (monsterTimer <= 0) {
         Matrix CP;
         monsterTimer = 10;
-        float tmp = randomFloat(12,-12);
-        CP.translation(0,tmp,90);
-        if (pCurrentMonster >= monsterModels.size()-1){
+        float tmp = randomFloat(12, -12);
+        CP.translation(0, tmp, 90);
+        if (pCurrentMonster >= monsterModels.size() - 1) {
             pCurrentMonster = 0;
             monsterModels.at(pCurrentMonster)->transform(CP);
             hitboxListMonster.at(pCurrentMonster)->transform(CP);
@@ -124,11 +124,11 @@ void Application::update(float dtime) {
     loopCollision();
     cam.update();
     if (laserTimer > -1000) {
-        laserTimer = laserTimer-(dtime*4);
+        laserTimer = laserTimer - (dtime * 4);
     }
 
     if (monsterTimer > -1000) {
-        monsterTimer = monsterTimer-(dtime*4);
+        monsterTimer = monsterTimer - (dtime * 4);
     }
     //std::cout << laserTimer << std::endl;
 }
@@ -157,11 +157,56 @@ void Application::updateLaser(float dtime) {
 
 void Application::updateMonster(float dtime) {
     Matrix TM, CP;
+
     for (int i = 0; i < monsterModels.size(); ++i) {
         CP = monsterModels.at(i)->transform();
         if (monsterModels.at(i)->transform().translation().Y > -13 &&
-                monsterModels.at(i)->transform().translation().Y < 14) {
-            TM.translation(0, 0, -10.0f * dtime); //1.0f * dtime
+            monsterModels.at(i)->transform().translation().Y < 14) {
+            if (pSkill.at(i) == 0) {
+                if (pObenUnten.at(i) == 0) {
+                    TM.translation(0, 0, -10.0f * dtime); //1.0f * dtime
+                } else if (pObenUnten.at(i) == 1) {
+                    if (monsterModels.at(i)->transform().translation().Y < -11) {
+                        TM.translation(0, 0.25f, -10.0f * dtime); //1.0f * dtime
+                        pVorher.at(i) = 0.25f;
+                    } else if (monsterModels.at(i)->transform().translation().Y > 12) {
+                        TM.translation(0, -0.25f, -10.0f * dtime); //1.0f * dtime
+                        pVorher.at(i) = -0.25f;
+                    }else {
+                        TM.translation(0, pVorher.at(i), -10.0f * dtime); //1.0f * dtime
+                    }
+                }
+            } else if (pSkill.at(i) == 1) {
+                if (pObenUnten.at(i) == 0) {
+                    TM.translation(0, 0, -10.0f * dtime * 2); //1.0f * dtime
+                } else if (pObenUnten.at(i) == 1) {
+                    if (monsterModels.at(i)->transform().translation().Y < -11) {
+                        TM.translation(0, 0.25f, -10.0f * dtime * 2); //1.0f * dtime
+                        pVorher.at(i) = 0.25f;
+                    } else if (monsterModels.at(i)->transform().translation().Y > 12) {
+                        TM.translation(0, -0.25f, -10.0f * dtime * 2); //1.0f * dtime
+                        pVorher.at(i) = -0.25f;
+                    } else {
+                        TM.translation(0, pVorher.at(i), -10.0f * dtime * 2); //1.0f * dtime
+                    }
+                }
+            } else if (pSkill.at(i) == 2) {
+                if (pObenUnten.at(i) == 0) {
+                    TM.translation(0, 0, -10.0f * dtime * 3); //1.0f * dtime
+                } else if (pObenUnten.at(i) == 1) {
+                    if (monsterModels.at(i)->transform().translation().Y < -11) {
+                        TM.translation(0, 0.25f, -10.0f * dtime * 3); //1.0f * dtime
+                        pVorher.at(i) = 0.25f;
+                    } else if (monsterModels.at(i)->transform().translation().Y > 12) {
+                        TM.translation(0, -0.25f, -10.0f * dtime * 3); //1.0f * dtime
+                        pVorher.at(i) = -0.25f;
+                    } else {
+                        TM.translation(0, pVorher.at(i), -10.0f * dtime * 3); //1.0f * dtime
+                    }
+                }
+            }
+
+            //TM.translation(0, 0, -10.0f * dtime * pGeschwindigkeit.at(i)); //1.0f * dtime
             monsterModels.at(i)->transform(CP * TM);
             //std::cout << "Posi Monster:" << monsterModels.at(i)->transform().translation().Z << std::endl;
             hitboxListMonster.at(i)->transform(CP * TM);
@@ -177,8 +222,8 @@ void Application::loopCollision() {
             CP = laserModels.at(i)->transform();
             CP2 = monsterModels.at(j)->transform();
             CP3 = pSpaceship->getTop()->transform();
-            if(AABB::collision(pSpaceship->boundingBox().transform(CP3),
-                               monsterModels.at(j)->boundingBox().transform(CP2)))   {
+            if (AABB::collision(pSpaceship->boundingBox().transform(CP3),
+                                monsterModels.at(j)->boundingBox().transform(CP2))) {
                 TM.translation(0, -50, 0);
                 monsterModels.at(j)->transform(TM);
                 hitboxListMonster.at(j)->transform(TM);
@@ -260,6 +305,10 @@ void Application::createScene() {
     laserTimer = 0;
     monsterTimer = 3;
     score = 0;
+    pSkill.reserve(sizeof(int) * modelsNumber);
+    pObenUnten.reserve(sizeof(int) * modelsNumber);
+    pVorher.reserve(sizeof(float) * modelsNumber);
+
     pModel = new Model(ASSET_DIRECTORY "skybox.obj", false);
     pModel->shader(new PhongShader(), true);
     pModel->shadowCaster(false);
@@ -277,7 +326,7 @@ void Application::createScene() {
     cam.setPosition(v1);
     ConstantShader *pConstShader;
     spaceship = new LineBoxModel(pSpaceship->getTop()->getBlockModel()->boundingBox().Min,
-                                   pSpaceship->getTop()->getBlockModel()->boundingBox().Max);
+                                 pSpaceship->getTop()->getBlockModel()->boundingBox().Max);
     pConstShader = new ConstantShader();
     pConstShader->color(Color(0, 1, 0));
     spaceship->shader(pConstShader, true);
@@ -337,5 +386,8 @@ void Application::createScene() {
         hitboxModel->transform(m * o);
         models.push_back(hitboxModel);
         hitboxListMonster.push_back(hitboxModel);
+        pSkill.push_back((int) randomFloat(0.0f, 3.0f));
+        pObenUnten.push_back((int) randomFloat(0.0f, 2.0f));
+        pVorher.push_back(0.25f);
     }
 }
