@@ -233,7 +233,7 @@ struct aiColor3D
  *  transformation was chosen in the belief that most strings in 3d files are limited
  *  to ASCII, thus the character set needed to be strictly ASCII compatible.
  *
- *  Most text file loaders provide proper Unicode input file handling, special unicode
+ *  Most Text file loaders provide proper Unicode input file handling, special unicode
  *  characters are correctly transcoded to UTF8 and are kept throughout the libraries'
  *  import pipeline.
  *

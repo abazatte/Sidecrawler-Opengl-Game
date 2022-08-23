@@ -99,7 +99,7 @@ typedef int aiBool;
  * library and will be stable until aiReleaseImport() is called. After you're
  * done with it, call aiReleaseImport() to free the resources associated with
  * this file. If the import fails, NULL is returned instead. Call
- * aiGetErrorString() to retrieve a human-readable error text.
+ * aiGetErrorString() to retrieve a human-readable error Text.
  * @param pFile Path and filename of the file to be imported,
  *   expected to be a null-terminated c-string. NULL is not a valid value.
  * @param pFlags Optional post processing steps to be executed after
@@ -120,7 +120,7 @@ ASSIMP_API const C_STRUCT aiScene* aiImportFile(
  * library and will be stable until aiReleaseImport() is called. After you're
  * done with it, call aiReleaseImport() to free the resources associated with
  * this file. If the import fails, NULL is returned instead. Call
- * aiGetErrorString() to retrieve a human-readable error text.
+ * aiGetErrorString() to retrieve a human-readable error Text.
  * @param pFile Path and filename of the file to be imported,
  *   expected to be a null-terminated c-string. NULL is not a valid value.
  * @param pFlags Optional post processing steps to be executed after
@@ -328,7 +328,7 @@ ASSIMP_API void aiReleaseImport(
     const C_STRUCT aiScene* pScene);
 
 // --------------------------------------------------------------------------------
-/** Returns the error text of the last failed import process.
+/** Returns the error Text of the last failed import process.
  *
  * @return A textual description of the error that occurred at the last
  * import process. NULL if there was no error. There can't be an error if you

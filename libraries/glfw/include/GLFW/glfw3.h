@@ -699,9 +699,9 @@ extern "C" {
  *  The regular arrow cursor.
  */
 #define GLFW_ARROW_CURSOR           0x00036001
-/*! @brief The text input I-beam cursor shape.
+/*! @brief The Text input I-beam cursor shape.
  *
- *  The text input I-beam cursor shape.
+ *  The Text input I-beam cursor shape.
  */
 #define GLFW_IBEAM_CURSOR           0x00036002
 /*! @brief The crosshair shape.
@@ -3017,12 +3017,12 @@ GLFWAPI const char* glfwGetKeyName(int key, int scancode);
  *
  *  The key functions deal with physical keys, with [key tokens](@ref keys)
  *  named after their use on the standard US keyboard layout.  If you want to
- *  input text, use the Unicode character callback instead.
+ *  input Text, use the Unicode character callback instead.
  *
  *  The [modifier key bit masks](@ref mods) are not key tokens and cannot be
  *  used with this function.
  *
- *  __Do not use this function__ to implement [text input](@ref input_char).
+ *  __Do not use this function__ to implement [Text input](@ref input_char).
  *
  *  @param[in] window The desired window.
  *  @param[in] key The desired [keyboard key](@ref keys).  `GLFW_KEY_UNKNOWN` is
@@ -3270,7 +3270,7 @@ GLFWAPI void glfwSetCursor(GLFWwindow* window, GLFWcursor* cursor);
  *
  *  The key functions deal with physical keys, with layout independent
  *  [key tokens](@ref keys) named after their values in the standard US keyboard
- *  layout.  If you want to input text, use the
+ *  layout.  If you want to input Text, use the
  *  [character callback](@ref glfwSetCharCallback) instead.
  *
  *  When a window loses input focus, it will generate synthetic key release
@@ -3311,15 +3311,15 @@ GLFWAPI GLFWkeyfun glfwSetKeyCallback(GLFWwindow* window, GLFWkeyfun cbfun);
  *  This function sets the character callback of the specified window, which is
  *  called when a Unicode character is input.
  *
- *  The character callback is intended for Unicode text input.  As it deals with
+ *  The character callback is intended for Unicode Text input.  As it deals with
  *  characters, it is keyboard layout dependent, whereas the
  *  [key callback](@ref glfwSetKeyCallback) is not.  Characters do not map 1:1
  *  to physical keys, as a key may produce zero, one or more characters.  If you
  *  want to know whether a specific physical key was pressed or released, see
  *  the key callback instead.
  *
- *  The character callback behaves as system text input normally does and will
- *  not be called if modifier keys are held down that would prevent normal text
+ *  The character callback behaves as system Text input normally does and will
+ *  not be called if modifier keys are held down that would prevent normal Text
  *  input on that platform, for example a Super (Command) key on OS X or Alt key
  *  on Windows.  There is a
  *  [character with modifiers callback](@ref glfwSetCharModsCallback) that
@@ -3351,7 +3351,7 @@ GLFWAPI GLFWcharfun glfwSetCharCallback(GLFWwindow* window, GLFWcharfun cbfun);
  *  modifier keys are used.
  *
  *  The character with modifiers callback is intended for implementing custom
- *  Unicode character input.  For regular Unicode text input, see the
+ *  Unicode character input.  For regular Unicode Text input, see the
  *  [character callback](@ref glfwSetCharCallback).  Like the character
  *  callback, the character with modifiers callback deals with characters and is
  *  keyboard layout dependent.  Characters do not map 1:1 to physical keys, as

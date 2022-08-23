@@ -33,6 +33,11 @@
 #include "utils/Shader/PhongShader.h"
 
 
+
+//freetype
+#include <ft2build.h>
+#include FT_FREETYPE_H
+
 #ifdef WIN32
 #define ASSET_DIRECTORY "../assets/"
 #else

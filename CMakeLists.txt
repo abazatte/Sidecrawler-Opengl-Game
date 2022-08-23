@@ -54,14 +54,15 @@ add_executable(${CMAKE_PROJECT_NAME}
         include/VertexBuffer.h
         source/VertexBuffer.cpp
         source/main.cpp
-        source/Spaceship.cpp include/Spaceship.h)
+        source/Spaceship.cpp include/Spaceship.h source/Text.h)
 
 include_directories(
         source
         libraries/glfw/include
         libraries/glew/include
         libraries/freeimage/include
-        libraries/assimp/include)
+        libraries/assimp/include
+        libraries/freetype/include)
 
 find_package(OpenGL REQUIRED)
 
