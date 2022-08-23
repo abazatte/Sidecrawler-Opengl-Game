@@ -62,6 +62,7 @@ protected:
     std::vector<int> pSkill;
     std::vector<int> pObenUnten;
     std::vector<float> pVorher;
+    std::vector<int> pLeben;
     float randomFloat(float a, float b);
 
 };

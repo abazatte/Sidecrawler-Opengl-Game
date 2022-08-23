@@ -164,6 +164,9 @@ void Application::updateMonster(float dtime) {
     Matrix TM, CP;
 
     for (int i = 0; i < monsterModels.size(); ++i) {
+        if (pLeben.at(i) == 3){
+            
+        }
         CP = monsterModels.at(i)->transform();
         if (monsterModels.at(i)->transform().translation().Y > -13 &&
             monsterModels.at(i)->transform().translation().Y < 14) {
@@ -238,13 +241,21 @@ void Application::loopCollision() {
             }
             if (AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
                                 monsterModels.at(j)->boundingBox().transform(CP2))) {
-                TM.translation(0, -40, 0);
-                laserModels.at(i)->transform(TM);
-                hitboxListLaser.at(i)->transform(TM);
-                TM.translation(0, -50, 0);
-                monsterModels.at(j)->transform(TM);
-                hitboxListMonster.at(j)->transform(TM);
-                score++;
+                if (pLeben.at(j) == 0){
+                    TM.translation(0, -40, 0);
+                    laserModels.at(i)->transform(TM);
+                    hitboxListLaser.at(i)->transform(TM);
+                    TM.translation(0, -50, 0);
+                    monsterModels.at(j)->transform(TM);
+                    hitboxListMonster.at(j)->transform(TM);
+                    score++;
+                } else {
+                    TM.translation(0, -40, 0);
+                    laserModels.at(i)->transform(TM);
+                    hitboxListLaser.at(i)->transform(TM);
+                    pLeben.at(j)--;
+                }
+
                 std::cout << score << std::endl;
             }
         }
@@ -313,6 +324,7 @@ void Application::createScene() {
     pSkill.reserve(sizeof(int) * modelsNumber);
     pObenUnten.reserve(sizeof(int) * modelsNumber);
     pVorher.reserve(sizeof(float) * modelsNumber);
+    pLeben.reserve(sizeof(int) * modelsNumber);
 
     pModel = new Model(ASSET_DIRECTORY "skybox.obj", false);
     pModel->shader(new PhongShader(), true);
@@ -344,7 +356,14 @@ void Application::createScene() {
     pModel->transform(m);
     models.push_back(pModel);
     //pSpaceship->loadModel(ASSET_DIRECTORY "spaceship.dae");
-
+/*
+    pModel = new Model(ASSET_DIRECTORY "Mars_2k.obj", false);
+    pModel->shader(new PhongShader(),true);
+    pModel->shadowCaster(false);
+    m.translation(50.0f, 0.0f, 0.0f);
+    pModel->transform(m);
+    models.push_back(pModel);
+*/
     // directional lights
     DirectionalLight *dl = new DirectionalLight();
     dl->direction(Vector(0.2f, -1, 1));
@@ -355,7 +374,7 @@ void Application::createScene() {
     for (int i = 0; i < modelsNumber; i++) {
         std::cout << i << " wird erstellt." << std::endl;
         pModel = new Model(ASSET_DIRECTORY "LaserTry.obj", false);
-        pModel->shader(new PhongShader(), false);
+        pModel->shader(new PhongShader(), true);
         //pModel->shadowCaster(false);
         m.translation(0, -40, 0);
         pModel->transform(m);
@@ -375,7 +394,7 @@ void Application::createScene() {
     for (int i = 0; i < 10; i++) {
         std::cout << i << ". Monster wird erstellt." << std::endl;
         pModel = new Model(ASSET_DIRECTORY "enemy.obj", false);
-        pModel->shader(new PhongShader(), false);
+        pModel->shader(new PhongShader(), true);
         m.translation(0, -50, 0);
         o.rotationY(AI_DEG_TO_RAD(180.0f));
         pModel->transform(m * o);
@@ -394,5 +413,10 @@ void Application::createScene() {
         pSkill.push_back((int) randomFloat(0.0f, 3.0f));
         pObenUnten.push_back((int) randomFloat(0.0f, 2.0f));
         pVorher.push_back(0.25f);
+        pLeben.push_back((int) randomFloat(1.0f, 4.0f));
     }
+
+
+
+
 }
