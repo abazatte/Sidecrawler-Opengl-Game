@@ -126,6 +126,7 @@ void Application::update(float dtime) {
 
     updateLaser(dtime);
     updateMonster(dtime);
+    updatePlanet(dtime);
     loopCollision();
     cam.update();
     if (laserTimer > -1000) {
@@ -164,8 +165,8 @@ void Application::updateMonster(float dtime) {
     Matrix TM, CP;
 
     for (int i = 0; i < monsterModels.size(); ++i) {
-        if (pLeben.at(i) == 3){
-            
+        if (pLeben.at(i) == 3) {
+
         }
         CP = monsterModels.at(i)->transform();
         if (monsterModels.at(i)->transform().translation().Y > -13 &&
@@ -175,13 +176,13 @@ void Application::updateMonster(float dtime) {
                     TM.translation(0, 0, -10.0f * dtime); //1.0f * dtime
                 } else if (pObenUnten.at(i) == 1) {
                     if (monsterModels.at(i)->transform().translation().Y < -11) {
-                        TM.translation(0, 0.25f, -10.0f * dtime); //1.0f * dtime
-                        pVorher.at(i) = 0.25f;
+                        TM.translation(0, 5.25f * dtime, -10.0f * dtime); //1.0f * dtime
+                        pVorher.at(i) = 5.25f;
                     } else if (monsterModels.at(i)->transform().translation().Y > 12) {
-                        TM.translation(0, -0.25f, -10.0f * dtime); //1.0f * dtime
-                        pVorher.at(i) = -0.25f;
-                    }else {
-                        TM.translation(0, pVorher.at(i), -10.0f * dtime); //1.0f * dtime
+                        TM.translation(0, -5.25f * dtime, -10.0f * dtime); //1.0f * dtime
+                        pVorher.at(i) = -5.25f;
+                    } else {
+                        TM.translation(0, pVorher.at(i) * dtime, -10.0f * dtime); //1.0f * dtime
                     }
                 }
             } else if (pSkill.at(i) == 1) {
@@ -189,13 +190,13 @@ void Application::updateMonster(float dtime) {
                     TM.translation(0, 0, -10.0f * dtime * 2); //1.0f * dtime
                 } else if (pObenUnten.at(i) == 1) {
                     if (monsterModels.at(i)->transform().translation().Y < -11) {
-                        TM.translation(0, 0.25f, -10.0f * dtime * 2); //1.0f * dtime
-                        pVorher.at(i) = 0.25f;
+                        TM.translation(0, 5.0f * dtime, -10.0f * dtime * 2); //1.0f * dtime
+                        pVorher.at(i) = 5.25f;
                     } else if (monsterModels.at(i)->transform().translation().Y > 12) {
-                        TM.translation(0, -0.25f, -10.0f * dtime * 2); //1.0f * dtime
-                        pVorher.at(i) = -0.25f;
+                        TM.translation(0, -5.0f * dtime, -10.0f * dtime * 2); //1.0f * dtime
+                        pVorher.at(i) = -5.25f;
                     } else {
-                        TM.translation(0, pVorher.at(i), -10.0f * dtime * 2); //1.0f * dtime
+                        TM.translation(0, pVorher.at(i) * dtime, -10.0f * dtime * 2); //1.0f * dtime
                     }
                 }
             } else if (pSkill.at(i) == 2) {
@@ -203,13 +204,13 @@ void Application::updateMonster(float dtime) {
                     TM.translation(0, 0, -10.0f * dtime * 3); //1.0f * dtime
                 } else if (pObenUnten.at(i) == 1) {
                     if (monsterModels.at(i)->transform().translation().Y < -11) {
-                        TM.translation(0, 0.25f, -10.0f * dtime * 3); //1.0f * dtime
-                        pVorher.at(i) = 0.25f;
+                        TM.translation(0, 5.0f * dtime, -10.0f * dtime * 3); //1.0f * dtime
+                        pVorher.at(i) = 5.25f;
                     } else if (monsterModels.at(i)->transform().translation().Y > 12) {
-                        TM.translation(0, -0.25f, -10.0f * dtime * 3); //1.0f * dtime
-                        pVorher.at(i) = -0.25f;
+                        TM.translation(0, -5.0f * dtime, -10.0f * dtime * 3); //1.0f * dtime
+                        pVorher.at(i) = -5.25f;
                     } else {
-                        TM.translation(0, pVorher.at(i), -10.0f * dtime * 3); //1.0f * dtime
+                        TM.translation(0, pVorher.at(i) * dtime, -10.0f * dtime * 3); //1.0f * dtime
                     }
                 }
             }
@@ -241,7 +242,7 @@ void Application::loopCollision() {
             }
             if (AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
                                 monsterModels.at(j)->boundingBox().transform(CP2))) {
-                if (pLeben.at(j) == 0){
+                if (pLeben.at(j) == 0) {
                     TM.translation(0, -40, 0);
                     laserModels.at(i)->transform(TM);
                     hitboxListLaser.at(i)->transform(TM);
@@ -262,18 +263,24 @@ void Application::loopCollision() {
     }
 }
 
-//std::cout << AABB::collision(laserModels.at(i)->boundingBox(), monsterModels.at(j)->boundingBox())
-//          << std::endl;
-
-/*
-std::cout << "minx: " << monsterModels.at(i)->boundingBox().transform().Min.X << "miny: "
-  << monsterModels.at(i)->boundingBox().Min.Y << "minz: " << monsterModels.at(i)->boundingBox().Min.Z
-  << "maxx: " << monsterModels.at(i)->boundingBox().Max.X
-  << "maxy: " << monsterModels.at(i)->boundingBox().Max.Y << "maxz: "
-  << monsterModels.at(i)->boundingBox().Max.Z << std::endl;
-  */
-
-//}
+void Application::updatePlanet(float dtime) {
+    Matrix TM, CP, CP2, N, R;
+    N.scale(2);
+    R.rotationY(AI_DEG_TO_RAD(-1.0f) * dtime);
+    CP = venus->transform();
+    CP2 = earth->transform();
+    TM.translation(0, 0, 10.0f * dtime);
+    venus->transform(R * CP * TM * R);
+    TM.translation(0, 0, 5.0f * dtime);
+    earth->transform(R * CP2 * TM * R);
+    if (venus->transform().translation().Z > 200) {
+        TM.translation(50, 0, -100);
+        venus->transform(R * TM * N * R);
+    } else if (earth->transform().translation().Z > 150) {
+        TM.translation(60, 10, -110);
+        earth->transform(R * TM * N * R);
+    }
+}
 
 /** https://stackoverflow.com/questions/5289613/generate-random-float-between-two-floats **/
 float Application::randomFloat(float a, float b) {
@@ -329,10 +336,11 @@ void Application::createScene() {
     pModel = new Model(ASSET_DIRECTORY "skybox.obj", false);
     pModel->shader(new PhongShader(), true);
     pModel->shadowCaster(false);
+    n.scale(2.0f);
+    pModel->transform(n);
     models.push_back(pModel);
-
-
     pPhongShader = new PhongShader();
+
     pSpaceship = new Spaceship(ASSET_DIRECTORY "woodenObje.obj");
     models.push_back(pSpaceship->getTop());
     Vector v1 = pSpaceship->getTop()->transform().translation();
@@ -349,12 +357,21 @@ void Application::createScene() {
     spaceship->shader(pConstShader, true);
     models.push_back(spaceship);
 
-    pModel = new Model(ASSET_DIRECTORY "spaceship.dae", false);
-    pModel->shader(new PhongShader(), true);
-    m.translation(0, 0, 40);
-    pModel->shadowCaster(false);
-    pModel->transform(m);
-    models.push_back(pModel);
+    venus = new Model(ASSET_DIRECTORY "Venus_1K.obj", false);
+    venus->shader(new PhongShader(), true);
+    m.translation(50, 0, 0);
+    n.scale(10);
+    venus->shadowCaster(false);
+    venus->transform(m * n);
+    models.push_back(venus);
+
+    earth = new Model(ASSET_DIRECTORY "Earth_2K.obj", false);
+    earth->shader(new PhongShader(), true);
+    m.translation(60, 10, 40);
+    n.scale(10);
+    earth->shadowCaster(false);
+    earth->transform(m * n);
+    models.push_back(earth);
     //pSpaceship->loadModel(ASSET_DIRECTORY "spaceship.dae");
 /*
     pModel = new Model(ASSET_DIRECTORY "Mars_2k.obj", false);
@@ -381,7 +398,6 @@ void Application::createScene() {
         models.push_back(pModel);
         laserModels.push_back(pModel);
 
-        ConstantShader *pConstShader;
         hitboxModel = new LineBoxModel(pModel->getBlockModel()->boundingBox().Max,
                                        pModel->getBlockModel()->boundingBox().Min);
         pConstShader = new ConstantShader();
@@ -415,8 +431,4 @@ void Application::createScene() {
         pVorher.push_back(0.25f);
         pLeben.push_back((int) randomFloat(1.0f, 4.0f));
     }
-
-
-
-
 }

@@ -51,6 +51,8 @@ protected:
     LaserVector laserModels;
     GLFWwindow* pWindow;
     BaseModel* pModel;
+    BaseModel* earth;
+    BaseModel* venus;
     Spaceship* pSpaceship;
     ShadowMapGenerator shadowGenerator;
     int pCurrentLaser;
@@ -64,7 +66,7 @@ protected:
     std::vector<float> pVorher;
     std::vector<int> pLeben;
     float randomFloat(float a, float b);
-
+    void updatePlanet(float dtime);
 };
 
 #endif /* Application_hpp */

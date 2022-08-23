@@ -1,45 +1,38 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/Application.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/Application.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/Camera.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/Camera.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/Framebuffer.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/Framebuffer.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/IndexBuffer.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/IndexBuffer.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/Matrix.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/Matrix.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/Spaceship.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/Spaceship.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/Texture.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/Texture.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/VertexBuffer.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/VertexBuffer.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/main.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/main.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Lights/ShaderLightMapper.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/Lights/ShaderLightMapper.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Lights/ShadowMapGenerator.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/Lights/ShadowMapGenerator.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/Aabb.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/Aabb.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/BaseModel.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/BaseModel.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/LineBoxModel.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/LineBoxModel.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/LinePlaneModel.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/LinePlaneModel.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/Model.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/Model.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/TriangleBoxModel.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TriangleBoxModel.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/TrianglePlaneModel.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TrianglePlaneModel.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/TriangleSphereModel.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TriangleSphereModel.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Shader/BaseShader.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/BaseShader.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Shader/ConstantShader.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/ConstantShader.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Shader/PhongShader.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/PhongShader.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/YourClasses/color.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/color.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/YourClasses/rgbimage.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/rgbimage.cpp.obj"
-  "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/YourClasses/vector.cpp" "C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/vector.cpp.obj"
-  )
-set(CMAKE_CXX_COMPILER_ID "MSVC")
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../source"
-  "../libraries/glfw/include"
-  "../libraries/glew/include"
-  "../libraries/freeimage/include"
-  "../libraries/assimp/include"
-  "../libraries/freetype/include"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/Application.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/Application.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/Application.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/Camera.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/Camera.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/Camera.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/Framebuffer.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/Framebuffer.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/Framebuffer.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/IndexBuffer.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/IndexBuffer.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/IndexBuffer.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/Matrix.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/Matrix.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/Matrix.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/Spaceship.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/Spaceship.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/Spaceship.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/Texture.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/Texture.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/Texture.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/VertexBuffer.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/VertexBuffer.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/VertexBuffer.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/main.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/main.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/main.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Lights/ShaderLightMapper.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Lights/ShaderLightMapper.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Lights/ShaderLightMapper.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Lights/ShadowMapGenerator.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Lights/ShadowMapGenerator.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Lights/ShadowMapGenerator.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/Aabb.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/Aabb.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/Aabb.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/BaseModel.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/BaseModel.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/BaseModel.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/LineBoxModel.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/LineBoxModel.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/LineBoxModel.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/LinePlaneModel.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/LinePlaneModel.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/LinePlaneModel.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/Model.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/Model.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/Model.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/TriangleBoxModel.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TriangleBoxModel.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TriangleBoxModel.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/TrianglePlaneModel.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TrianglePlaneModel.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TrianglePlaneModel.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/TriangleSphereModel.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TriangleSphereModel.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Models/TriangleSphereModel.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Shader/BaseShader.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/BaseShader.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/BaseShader.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Shader/ConstantShader.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/ConstantShader.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/ConstantShader.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Shader/PhongShader.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/PhongShader.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/PhongShader.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/YourClasses/color.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/color.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/color.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/YourClasses/rgbimage.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/rgbimage.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/rgbimage.cpp.obj.d"
+  "C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/YourClasses/vector.cpp" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/vector.cpp.obj" "msvc" "CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/vector.cpp.obj.d"
   )
 
 # Targets to which this target links.
