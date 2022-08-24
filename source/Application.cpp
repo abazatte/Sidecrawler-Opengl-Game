@@ -37,6 +37,7 @@
 //freetype
 #include <ft2build.h>
 #include FT_FREETYPE_H
+#include "../include/Enemy.h"
 
 #ifdef WIN32
 #define ASSET_DIRECTORY "../assets/"
@@ -96,13 +97,13 @@ void Application::update(float dtime) {
         if (pCurrentLaser >= laserModels.size() - 1) {
             pCurrentLaser = 0;
             laserModels.at(pCurrentLaser)->transform(CP);
-            hitboxListLaser.at(pCurrentLaser)->transform(CP);
+            //hitboxListLaser.at(pCurrentLaser)->transform(CP);
 
 
         } else {
             pCurrentLaser++;
             laserModels.at(pCurrentLaser)->transform(CP);
-            hitboxListLaser.at(pCurrentLaser)->transform(CP);
+            //hitboxListLaser.at(pCurrentLaser)->transform(CP);
         }
     }
     if (monsterTimer <= 0) {
@@ -112,11 +113,11 @@ void Application::update(float dtime) {
         CP.translation(0, tmp, 90);
         if (pCurrentMonster >= monsterModels.size() - 1) {
             pCurrentMonster = 0;
-            monsterModels.at(pCurrentMonster)->transform(CP);
+            monsterModels.at(pCurrentMonster)->getEnemy()->transform(CP);
             hitboxListMonster.at(pCurrentMonster)->transform(CP);
         } else {
             pCurrentMonster++;
-            monsterModels.at(pCurrentMonster)->transform(CP);
+            monsterModels.at(pCurrentMonster)->getEnemy()->transform(CP);
             hitboxListMonster.at(pCurrentMonster)->transform(CP);
         }
     }
@@ -147,7 +148,7 @@ void Application::updateLaser(float dtime) {
             laserModels.at(i)->transform().translation().Y < 14) {
             TM.translation(0, 0, 20.0f * dtime);
             laserModels.at(i)->transform(CP * TM);
-            hitboxListLaser.at(i)->transform(CP * TM);
+            //hitboxListLaser.at(i)->transform(CP * TM);
 
             //std::cout << "Posi Laser:" << laserModels.at(i)->transform().translation().Z << std::endl;
 
@@ -155,7 +156,7 @@ void Application::updateLaser(float dtime) {
         if (laserModels.at(i)->transform().translation().Z > 90) {
             TM.translation(0, -40, 0);
             laserModels.at(i)->transform(TM);
-            hitboxListLaser.at(i)->transform(TM);
+            //hitboxListLaser.at(i)->transform(TM);
 
         }
     }
@@ -165,62 +166,11 @@ void Application::updateMonster(float dtime) {
     Matrix TM, CP;
 
     for (int i = 0; i < monsterModels.size(); ++i) {
-        if (pLeben.at(i) == 3) {
-
-        }
-        CP = monsterModels.at(i)->transform();
-        if (monsterModels.at(i)->transform().translation().Y > -13 &&
-            monsterModels.at(i)->transform().translation().Y < 14) {
-            if (pSkill.at(i) == 0) {
-                if (pObenUnten.at(i) == 0) {
-                    TM.translation(0, 0, -10.0f * dtime); //1.0f * dtime
-                } else if (pObenUnten.at(i) == 1) {
-                    if (monsterModels.at(i)->transform().translation().Y < -11) {
-                        TM.translation(0, 5.25f * dtime, -10.0f * dtime); //1.0f * dtime
-                        pVorher.at(i) = 5.25f;
-                    } else if (monsterModels.at(i)->transform().translation().Y > 12) {
-                        TM.translation(0, -5.25f * dtime, -10.0f * dtime); //1.0f * dtime
-                        pVorher.at(i) = -5.25f;
-                    } else {
-                        TM.translation(0, pVorher.at(i) * dtime, -10.0f * dtime); //1.0f * dtime
-                    }
-                }
-            } else if (pSkill.at(i) == 1) {
-                if (pObenUnten.at(i) == 0) {
-                    TM.translation(0, 0, -10.0f * dtime * 2); //1.0f * dtime
-                } else if (pObenUnten.at(i) == 1) {
-                    if (monsterModels.at(i)->transform().translation().Y < -11) {
-                        TM.translation(0, 5.0f * dtime, -10.0f * dtime * 2); //1.0f * dtime
-                        pVorher.at(i) = 5.25f;
-                    } else if (monsterModels.at(i)->transform().translation().Y > 12) {
-                        TM.translation(0, -5.0f * dtime, -10.0f * dtime * 2); //1.0f * dtime
-                        pVorher.at(i) = -5.25f;
-                    } else {
-                        TM.translation(0, pVorher.at(i) * dtime, -10.0f * dtime * 2); //1.0f * dtime
-                    }
-                }
-            } else if (pSkill.at(i) == 2) {
-                if (pObenUnten.at(i) == 0) {
-                    TM.translation(0, 0, -10.0f * dtime * 3); //1.0f * dtime
-                } else if (pObenUnten.at(i) == 1) {
-                    if (monsterModels.at(i)->transform().translation().Y < -11) {
-                        TM.translation(0, 5.0f * dtime, -10.0f * dtime * 3); //1.0f * dtime
-                        pVorher.at(i) = 5.25f;
-                    } else if (monsterModels.at(i)->transform().translation().Y > 12) {
-                        TM.translation(0, -5.0f * dtime, -10.0f * dtime * 3); //1.0f * dtime
-                        pVorher.at(i) = -5.25f;
-                    } else {
-                        TM.translation(0, pVorher.at(i) * dtime, -10.0f * dtime * 3); //1.0f * dtime
-                    }
-                }
-            }
-
             //TM.translation(0, 0, -10.0f * dtime * pGeschwindigkeit.at(i)); //1.0f * dtime
-            monsterModels.at(i)->transform(CP * TM);
+            monsterModels.at(i)->update(dtime);
             //std::cout << "Posi Monster:" << monsterModels.at(i)->transform().translation().Z << std::endl;
-            hitboxListMonster.at(i)->transform(CP * TM);
+            hitboxListMonster.at(i)->transform(monsterModels.at(i)->getBlockModel()->transform());
             //std::cout << "Posi Laser:" << laserModels.at(i)->transform().translation().Z << std::endl;
-        }
     }
 }
 
@@ -229,32 +179,32 @@ void Application::loopCollision() {
     for (int i = 0; i < laserModels.size(); ++i) {
         for (int j = 0; j < monsterModels.size(); ++j) {
             CP = laserModels.at(i)->transform();
-            CP2 = monsterModels.at(j)->transform();
+            CP2 = monsterModels.at(j)->getEnemy()->transform();
             CP3 = pSpaceship->getTop()->transform();
             if (AABB::collision(pSpaceship->boundingBox().transform(CP3),
-                                monsterModels.at(j)->boundingBox().transform(CP2))) {
+                                monsterModels.at(j)->getEnemy()->boundingBox().transform(CP2))) {
                 TM.translation(0, -50, 0);
-                monsterModels.at(j)->transform(TM);
+                monsterModels.at(j)->getEnemy()->transform(TM);
                 hitboxListMonster.at(j)->transform(TM);
                 //std::cout<< "du wurdest getroffen von Monster Nummer: " << j << std::endl;
                 score = 0;
 
             }
             if (AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
-                                monsterModels.at(j)->boundingBox().transform(CP2))) {
-                if (pLeben.at(j) == 0) {
+                                monsterModels.at(j)->getEnemy()->boundingBox().transform(CP2))) {
+                if (monsterModels.at(j)->getPLeben() == 0) {
                     TM.translation(0, -40, 0);
                     laserModels.at(i)->transform(TM);
-                    hitboxListLaser.at(i)->transform(TM);
+                    //hitboxListLaser.at(i)->transform(TM);
                     TM.translation(0, -50, 0);
-                    monsterModels.at(j)->transform(TM);
+                    monsterModels.at(j)->getEnemy()->transform(TM);
                     hitboxListMonster.at(j)->transform(TM);
                     score++;
                 } else {
                     TM.translation(0, -40, 0);
                     laserModels.at(i)->transform(TM);
-                    hitboxListLaser.at(i)->transform(TM);
-                    pLeben.at(j)--;
+                    //hitboxListLaser.at(i)->transform(TM);
+                    monsterModels.at(j)->setPLeben(monsterModels.at(j)->getPLeben()-1);
                 }
 
                 std::cout << score << std::endl;
@@ -328,10 +278,6 @@ void Application::createScene() {
     laserTimer = 0;
     monsterTimer = 3;
     score = 0;
-    pSkill.reserve(sizeof(int) * modelsNumber);
-    pObenUnten.reserve(sizeof(int) * modelsNumber);
-    pVorher.reserve(sizeof(float) * modelsNumber);
-    pLeben.reserve(sizeof(int) * modelsNumber);
 
     pModel = new Model(ASSET_DIRECTORY "skybox.obj", false);
     pModel->shader(new PhongShader(), true);
@@ -409,26 +355,28 @@ void Application::createScene() {
     }
     for (int i = 0; i < 10; i++) {
         std::cout << i << ". Monster wird erstellt." << std::endl;
-        pModel = new Model(ASSET_DIRECTORY "enemy.obj", false);
-        pModel->shader(new PhongShader(), true);
+        pEnemy = new Enemy(ASSET_DIRECTORY "enemy.obj");
         m.translation(0, -50, 0);
         o.rotationY(AI_DEG_TO_RAD(180.0f));
-        pModel->transform(m * o);
-        models.push_back(pModel);
-        monsterModels.push_back(pModel);
+        pEnemy->getEnemy()->transform(m * o);
+
+        pEnemy->setPSkill((int) randomFloat(0.0f, 3.0f));
+        pEnemy->setPObenUnten((int) randomFloat(0.0f, 2.0f));
+        pEnemy->setPVorher(5.25f);
+        pEnemy->setPLeben((int) randomFloat(1.0f, 4.0f));
+
+        models.push_back(pEnemy->getEnemy());
+        monsterModels.push_back(pEnemy);
+
 
         ConstantShader *pConstShader;
-        hitboxModel = new LineBoxModel(pModel->getBlockModel()->boundingBox().Max,
-                                       pModel->getBlockModel()->boundingBox().Min);
+        hitboxModel = new LineBoxModel(pEnemy->getBlockModel()->boundingBox().Max,
+                                       pEnemy->getBlockModel()->boundingBox().Min);
         pConstShader = new ConstantShader();
         pConstShader->color(Color(0, 1, 0));
         hitboxModel->shader(pConstShader, true);
         hitboxModel->transform(m * o);
         models.push_back(hitboxModel);
         hitboxListMonster.push_back(hitboxModel);
-        pSkill.push_back((int) randomFloat(0.0f, 3.0f));
-        pObenUnten.push_back((int) randomFloat(0.0f, 2.0f));
-        pVorher.push_back(0.25f);
-        pLeben.push_back((int) randomFloat(1.0f, 4.0f));
     }
 }

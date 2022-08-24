@@ -20,13 +20,14 @@
 #include "utils/Lights/ShadowMapGenerator.h"
 #include "Spaceship.h"
 #include "utils/Models/LineBoxModel.h"
+#include "Enemy.h"
 
 class Application
 {
 public:
     typedef std::vector<LineBoxModel*> HitboxVectorLaser;
     typedef std::vector<LineBoxModel*> HitboxVectorMonster;
-    typedef std::vector<BaseModel*> MonsterVector;
+    typedef std::vector<Enemy*> MonsterVector;
     typedef std::list<BaseModel*> ModelList;
     typedef std::vector<BaseModel*> LaserVector;
     Application(GLFWwindow* pWin);
@@ -54,6 +55,7 @@ protected:
     BaseModel* earth;
     BaseModel* venus;
     Spaceship* pSpaceship;
+    Enemy* pEnemy;
     ShadowMapGenerator shadowGenerator;
     int pCurrentLaser;
     float laserTimer;
@@ -61,10 +63,6 @@ protected:
     void loopCollision();
     int pCurrentMonster;
     int score;
-    std::vector<int> pSkill;
-    std::vector<int> pObenUnten;
-    std::vector<float> pVorher;
-    std::vector<int> pLeben;
     float randomFloat(float a, float b);
     void updatePlanet(float dtime);
 };

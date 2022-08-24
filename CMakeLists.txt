@@ -54,7 +54,7 @@ add_executable(${CMAKE_PROJECT_NAME}
         include/VertexBuffer.h
         source/VertexBuffer.cpp
         source/main.cpp
-        source/Spaceship.cpp include/Spaceship.h source/Text.h)
+        source/Spaceship.cpp include/Spaceship.h source/Text.h source/Enemy.cpp include/Enemy.h)
 
 include_directories(
         source

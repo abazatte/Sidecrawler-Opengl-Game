@@ -8,30 +8,31 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/cmake-build-debug"/>
+				<Option working_dir="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CGPrakt6_Clion">
-				<Option output="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/cmake-build-debug/CGPrakt6_Clion.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/cmake-build-debug"/>
+				<Option output="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CGPrakt6_Clion.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source"/>
-					<Add directory="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/libraries/glfw/include"/>
-					<Add directory="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/libraries/glew/include"/>
-					<Add directory="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/libraries/freeimage/include"/>
-					<Add directory="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/libraries/assimp/include"/>
-					<Add directory="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/libraries/freetype/include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include"/>
+					<Add directory="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source"/>
+					<Add directory="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/libraries/glfw/include"/>
+					<Add directory="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/libraries/glew/include"/>
+					<Add directory="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/libraries/freeimage/include"/>
+					<Add directory="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/libraries/assimp/include"/>
+					<Add directory="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/libraries/freetype/include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"/>
@@ -39,27 +40,28 @@
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 CGPrakt6_Clion"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 CGPrakt6_Clion"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="CGPrakt6_Clion/fast">
-				<Option output="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/cmake-build-debug/CGPrakt6_Clion.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/cmake-build-debug"/>
+				<Option output="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug/CGPrakt6_Clion.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source"/>
-					<Add directory="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/libraries/glfw/include"/>
-					<Add directory="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/libraries/glew/include"/>
-					<Add directory="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/libraries/freeimage/include"/>
-					<Add directory="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/libraries/assimp/include"/>
-					<Add directory="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/libraries/freetype/include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include"/>
+					<Add directory="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source"/>
+					<Add directory="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/libraries/glfw/include"/>
+					<Add directory="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/libraries/glew/include"/>
+					<Add directory="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/libraries/freeimage/include"/>
+					<Add directory="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/libraries/assimp/include"/>
+					<Add directory="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/libraries/freetype/include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"/>
@@ -67,184 +69,190 @@
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 CGPrakt6_Clion/fast"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 CGPrakt6_Clion/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/cmake-build-debug"/>
+				<Option working_dir="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/cmake-build-debug"/>
+				<Option working_dir="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\aazat\Desktop\Neu\Hochschule\4.Semester\Computergrafik\CG_tcirksena_abazatte\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/include/Application.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/include/Application.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/include/Camera.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/include/Camera.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/include/Framebuffer.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/include/Enemy.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/include/IndexBuffer.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/include/Framebuffer.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/include/Matrix.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/include/IndexBuffer.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/include/Spaceship.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/include/Matrix.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/include/Texture.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/include/Spaceship.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/include/VertexBuffer.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/include/Texture.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/Application.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/include/VertexBuffer.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/Camera.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/Application.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/Framebuffer.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/Camera.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/IndexBuffer.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/Enemy.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/Matrix.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/Framebuffer.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/Spaceship.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/IndexBuffer.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/Text.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/Matrix.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/Texture.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/Spaceship.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/VertexBuffer.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/Text.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/main.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/Texture.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Lights/ShaderLightMapper.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/VertexBuffer.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Lights/ShaderLightMapper.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/main.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Lights/ShadowMapGenerator.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Lights/ShaderLightMapper.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Lights/ShadowMapGenerator.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Lights/ShaderLightMapper.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/Aabb.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Lights/ShadowMapGenerator.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/Aabb.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Lights/ShadowMapGenerator.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/BaseModel.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/Aabb.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/BaseModel.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/Aabb.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/LineBoxModel.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/BaseModel.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/LineBoxModel.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/BaseModel.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/LinePlaneModel.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/LineBoxModel.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/LinePlaneModel.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/LineBoxModel.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/Model.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/LinePlaneModel.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/Model.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/LinePlaneModel.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/TriangleBoxModel.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/Model.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/TriangleBoxModel.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/Model.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/TrianglePlaneModel.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/TriangleBoxModel.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/TrianglePlaneModel.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/TriangleBoxModel.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/TriangleSphereModel.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/TrianglePlaneModel.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Models/TriangleSphereModel.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/TrianglePlaneModel.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Shader/BaseShader.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/TriangleSphereModel.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Shader/BaseShader.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Models/TriangleSphereModel.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Shader/ConstantShader.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Shader/BaseShader.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Shader/ConstantShader.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Shader/BaseShader.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Shader/PhongShader.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Shader/ConstantShader.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/Shader/PhongShader.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Shader/ConstantShader.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/YourClasses/color.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Shader/PhongShader.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/YourClasses/color.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/Shader/PhongShader.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/YourClasses/rgbimage.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/YourClasses/color.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/YourClasses/rgbimage.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/YourClasses/color.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/YourClasses/vector.cpp">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/YourClasses/rgbimage.cpp">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/source/utils/YourClasses/vector.h">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/YourClasses/rgbimage.h">
 			<Option target="CGPrakt6_Clion"/>
 		</Unit>
-		<Unit filename="C:/Users/TimCirksena/CLionProjects/newCG_tcirksena_abazatte/CMakeLists.txt">
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/YourClasses/vector.cpp">
+			<Option target="CGPrakt6_Clion"/>
+		</Unit>
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/source/utils/YourClasses/vector.h">
+			<Option target="CGPrakt6_Clion"/>
+		</Unit>
+		<Unit filename="C:/Users/aazat/Desktop/Neu/Hochschule/4.Semester/Computergrafik/CG_tcirksena_abazatte/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
