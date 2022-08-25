@@ -20,7 +20,7 @@
 #else
 #define GLFW_INCLUDE_GLCOREARB
 #define GLFW_INCLUDE_GLEXT
-#include <glfw/glfw3.h>
+//#include <glfw/glfw3.h>
 #endif
 
 #include "utils/Models/LinePlaneModel.h"
@@ -125,6 +125,22 @@ void Application::update(float dtime) {
     pSpaceship->update(dtime);
     spaceship->transform(pSpaceship->getTop()->transform());
 
+
+    crntTime = glfwGetTime();
+    timeDiff = crntTime - prevTime;
+    counter++;
+    if (timeDiff >= 1.0 / 30.0) { // If last prinf() was more than 1 sec ago
+        std::string FPS = std::to_string((1.0 / timeDiff) * counter);
+        std::string ms = std::to_string((timeDiff / counter) * 1000);
+        std::string deinScore = std::to_string(score);
+        std::string newTitle = "HSOSNABRUECK - " + FPS + "FPS / " + ms + "ms /            " + deinScore + " Dein Score";
+        prevTime = crntTime;
+        counter = 0;
+        glfwSetWindowTitle(pWindow, newTitle.c_str());
+
+    }
+
+
     updateLaser(dtime);
     updateMonster(dtime);
     updatePlanet(dtime);
@@ -166,11 +182,11 @@ void Application::updateMonster(float dtime) {
     Matrix TM, CP;
 
     for (int i = 0; i < monsterModels.size(); ++i) {
-            //TM.translation(0, 0, -10.0f * dtime * pGeschwindigkeit.at(i)); //1.0f * dtime
-            monsterModels.at(i)->update(dtime);
-            //std::cout << "Posi Monster:" << monsterModels.at(i)->transform().translation().Z << std::endl;
-            hitboxListMonster.at(i)->transform(monsterModels.at(i)->getBlockModel()->transform());
-            //std::cout << "Posi Laser:" << laserModels.at(i)->transform().translation().Z << std::endl;
+        //TM.translation(0, 0, -10.0f * dtime * pGeschwindigkeit.at(i)); //1.0f * dtime
+        monsterModels.at(i)->update(dtime);
+        //std::cout << "Posi Monster:" << monsterModels.at(i)->transform().translation().Z << std::endl;
+        hitboxListMonster.at(i)->transform(monsterModels.at(i)->getBlockModel()->transform());
+        //std::cout << "Posi Laser:" << laserModels.at(i)->transform().translation().Z << std::endl;
     }
 }
 
@@ -204,7 +220,7 @@ void Application::loopCollision() {
                     TM.translation(0, -40, 0);
                     laserModels.at(i)->transform(TM);
                     //hitboxListLaser.at(i)->transform(TM);
-                    monsterModels.at(j)->setPLeben(monsterModels.at(j)->getPLeben()-1);
+                    monsterModels.at(j)->setPLeben(monsterModels.at(j)->getPLeben() - 1);
                 }
 
                 std::cout << score << std::endl;
@@ -213,6 +229,25 @@ void Application::loopCollision() {
     }
 }
 
+/*
+void Application::TextAusgabe() {
+    Color color(1.f, 1.f, 1.f);
+    char buf[100] = {0};
+    sprintf(buf, "HALLO");
+    renderBitmap(-80, 40, GLUT_BITMAP_TIMES_ROMAN_24, buf);
+    sprintf(buf, "::::::::::::::::::::");
+    renderBitmap(-80, 35, GLUT_BITMAP_TIMES_ROMAN_24, buf);
+
+}
+
+void Application::renderBitmap(float x, float y, void *font, char *string) {
+    char *c;
+    glRasterPos2f(x, y);
+    for (c = string; *c != '\0'; c++) {
+        glutBitmapCharacter(font, *c);
+    }
+}
+*/
 void Application::updatePlanet(float dtime) {
     Matrix TM, CP, CP2, N, R;
     N.scale(2);
@@ -264,6 +299,59 @@ void Application::end() {
         delete *it;
 
     models.clear();
+}
+void Application::createMonster(Matrix m,Matrix o,ConstantShader *pConstShader){
+    for (int i = 0; i < 10; i++) {
+        std::cout << i << ". Monster wird erstellt." << std::endl;
+        pEnemy = new Enemy(ASSET_DIRECTORY "enemy.obj");
+        m.translation(0, -50, 0);
+        o.rotationY(AI_DEG_TO_RAD(180.0f));
+        pEnemy->getEnemy()->transform(m * o);
+
+        //Geschwindigkeit
+        pEnemy->setPSkill((int) randomFloat(0.0f, 3.0f));
+        //Hoch runter
+        pEnemy->setPObenUnten((int) randomFloat(0.0f, 2.0f));
+        //Wenn man hoch runter geht
+        pEnemy->setPVorher(5.25f);
+        //Wie viele Hits ein Enemy braucht zum sterben
+        pEnemy->setPLeben((int) randomFloat(1.0f, 4.0f));
+
+        models.push_back(pEnemy->getEnemy());
+        monsterModels.push_back(pEnemy);
+
+
+        ConstantShader *pConstShader;
+        hitboxModel = new LineBoxModel(pEnemy->getBlockModel()->boundingBox().Max,
+                                       pEnemy->getBlockModel()->boundingBox().Min);
+        pConstShader = new ConstantShader();
+        pConstShader->color(Color(0, 1, 0));
+        hitboxModel->shader(pConstShader, true);
+        hitboxModel->transform(m * o);
+        models.push_back(hitboxModel);
+        hitboxListMonster.push_back(hitboxModel);
+    }
+}
+void Application::createLaser(int modelsNumber, Matrix m,ConstantShader *pConstShader){
+    for (int i = 0; i < modelsNumber; i++) {
+        std::cout << i << " wird erstellt." << std::endl;
+        pModel = new Model(ASSET_DIRECTORY "LaserTry.obj", false);
+        pModel->shader(new PhongShader(), true);
+        //pModel->shadowCaster(false);
+        m.translation(0, -40, 0);
+        pModel->transform(m);
+        models.push_back(pModel);
+        laserModels.push_back(pModel);
+
+        hitboxModel = new LineBoxModel(pModel->getBlockModel()->boundingBox().Max,
+                                       pModel->getBlockModel()->boundingBox().Min);
+        pConstShader = new ConstantShader();
+        pConstShader->color(Color(0, 1, 0));
+        hitboxModel->shader(pConstShader, true);
+        hitboxModel->transform(m);
+        models.push_back(hitboxModel);
+        hitboxListLaser.push_back(hitboxModel);
+    }
 }
 
 void Application::createScene() {
@@ -318,65 +406,23 @@ void Application::createScene() {
     earth->shadowCaster(false);
     earth->transform(m * n);
     models.push_back(earth);
-    //pSpaceship->loadModel(ASSET_DIRECTORY "spaceship.dae");
-/*
-    pModel = new Model(ASSET_DIRECTORY "Mars_2k.obj", false);
-    pModel->shader(new PhongShader(),true);
-    pModel->shadowCaster(false);
-    m.translation(50.0f, 0.0f, 0.0f);
-    pModel->transform(m);
-    models.push_back(pModel);
-*/
+
+    pItem = new Items(ASSET_DIRECTORY "Shine_Sprite.obj");
+    m.translation(0, -60, 0);
+    o.rotationY(AI_DEG_TO_RAD(180.0f));
+    pItem->getItem()->transform(m * o);
+
+    models.push_back(pItem->getItem());
+
+
+    //Erstell einige Laser und Monster Objekte
+    createLaser(modelsNumber,m,pConstShader);
+    createMonster(m,o,pConstShader);
+
     // directional lights
     DirectionalLight *dl = new DirectionalLight();
     dl->direction(Vector(0.2f, -1, 1));
     dl->color(Color(1, 1, 1));
     dl->castShadows(true);
     ShaderLightMapper::instance().addLight(dl);
-
-    for (int i = 0; i < modelsNumber; i++) {
-        std::cout << i << " wird erstellt." << std::endl;
-        pModel = new Model(ASSET_DIRECTORY "LaserTry.obj", false);
-        pModel->shader(new PhongShader(), true);
-        //pModel->shadowCaster(false);
-        m.translation(0, -40, 0);
-        pModel->transform(m);
-        models.push_back(pModel);
-        laserModels.push_back(pModel);
-
-        hitboxModel = new LineBoxModel(pModel->getBlockModel()->boundingBox().Max,
-                                       pModel->getBlockModel()->boundingBox().Min);
-        pConstShader = new ConstantShader();
-        pConstShader->color(Color(0, 1, 0));
-        hitboxModel->shader(pConstShader, true);
-        hitboxModel->transform(m);
-        models.push_back(hitboxModel);
-        hitboxListLaser.push_back(hitboxModel);
-    }
-    for (int i = 0; i < 10; i++) {
-        std::cout << i << ". Monster wird erstellt." << std::endl;
-        pEnemy = new Enemy(ASSET_DIRECTORY "enemy.obj");
-        m.translation(0, -50, 0);
-        o.rotationY(AI_DEG_TO_RAD(180.0f));
-        pEnemy->getEnemy()->transform(m * o);
-
-        pEnemy->setPSkill((int) randomFloat(0.0f, 3.0f));
-        pEnemy->setPObenUnten((int) randomFloat(0.0f, 2.0f));
-        pEnemy->setPVorher(5.25f);
-        pEnemy->setPLeben((int) randomFloat(1.0f, 4.0f));
-
-        models.push_back(pEnemy->getEnemy());
-        monsterModels.push_back(pEnemy);
-
-
-        ConstantShader *pConstShader;
-        hitboxModel = new LineBoxModel(pEnemy->getBlockModel()->boundingBox().Max,
-                                       pEnemy->getBlockModel()->boundingBox().Min);
-        pConstShader = new ConstantShader();
-        pConstShader->color(Color(0, 1, 0));
-        hitboxModel->shader(pConstShader, true);
-        hitboxModel->transform(m * o);
-        models.push_back(hitboxModel);
-        hitboxListMonster.push_back(hitboxModel);
-    }
 }

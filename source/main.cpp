@@ -10,6 +10,7 @@
 #include "../include/Application.h"
 #include "FreeImage.h"
 
+
 void PrintOpenGLVersion();
 
 
@@ -30,7 +31,7 @@ int main () {
     
     const int WindowWidth = 1500;
     const int WindowHeight = 600;
-    
+
     GLFWwindow* window = glfwCreateWindow (WindowWidth, WindowHeight, "Computergrafik - Hochschule Osnabrück", NULL, NULL);
     if (!window) {
         fprintf (stderr, "ERROR: can not open window with GLFW3\n");

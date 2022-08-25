@@ -21,6 +21,7 @@
 #include "Spaceship.h"
 #include "utils/Models/LineBoxModel.h"
 #include "Enemy.h"
+#include "Items.h"
 
 class Application
 {
@@ -36,6 +37,10 @@ public:
     void draw();
     void end();
 protected:
+    double prevTime = 0.0;
+    double crntTime = 0.0;
+    double timeDiff;
+    unsigned int counter = 0;
     void updateMonster(float dtime);
     void createScene();
     void createNormalTestScene();
@@ -56,15 +61,20 @@ protected:
     BaseModel* venus;
     Spaceship* pSpaceship;
     Enemy* pEnemy;
+    Items* pItem;
     ShadowMapGenerator shadowGenerator;
     int pCurrentLaser;
     float laserTimer;
     float monsterTimer;
     void loopCollision();
     int pCurrentMonster;
-    int score;
+    int score = 0;
     float randomFloat(float a, float b);
     void updatePlanet(float dtime);
+
+    void createMonster(Matrix m,Matrix o,ConstantShader *pConstShader);
+
+    void createLaser(int modelsNumber, Matrix m,ConstantShader *pConstShader);
 };
 
 #endif /* Application_hpp */
