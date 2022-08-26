@@ -11,14 +11,19 @@
 
 class Items : public BaseModel{
 public:
-    Items(const char* itemModel);
+    Items();
     virtual ~Items();
     bool loadModel(const char* itemModel);
     void update(float dtime);
     virtual void draw(const BaseCamera& Cam);
     Model* getItem();
+    int getType();
+
+    void setItemType(int itemType);
+
 protected:
     Model* pItem;
+    int itemType;
 
 };
 

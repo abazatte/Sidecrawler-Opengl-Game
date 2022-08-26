@@ -82,9 +82,18 @@ void Application::update(float dtime) {
     float f = pSpaceship->getTop()->transform().translation().Y;
     //std::cout << f << std:: endl;
     if (f < 13.5 && upState == GLFW_PRESS && downState == GLFW_RELEASE) {
-        upDown = 17.5f;
+        if (item1) {
+            upDown = 25.0f;
+        } else {
+            upDown = 17.5f;
+        }
+
     } else if (f > -12.4 && downState == GLFW_PRESS && upState == GLFW_RELEASE) {
-        upDown = -17.5f;
+        if (item1) {
+            upDown = -25.0f;
+        } else {
+            upDown = -17.5f;
+        }
     }
     if (positionState == GLFW_PRESS) {
         //std::cout << "x: " << pSpaceship->getTop()->transform().translation().X << "y: " << pSpaceship->getTop()->transform().translation().Y << "z: " << pSpaceship->getTop()->transform().translation().Z << std::endl;
@@ -106,6 +115,8 @@ void Application::update(float dtime) {
             //hitboxListLaser.at(pCurrentLaser)->transform(CP);
         }
     }
+
+    //Monster werden nach 10 Zeiteinheiten am rechten Rand platziert
     if (monsterTimer <= 0) {
         Matrix CP;
         monsterTimer = 10;
@@ -114,18 +125,23 @@ void Application::update(float dtime) {
         if (pCurrentMonster >= monsterModels.size() - 1) {
             pCurrentMonster = 0;
             monsterModels.at(pCurrentMonster)->getEnemy()->transform(CP);
-            hitboxListMonster.at(pCurrentMonster)->transform(CP);
         } else {
             pCurrentMonster++;
             monsterModels.at(pCurrentMonster)->getEnemy()->transform(CP);
-            hitboxListMonster.at(pCurrentMonster)->transform(CP);
+        }
+        if (pCurrentItem >= itemsModels.size() - 1) {
+            pCurrentItem = 0;
+            itemsModels.at(pCurrentItem)->getItem()->transform(CP);
+        } else {
+            pCurrentItem++;
+            itemsModels.at(pCurrentItem)->getItem()->transform(CP);
         }
     }
     pSpaceship->steer(upDown);
     pSpaceship->update(dtime);
     spaceship->transform(pSpaceship->getTop()->transform());
 
-
+    //FPS Anzeigen und Score
     crntTime = glfwGetTime();
     timeDiff = crntTime - prevTime;
     counter++;
@@ -133,17 +149,18 @@ void Application::update(float dtime) {
         std::string FPS = std::to_string((1.0 / timeDiff) * counter);
         std::string ms = std::to_string((timeDiff / counter) * 1000);
         std::string deinScore = std::to_string(score);
-        std::string newTitle = "HSOSNABRUECK - " + FPS + "FPS / " + ms + "ms /            " + deinScore + " Dein Score";
+        std::string newTitle = "HSOSNABRUECK - " + FPS + "FPS / " + ms + "ms /       \" Dein Score\"  " + deinScore;
         prevTime = crntTime;
         counter = 0;
         glfwSetWindowTitle(pWindow, newTitle.c_str());
 
     }
-
-
     updateLaser(dtime);
     updateMonster(dtime);
+    updateItem(dtime);
     updatePlanet(dtime);
+    collisionItem(dtime);
+
     loopCollision();
     cam.update();
     if (laserTimer > -1000) {
@@ -190,6 +207,31 @@ void Application::updateMonster(float dtime) {
     }
 }
 
+void Application::updateItem(float dtime) {
+    for (int i = 0; i < itemsModels.size(); ++i) {
+        itemsModels.at(i)->update(dtime);
+    }
+}
+
+void Application::updatePlanet(float dtime) {
+    Matrix TM, CP, CP2, N, R;
+    N.scale(2);
+    R.rotationY(AI_DEG_TO_RAD(-1.0f) * dtime);
+    CP = venus->transform();
+    CP2 = earth->transform();
+    TM.translation(0, 0, 10.0f * dtime);
+    venus->transform(R * CP * TM * R);
+    TM.translation(0, 0, 5.0f * dtime);
+    earth->transform(R * CP2 * TM * R);
+    if (venus->transform().translation().Z > 200) {
+        TM.translation(50, 0, -100);
+        venus->transform(R * TM * N * R);
+    } else if (earth->transform().translation().Z > 150) {
+        TM.translation(60, 10, -110);
+        earth->transform(R * TM * N * R);
+    }
+}
+
 void Application::loopCollision() {
     Matrix TM, CP, CP2, CP3;
     for (int i = 0; i < laserModels.size(); ++i) {
@@ -229,43 +271,46 @@ void Application::loopCollision() {
     }
 }
 
-/*
-void Application::TextAusgabe() {
-    Color color(1.f, 1.f, 1.f);
-    char buf[100] = {0};
-    sprintf(buf, "HALLO");
-    renderBitmap(-80, 40, GLUT_BITMAP_TIMES_ROMAN_24, buf);
-    sprintf(buf, "::::::::::::::::::::");
-    renderBitmap(-80, 35, GLUT_BITMAP_TIMES_ROMAN_24, buf);
+void Application::collisionItem(float dtime) {
+    Matrix TM, CP, CP2, o;
+    for (int i = 0; i < itemsModels.size(); ++i) {
+        CP = itemsModels.at(i)->getItem()->transform();
+        CP2 = pSpaceship->getTop()->transform();
+        if (AABB::collision(pSpaceship->boundingBox().transform(CP2),
+                            itemsModels.at(i)->getItem()->boundingBox().transform(CP))) {
+            std::cout << "Item hittet" << std::endl;
+            //Schneller Bewegen Buff
+            if (itemsModels.at(i)->getType() == 0) {
+                TM.translation(0, -60, 0);
+                o.rotationY(AI_DEG_TO_RAD(180.0f));
+                itemsModels.at(i)->getItem()->transform(TM * o);
+                item1 = true;
+                //Schneller schießen buff
+            } else if (itemsModels.at(i)->getType() == 1) {
+                TM.translation(0, -60, 0);
+                o.rotationY(AI_DEG_TO_RAD(180.0f));
+                itemsModels.at(i)->getItem()->transform(TM * o);
+                item2 = true;
+                //Doppelt Punkte buff
+            } else {
+                TM.translation(0, -60, 0);
+                o.rotationY(AI_DEG_TO_RAD(180.0f));
+                itemsModels.at(i)->getItem()->transform(TM * o);
+                item3 = true;
+            }
+        }
+    }
+    if (item1) {
+        itemTime -= dtime;
+        if (itemTime <= 0) {
+            std::cout << itemTime << "FUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUCK" << std::endl;
+            item1 = false;
+            itemTime = 3;
+        }
+    }
 
 }
 
-void Application::renderBitmap(float x, float y, void *font, char *string) {
-    char *c;
-    glRasterPos2f(x, y);
-    for (c = string; *c != '\0'; c++) {
-        glutBitmapCharacter(font, *c);
-    }
-}
-*/
-void Application::updatePlanet(float dtime) {
-    Matrix TM, CP, CP2, N, R;
-    N.scale(2);
-    R.rotationY(AI_DEG_TO_RAD(-1.0f) * dtime);
-    CP = venus->transform();
-    CP2 = earth->transform();
-    TM.translation(0, 0, 10.0f * dtime);
-    venus->transform(R * CP * TM * R);
-    TM.translation(0, 0, 5.0f * dtime);
-    earth->transform(R * CP2 * TM * R);
-    if (venus->transform().translation().Z > 200) {
-        TM.translation(50, 0, -100);
-        venus->transform(R * TM * N * R);
-    } else if (earth->transform().translation().Z > 150) {
-        TM.translation(60, 10, -110);
-        earth->transform(R * TM * N * R);
-    }
-}
 
 /** https://stackoverflow.com/questions/5289613/generate-random-float-between-two-floats **/
 float Application::randomFloat(float a, float b) {
@@ -274,8 +319,6 @@ float Application::randomFloat(float a, float b) {
     float r = random * diff;
     return a + r;
 }
-
-
 void Application::draw() {
     shadowGenerator.generate(models);
 
@@ -300,7 +343,9 @@ void Application::end() {
 
     models.clear();
 }
-void Application::createMonster(Matrix m,Matrix o,ConstantShader *pConstShader){
+
+/**  CREATE METHODEN  **/
+void Application::createMonster(Matrix m, Matrix o, ConstantShader *pConstShader) {
     for (int i = 0; i < 10; i++) {
         std::cout << i << ". Monster wird erstellt." << std::endl;
         pEnemy = new Enemy(ASSET_DIRECTORY "enemy.obj");
@@ -311,8 +356,6 @@ void Application::createMonster(Matrix m,Matrix o,ConstantShader *pConstShader){
         models.push_back(pEnemy->getEnemy());
         monsterModels.push_back(pEnemy);
 
-
-        ConstantShader *pConstShader;
         hitboxModel = new LineBoxModel(pEnemy->getBlockModel()->boundingBox().Max,
                                        pEnemy->getBlockModel()->boundingBox().Min);
         pConstShader = new ConstantShader();
@@ -323,7 +366,8 @@ void Application::createMonster(Matrix m,Matrix o,ConstantShader *pConstShader){
         hitboxListMonster.push_back(hitboxModel);
     }
 }
-void Application::createLaser(int modelsNumber, Matrix m,ConstantShader *pConstShader){
+
+void Application::createLaser(int modelsNumber, Matrix m, ConstantShader *pConstShader) {
     for (int i = 0; i < modelsNumber; i++) {
         std::cout << i << " wird erstellt." << std::endl;
         pModel = new Model(ASSET_DIRECTORY "LaserTry.obj", false);
@@ -345,6 +389,19 @@ void Application::createLaser(int modelsNumber, Matrix m,ConstantShader *pConstS
     }
 }
 
+void Application::createItems(int modelsNumber, Matrix m, Matrix o, ConstantShader *pConstShader) {
+    for (int i = 0; i < 5; i++) {
+        std::cout << i << " Item wird erstellt." << std::endl;
+        pItem = new Items();
+        m.translation(0, -60, 0);
+        o.rotationY(AI_DEG_TO_RAD(180.0f));
+        pItem->getItem()->transform(m * o);
+
+        models.push_back(pItem->getItem());
+        itemsModels.push_back(pItem);
+    }
+}
+
 void Application::createScene() {
     Matrix m, n, o;
     float rad;
@@ -354,6 +411,7 @@ void Application::createScene() {
     laserModels.reserve(sizeof(BaseModel) * modelsNumber);
     hitboxListMonster.reserve(sizeof(BaseModel) * modelsNumber);
     pCurrentLaser = 0;
+    pCurrentItem = 0;
     laserTimer = 0;
     monsterTimer = 3;
     score = 0;
@@ -366,6 +424,7 @@ void Application::createScene() {
     models.push_back(pModel);
     pPhongShader = new PhongShader();
 
+    /** Player **/
     pSpaceship = new Spaceship(ASSET_DIRECTORY "woodenObje.obj");
     models.push_back(pSpaceship->getTop());
     Vector v1 = pSpaceship->getTop()->transform().translation();
@@ -382,6 +441,8 @@ void Application::createScene() {
     spaceship->shader(pConstShader, true);
     models.push_back(spaceship);
 
+
+    /** Planeten **/
     venus = new Model(ASSET_DIRECTORY "Venus_1K.obj", false);
     venus->shader(new PhongShader(), true);
     m.translation(50, 0, 0);
@@ -398,17 +459,10 @@ void Application::createScene() {
     earth->transform(m * n);
     models.push_back(earth);
 
-    pItem = new Items(ASSET_DIRECTORY "Shine_Sprite.obj");
-    m.translation(0, -60, 0);
-    o.rotationY(AI_DEG_TO_RAD(180.0f));
-    pItem->getItem()->transform(m * o);
-
-    models.push_back(pItem->getItem());
-
-
-    //Erstell einige Laser und Monster Objekte
-    createLaser(modelsNumber,m,pConstShader);
-    createMonster(m,o,pConstShader);
+    /**Erstell einige Laser, Item und Monster Objekte **/
+    createLaser(modelsNumber, m, pConstShader);
+    createMonster(m, o, pConstShader);
+    createItems(modelsNumber, m, o, pConstShader);
 
     // directional lights
     DirectionalLight *dl = new DirectionalLight();

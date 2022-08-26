@@ -4,15 +4,35 @@
 
 #include "Items.h"
 #include "utils/Shader/PhongShader.h"
+#include "../include/Application.h"
 
 
-Items::Items(const char *itemModel) {
-    pItem = new Model(itemModel, false);
-    pItem->shader(new PhongShader(), true);
-    pItem->shadowCaster(false);
+Items::Items() {
+    this->setItemType((int) Application::randomFloat(0.0f,4.0f));
+    std::cout << getType() << std::endl;
+    if(getType() == 0){
+        pItem = new Model("../assets/item1.obj", false);
+        pItem->shader(new PhongShader(), true);
+        pItem->shadowCaster(false);
+    }else if(getType() == 1){
+        pItem = new Model("../assets/item2.obj", false);
+        pItem->shader(new PhongShader(), true);
+        pItem->shadowCaster(false);
+    }else{
+        pItem = new Model("../assets/item3.obj", false);
+        pItem->shader(new PhongShader(), true);
+        pItem->shadowCaster(false);
+    }
+
+
+
 }
 Items::~Items() {
     delete pItem;
+}
+
+void Items::setItemType(int itemType) {
+    Items::itemType = itemType;
 }
 
 
@@ -27,8 +47,11 @@ void Items::update(float dtime) {
     Matrix TM, CP;
     CP = this->getItem()->transform();
     if(this->getItem()->transform().translation().Y > -13 && this->getItem()->transform().translation().Y < 14){
+        TM.translation(0,0,-10.0f  * dtime);
 
     }
+    this->getItem()->transform(CP * TM);
+    this->getItem()->boundingBox().transform(CP * TM);
 }
 
 void Items::draw(const BaseCamera &Cam) {
@@ -37,4 +60,7 @@ void Items::draw(const BaseCamera &Cam) {
 
 Model *Items::getItem() {
     return pItem;
+}
+int Items::getType() {
+    return this->itemType;
 }

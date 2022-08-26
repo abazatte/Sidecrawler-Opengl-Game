@@ -29,6 +29,7 @@ public:
     typedef std::vector<LineBoxModel*> HitboxVectorLaser;
     typedef std::vector<LineBoxModel*> HitboxVectorMonster;
     typedef std::vector<Enemy*> MonsterVector;
+    typedef std::vector<Items*> ItemsVector;
     typedef std::list<BaseModel*> ModelList;
     typedef std::vector<BaseModel*> LaserVector;
     Application(GLFWwindow* pWin);
@@ -38,19 +39,18 @@ public:
     void draw();
     void end();
 protected:
+    float itemTime = 3;
     double prevTime = 0.0;
     double crntTime = 0.0;
     double timeDiff;
     unsigned int counter = 0;
     void updateMonster(float dtime);
     void createScene();
-    void createNormalTestScene();
-    void createShadowTestScene();
     void updateLaser(float dtime);
-    static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
     Camera cam;
     ModelList models;
     MonsterVector monsterModels;
+    ItemsVector itemsModels;
     LineBoxModel* hitboxModel;
     LineBoxModel* spaceship;
     HitboxVectorMonster hitboxListMonster;
@@ -69,12 +69,17 @@ protected:
     float monsterTimer;
     void loopCollision();
     int pCurrentMonster;
+    int pCurrentItem;
     int score = 0;
+    bool item1 = false;
+    bool item2 = false;
+    bool item3 = false;
     void updatePlanet(float dtime);
-
     void createMonster(Matrix m,Matrix o,ConstantShader *pConstShader);
-
     void createLaser(int modelsNumber, Matrix m,ConstantShader *pConstShader);
+    void collisionItem(float dtime);
+    void createItems(int modelsNumber, Matrix m,Matrix o, ConstantShader *pConstShader);
+    void updateItem(float dtime);
 };
 
 #endif /* Application_hpp */
