@@ -185,7 +185,7 @@ void Application::updateMonster(float dtime) {
         //TM.translation(0, 0, -10.0f * dtime * pGeschwindigkeit.at(i)); //1.0f * dtime
         monsterModels.at(i)->update(dtime);
         //std::cout << "Posi Monster:" << monsterModels.at(i)->transform().translation().Z << std::endl;
-        hitboxListMonster.at(i)->transform(monsterModels.at(i)->getBlockModel()->transform());
+        //hitboxListMonster.at(i)->transform(monsterModels.at(i)->getBlockModel()->transform());
         //std::cout << "Posi Laser:" << laserModels.at(i)->transform().translation().Z << std::endl;
     }
 }
