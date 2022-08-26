@@ -34,6 +34,7 @@ public:
     Application(GLFWwindow* pWin);
     void start();
     void update(float dtime);
+    static float randomFloat(float a, float b);
     void draw();
     void end();
 protected:
@@ -69,7 +70,6 @@ protected:
     void loopCollision();
     int pCurrentMonster;
     int score = 0;
-    float randomFloat(float a, float b);
     void updatePlanet(float dtime);
 
     void createMonster(Matrix m,Matrix o,ConstantShader *pConstShader);

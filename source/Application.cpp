@@ -308,15 +308,6 @@ void Application::createMonster(Matrix m,Matrix o,ConstantShader *pConstShader){
         o.rotationY(AI_DEG_TO_RAD(180.0f));
         pEnemy->getEnemy()->transform(m * o);
 
-        //Geschwindigkeit
-        pEnemy->setPSkill((int) randomFloat(0.0f, 3.0f));
-        //Hoch runter
-        pEnemy->setPObenUnten((int) randomFloat(0.0f, 2.0f));
-        //Wenn man hoch runter geht
-        pEnemy->setPVorher(5.25f);
-        //Wie viele Hits ein Enemy braucht zum sterben
-        pEnemy->setPLeben((int) randomFloat(1.0f, 4.0f));
-
         models.push_back(pEnemy->getEnemy());
         monsterModels.push_back(pEnemy);
 

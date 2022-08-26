@@ -4,11 +4,21 @@
 
 #include <utils/Shader/PhongShader.h>
 #include "../include/Enemy.h"
+#include "../include/Application.h"
 
 Enemy::Enemy(const char *enemyModel) {
     pEnemy = new Model(enemyModel, false);
     pEnemy->shader(new PhongShader(), true);
     pEnemy->shadowCaster(false);
+
+    //Geschwindigkeit
+    this->setPSkill((int) Application::randomFloat(0.0f, 3.0f));
+    //Hoch runter
+    this->setPObenUnten((int) Application::randomFloat(0.0f, 2.0f));
+    //Wenn man hoch runter geht
+    this->setPVorher(5.25f);
+    //Wie viele Hits ein Enemy braucht zum sterben
+    this->setPLeben((int) Application::randomFloat(1.0f, 4.0f));
 }
 
 Enemy::~Enemy() {
