@@ -7,6 +7,6 @@ Ks  0.0 0.0 0.0
 d  1.0
 Ns  4.0
 illum 2
-map_Kd skybox3.png
+map_Kd cubemap.png
 #
 # EOF

@@ -20,6 +20,13 @@ Enemy::Enemy(const char *enemyModel) {
     //Wie viele Hits ein Enemy braucht zum sterben
     this->setPLeben((int) Application::randomFloat(1.0f, 4.0f));
 }
+Enemy::Enemy() {
+    pEnemy = new Model("../assets/untitled.obj", false);
+    pEnemy->shader(new PhongShader(), true);
+    pEnemy->shadowCaster(false);
+    this->setPLeben(30);
+
+}
 
 Enemy::~Enemy() {
     delete pEnemy;

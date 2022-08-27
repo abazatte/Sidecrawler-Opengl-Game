@@ -163,8 +163,10 @@ void Application::update(float dtime) {
 
     loopCollision();
     cam.update();
-    if (laserTimer > -1000) {
+    if (laserTimer > -1000 && !item2) {
         laserTimer = laserTimer - (dtime * 4);
+    }else if(laserTimer > -1000 && item2){
+        laserTimer = laserTimer - (dtime * 8);
     }
 
     if (monsterTimer > -1000) {
@@ -281,31 +283,47 @@ void Application::collisionItem(float dtime) {
             std::cout << "Item hittet" << std::endl;
             //Schneller Bewegen Buff
             if (itemsModels.at(i)->getType() == 0) {
+                //Falls Item doppelt eingesammelt wird
+                if(item1){
+                    itemTime = 3.0f;
+                }
                 TM.translation(0, -60, 0);
-                o.rotationY(AI_DEG_TO_RAD(180.0f));
-                itemsModels.at(i)->getItem()->transform(TM * o);
+                itemsModels.at(i)->getItem()->transform(TM);
                 item1 = true;
                 //Schneller schießen buff
             } else if (itemsModels.at(i)->getType() == 1) {
+                //Falls Item doppelt eingesammelt wird
+                if(item2){
+                    item2Time = 3.0f;
+                }
                 TM.translation(0, -60, 0);
-                o.rotationY(AI_DEG_TO_RAD(180.0f));
-                itemsModels.at(i)->getItem()->transform(TM * o);
+                itemsModels.at(i)->getItem()->transform(TM);
                 item2 = true;
                 //Doppelt Punkte buff
             } else {
                 TM.translation(0, -60, 0);
-                o.rotationY(AI_DEG_TO_RAD(180.0f));
-                itemsModels.at(i)->getItem()->transform(TM * o);
+
+                itemsModels.at(i)->getItem()->transform(TM);
                 item3 = true;
             }
         }
     }
+    //Timer für hoch und runter boost
     if (item1) {
         itemTime -= dtime;
         if (itemTime <= 0) {
             std::cout << itemTime << "FUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUCK" << std::endl;
             item1 = false;
             itemTime = 3;
+        }
+    }
+    //Timer für schneller schießen
+    if (item2) {
+        item2Time -= dtime;
+        if (item2Time <= 0) {
+            std::cout << item2Time << "FUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUCK" << std::endl;
+            item2 = false;
+            item2Time = 3;
         }
     }
 
@@ -366,6 +384,14 @@ void Application::createMonster(Matrix m, Matrix o, ConstantShader *pConstShader
         hitboxListMonster.push_back(hitboxModel);
     }
 }
+void Application::createBoss(Matrix m, Matrix o, ConstantShader *pConstShader){
+    pBoss = new Enemy();
+    m.translation(0, -70, 0);
+    o.rotationY(AI_DEG_TO_RAD(180.0f));
+    pBoss->getEnemy()->transform(m * o);
+
+    models.push_back(pBoss->getEnemy());
+}
 
 void Application::createLaser(int modelsNumber, Matrix m, ConstantShader *pConstShader) {
     for (int i = 0; i < modelsNumber; i++) {
@@ -401,6 +427,7 @@ void Application::createItems(int modelsNumber, Matrix m, Matrix o, ConstantShad
         itemsModels.push_back(pItem);
     }
 }
+
 
 void Application::createScene() {
     Matrix m, n, o;
@@ -463,6 +490,7 @@ void Application::createScene() {
     createLaser(modelsNumber, m, pConstShader);
     createMonster(m, o, pConstShader);
     createItems(modelsNumber, m, o, pConstShader);
+    createBoss(m,o,pConstShader);
 
     // directional lights
     DirectionalLight *dl = new DirectionalLight();

@@ -11,6 +11,8 @@
 
 class Enemy : public BaseModel {
 public:
+    Enemy();
+
     Enemy(const char* enemyModel);
     virtual ~Enemy();
     bool loadModel(const char* enemyModel);

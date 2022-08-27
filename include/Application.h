@@ -39,7 +39,17 @@ public:
     void draw();
     void end();
 protected:
-    float itemTime = 3;
+    int pCurrentMonster;
+    int pCurrentItem;
+    int score = 0;
+    int pCurrentLaser;
+    bool item1 = false;
+    bool item2 = false;
+    bool item3 = false;
+    float laserTimer;
+    float monsterTimer;
+    float itemTime = 3.0f;
+    float item2Time = 3.0f;
     double prevTime = 0.0;
     double crntTime = 0.0;
     double timeDiff;
@@ -62,24 +72,17 @@ protected:
     BaseModel* venus;
     Spaceship* pSpaceship;
     Enemy* pEnemy;
+    Enemy* pBoss;
     Items* pItem;
     ShadowMapGenerator shadowGenerator;
-    int pCurrentLaser;
-    float laserTimer;
-    float monsterTimer;
     void loopCollision();
-    int pCurrentMonster;
-    int pCurrentItem;
-    int score = 0;
-    bool item1 = false;
-    bool item2 = false;
-    bool item3 = false;
     void updatePlanet(float dtime);
     void createMonster(Matrix m,Matrix o,ConstantShader *pConstShader);
     void createLaser(int modelsNumber, Matrix m,ConstantShader *pConstShader);
     void collisionItem(float dtime);
     void createItems(int modelsNumber, Matrix m,Matrix o, ConstantShader *pConstShader);
     void updateItem(float dtime);
+    void createBoss(Matrix m, Matrix o, ConstantShader *pConstShader);
 };
 
 #endif /* Application_hpp */
