@@ -25,7 +25,6 @@ Enemy::Enemy() {
     pEnemy->shader(new PhongShader(), true);
     pEnemy->shadowCaster(false);
     this->setPLeben(30);
-
 }
 
 Enemy::~Enemy() {
@@ -129,4 +128,12 @@ void Enemy::setPVorher(float pVorher) {
 
 void Enemy::setPLeben(int pLeben) {
     this->pLeben = pLeben;
+}
+
+bool Enemy::isBossStatus() const {
+    return bossStatus;
+}
+
+void Enemy::setBossStatus(bool bossStatus) {
+    Enemy::bossStatus = bossStatus;
 }

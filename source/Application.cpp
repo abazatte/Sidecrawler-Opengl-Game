@@ -155,10 +155,23 @@ void Application::update(float dtime) {
         glfwSetWindowTitle(pWindow, newTitle.c_str());
 
     }
+
+    if(score == 5){
+        bossTimer = 5.0f;
+        pBoss->setBossStatus(true);
+        if(isBossHit() == 30){
+            pBoss->setBossStatus(false);
+        }
+    }
+
+    /** Update alle Spielmodels **/
+    if(!pBoss->isBossStatus()){
+        updateMonster(dtime);
+    }
     updateLaser(dtime);
-    updateMonster(dtime);
     updateItem(dtime);
     updatePlanet(dtime);
+    updateBoss(dtime);
     collisionItem(dtime);
 
     loopCollision();
@@ -212,6 +225,19 @@ void Application::updateMonster(float dtime) {
 void Application::updateItem(float dtime) {
     for (int i = 0; i < itemsModels.size(); ++i) {
         itemsModels.at(i)->update(dtime);
+    }
+}
+void Application::updateBoss(float dtime){
+    Matrix TM, CP;
+
+    CP = pBoss->getEnemy()->transform();
+    if(CP.translation().Y < -60){
+        TM.translation(0,0,100);
+        pBoss->getEnemy()->transform(TM);
+    }
+    if(CP.translation().Z > 60){
+        TM.translation(0, 0, -5.0f * dtime);
+        pBoss->getEnemy()->transform(CP * TM);
     }
 }
 
@@ -327,6 +353,22 @@ void Application::collisionItem(float dtime) {
         }
     }
 
+}
+int Application::isBossHit(){
+    Matrix TM,CP, CP2;
+    for (int i = 0; i < laserModels.size(); ++i) {
+        CP = laserModels.at(i)->transform();
+        CP2 = pBoss->getEnemy()->transform();
+        if(AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
+                        pBoss->boundingBox().transform(CP2))){
+            bossHit++;
+            if(bossHit == 30){
+                TM.translation(0,-60,0);
+                pBoss->getEnemy()->transform(TM);
+            }
+        }
+    }
+    return bossHit;
 }
 
 

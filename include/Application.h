@@ -39,24 +39,24 @@ public:
     void draw();
     void end();
 protected:
+
     int pCurrentMonster;
     int pCurrentItem;
     int score = 0;
     int pCurrentLaser;
+    int bossHit;
     bool item1 = false;
     bool item2 = false;
     bool item3 = false;
     float laserTimer;
     float monsterTimer;
+    float bossTimer;
     float itemTime = 3.0f;
     float item2Time = 3.0f;
     double prevTime = 0.0;
     double crntTime = 0.0;
     double timeDiff;
     unsigned int counter = 0;
-    void updateMonster(float dtime);
-    void createScene();
-    void updateLaser(float dtime);
     Camera cam;
     ModelList models;
     MonsterVector monsterModels;
@@ -83,6 +83,12 @@ protected:
     void createItems(int modelsNumber, Matrix m,Matrix o, ConstantShader *pConstShader);
     void updateItem(float dtime);
     void createBoss(Matrix m, Matrix o, ConstantShader *pConstShader);
+    void updateMonster(float dtime);
+    void createScene();
+    void updateLaser(float dtime);
+    void updateBoss(float dtime);
+
+    int isBossHit();
 };
 
 #endif /* Application_hpp */

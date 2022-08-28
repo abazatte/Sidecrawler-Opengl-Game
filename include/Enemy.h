@@ -29,6 +29,13 @@ public:
     void setPVorher(float pVorher);
     void setPLeben(int pLeben);
 protected:
+    bool bossStatus = false;
+public:
+    bool isBossStatus() const;
+
+    void setBossStatus(bool bossStatus);
+
+protected:
     Model* pEnemy;
     int pSkill;
     int pObenUnten;
