@@ -32,7 +32,6 @@ protected:
     bool bossStatus = false;
 public:
     bool isBossStatus() const;
-
     void setBossStatus(bool bossStatus);
 
 protected:

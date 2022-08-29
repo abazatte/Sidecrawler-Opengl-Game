@@ -44,19 +44,25 @@ protected:
     int pCurrentItem;
     int score = 0;
     int pCurrentLaser;
-    int bossHit;
+    int bossHit = 0;
     bool item1 = false;
     bool item2 = false;
     bool item3 = false;
+    float randomMonsterMovement = 1.0f;
+    float adjustAmplitudePerSecond = -10.0f;
+    float timeElapsed = 0.0f;
     float laserTimer;
     float monsterTimer;
-    float bossTimer;
+    float bossTimer = 5.0f;
+    float bossTimerMovement = 1.5f;
     float itemTime = 3.0f;
     float item2Time = 3.0f;
+    float item3Time = 3.0f;
     double prevTime = 0.0;
     double crntTime = 0.0;
     double timeDiff;
     unsigned int counter = 0;
+    Vector camUrsprung;
     Camera cam;
     ModelList models;
     MonsterVector monsterModels;
@@ -73,6 +79,10 @@ protected:
     Spaceship* pSpaceship;
     Enemy* pEnemy;
     Enemy* pBoss;
+public:
+    Enemy *getPBoss() const;
+
+protected:
     Items* pItem;
     ShadowMapGenerator shadowGenerator;
     void loopCollision();
@@ -87,8 +97,9 @@ protected:
     void createScene();
     void updateLaser(float dtime);
     void updateBoss(float dtime);
+    void isBossHit();
 
-    int isBossHit();
+    void shake(float deltaTime);
 };
 
 #endif /* Application_hpp */

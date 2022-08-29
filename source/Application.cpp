@@ -15,7 +15,7 @@
 
 #define _USE_MATH_DEFINES
 
-#include <math.h>
+#include <cmath>
 
 #else
 #define GLFW_INCLUDE_GLCOREARB
@@ -81,6 +81,11 @@ void Application::update(float dtime) {
 
     float f = pSpaceship->getTop()->transform().translation().Y;
     //std::cout << f << std:: endl;
+
+    /** User input        **/
+    /**                   **/
+    /**                   **/
+    /**                   **/
     if (f < 13.5 && upState == GLFW_PRESS && downState == GLFW_RELEASE) {
         if (item1) {
             upDown = 25.0f;
@@ -115,6 +120,13 @@ void Application::update(float dtime) {
             //hitboxListLaser.at(pCurrentLaser)->transform(CP);
         }
     }
+
+
+    /**  DTIME METHODEN   **/
+    /**                   **/
+    /**                   **/
+    /**                   **/
+
 
     //Monster werden nach 10 Zeiteinheiten am rechten Rand platziert
     if (monsterTimer <= 0) {
@@ -156,37 +168,66 @@ void Application::update(float dtime) {
 
     }
 
-    if(score == 5){
-        bossTimer = 5.0f;
+    if (score == 2) {
         pBoss->setBossStatus(true);
-        if(isBossHit() == 30){
-            pBoss->setBossStatus(false);
-        }
     }
-
+    if (bossHit == 100) {
+        pBoss->setBossStatus(false);
+    }
     /** Update alle Spielmodels **/
-    if(!pBoss->isBossStatus()){
-        updateMonster(dtime);
+
+
+    if (pBoss->isBossStatus() && bossTimer < 0) {
+        isBossHit();
+        updateBoss(dtime);
+        shake(dtime);
     }
+    updateMonster(dtime);
     updateLaser(dtime);
     updateItem(dtime);
     updatePlanet(dtime);
-    updateBoss(dtime);
     collisionItem(dtime);
 
     loopCollision();
     cam.update();
     if (laserTimer > -1000 && !item2) {
         laserTimer = laserTimer - (dtime * 4);
-    }else if(laserTimer > -1000 && item2){
+    } else if (laserTimer > -1000 && item2) {
         laserTimer = laserTimer - (dtime * 8);
     }
-
     if (monsterTimer > -1000) {
         monsterTimer = monsterTimer - (dtime * 4);
     }
+    if (bossTimer > -5) {
+        bossTimer -= dtime;
+    }
+    if (bossTimerMovement > -1) {
+        bossTimerMovement -= dtime;
+    }
     //std::cout << laserTimer << std::endl;
 }
+
+/** Dance til your dead **/
+
+void Application::shake(float deltaTime) {
+    Vector v, CP;
+    v.X = 1;
+    v.Y = randomFloat(0.1, -0.1);
+    v.Z = randomFloat(0.1, -0.1);
+    CP = camUrsprung;
+    CP.X *= v.X;
+    CP.Y += v.Y;
+    CP.Z += v.Z;
+    cam.setPosition(CP);
+
+}
+
+
+/**   Update Methoden **/
+/**                   **/
+/**                   **/
+/**                   **/
+
 
 void Application::updateLaser(float dtime) {
     Matrix TM, CP;
@@ -201,7 +242,7 @@ void Application::updateLaser(float dtime) {
             //std::cout << "Posi Laser:" << laserModels.at(i)->transform().translation().Z << std::endl;
 
         }
-        if (laserModels.at(i)->transform().translation().Z > 90) {
+        if (laserModels.at(i)->transform().translation().Z > 80) {
             TM.translation(0, -40, 0);
             laserModels.at(i)->transform(TM);
             //hitboxListLaser.at(i)->transform(TM);
@@ -215,7 +256,14 @@ void Application::updateMonster(float dtime) {
 
     for (int i = 0; i < monsterModels.size(); ++i) {
         //TM.translation(0, 0, -10.0f * dtime * pGeschwindigkeit.at(i)); //1.0f * dtime
-        monsterModels.at(i)->update(dtime);
+        if (!pBoss->isBossStatus()) {
+            monsterModels.at(i)->update(dtime);
+        }
+        if (pBoss->isBossStatus()) {
+            std::cout << "LOL" << std::endl;
+            TM.translation(0, -50, 0);
+            monsterModels.at(i)->getEnemy()->transform(TM);
+        }
         //std::cout << "Posi Monster:" << monsterModels.at(i)->transform().translation().Z << std::endl;
         //hitboxListMonster.at(i)->transform(monsterModels.at(i)->getBlockModel()->transform());
         //std::cout << "Posi Laser:" << laserModels.at(i)->transform().translation().Z << std::endl;
@@ -227,18 +275,34 @@ void Application::updateItem(float dtime) {
         itemsModels.at(i)->update(dtime);
     }
 }
-void Application::updateBoss(float dtime){
-    Matrix TM, CP;
 
+void Application::updateBoss(float dtime) {
+    Matrix TM, CP;
     CP = pBoss->getEnemy()->transform();
-    if(CP.translation().Y < -60){
-        TM.translation(0,0,100);
+    //Movet Boss an Anfangposition im Spielfeld
+    if (CP.translation().Y < -60) {
+        TM.translation(0, 0, 100);
         pBoss->getEnemy()->transform(TM);
     }
-    if(CP.translation().Z > 60){
+    //Wenn Boss Ausgangsposition noch nicht erreicht hat, bewegt sich weiter vorwärts
+    if (CP.translation().Z > 60) {
         TM.translation(0, 0, -5.0f * dtime);
         pBoss->getEnemy()->transform(CP * TM);
     }
+
+    if (bossTimerMovement < 0) {
+        std::cout << "YOOO" << std::endl;
+        randomMonsterMovement = randomFloat(-5, 5);
+        bossTimerMovement = 1.5f;
+    }
+    if (pBoss->getEnemy()->transform().translation().Y > -13 &&
+        pBoss->getEnemy()->transform().translation().Y < 14) {
+        CP = pBoss->getEnemy()->transform();
+        TM.translation(0, randomMonsterMovement * dtime, 0);
+        pBoss->getEnemy()->transform(CP * TM);
+    }
+
+
 }
 
 void Application::updatePlanet(float dtime) {
@@ -255,10 +319,17 @@ void Application::updatePlanet(float dtime) {
         TM.translation(50, 0, -100);
         venus->transform(R * TM * N * R);
     } else if (earth->transform().translation().Z > 150) {
-        TM.translation(60, 10, -110);
+        TM.translation(60, 0, -110);
         earth->transform(R * TM * N * R);
     }
 }
+
+
+/**COLLISION METHODEN **/
+/**                   **/
+/**                   **/
+/**                   **/
+
 
 void Application::loopCollision() {
     Matrix TM, CP, CP2, CP3;
@@ -271,9 +342,8 @@ void Application::loopCollision() {
                                 monsterModels.at(j)->getEnemy()->boundingBox().transform(CP2))) {
                 TM.translation(0, -50, 0);
                 monsterModels.at(j)->getEnemy()->transform(TM);
-                hitboxListMonster.at(j)->transform(TM);
                 //std::cout<< "du wurdest getroffen von Monster Nummer: " << j << std::endl;
-                score = 0;
+                score -= 1;
 
             }
             if (AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
@@ -284,8 +354,12 @@ void Application::loopCollision() {
                     //hitboxListLaser.at(i)->transform(TM);
                     TM.translation(0, -50, 0);
                     monsterModels.at(j)->getEnemy()->transform(TM);
-                    hitboxListMonster.at(j)->transform(TM);
-                    score++;
+                    if (item3) {
+                        score += 2;
+                    } else {
+                        score++;
+                    }
+
                 } else {
                     TM.translation(0, -40, 0);
                     laserModels.at(i)->transform(TM);
@@ -310,7 +384,7 @@ void Application::collisionItem(float dtime) {
             //Schneller Bewegen Buff
             if (itemsModels.at(i)->getType() == 0) {
                 //Falls Item doppelt eingesammelt wird
-                if(item1){
+                if (item1) {
                     itemTime = 3.0f;
                 }
                 TM.translation(0, -60, 0);
@@ -319,7 +393,7 @@ void Application::collisionItem(float dtime) {
                 //Schneller schießen buff
             } else if (itemsModels.at(i)->getType() == 1) {
                 //Falls Item doppelt eingesammelt wird
-                if(item2){
+                if (item2) {
                     item2Time = 3.0f;
                 }
                 TM.translation(0, -60, 0);
@@ -338,7 +412,7 @@ void Application::collisionItem(float dtime) {
     if (item1) {
         itemTime -= dtime;
         if (itemTime <= 0) {
-            std::cout << itemTime << "FUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUCK" << std::endl;
+            std::cout << itemTime << "HOCHRUNTER" << std::endl;
             item1 = false;
             itemTime = 3;
         }
@@ -347,28 +421,39 @@ void Application::collisionItem(float dtime) {
     if (item2) {
         item2Time -= dtime;
         if (item2Time <= 0) {
-            std::cout << item2Time << "FUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUCK" << std::endl;
+            std::cout << item2Time << "FAST" << std::endl;
             item2 = false;
             item2Time = 3;
         }
     }
+    if (item3) {
+        item3Time -= dtime;
+        if (item3Time <= 0) {
+            std::cout << item3Time << "FAST" << std::endl;
+            item3 = false;
+            item3Time = 3;
+        }
+    }
 
 }
-int Application::isBossHit(){
-    Matrix TM,CP, CP2;
+
+void Application::isBossHit() {
+    Matrix TM, CP, CP2;
     for (int i = 0; i < laserModels.size(); ++i) {
         CP = laserModels.at(i)->transform();
         CP2 = pBoss->getEnemy()->transform();
-        if(AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
-                        pBoss->boundingBox().transform(CP2))){
+        if (AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
+                            pBoss->getEnemy()->boundingBox().transform(CP2))) {
             bossHit++;
-            if(bossHit == 30){
-                TM.translation(0,-60,0);
+            TM.translation(0, -40, 0);
+            laserModels.at(i)->transform(TM);
+            if (bossHit == 100) {
+                TM.translation(0, -60, 0);
                 pBoss->getEnemy()->transform(TM);
+                this->score += 10;
             }
         }
     }
-    return bossHit;
 }
 
 
@@ -379,6 +464,7 @@ float Application::randomFloat(float a, float b) {
     float r = random * diff;
     return a + r;
 }
+
 void Application::draw() {
     shadowGenerator.generate(models);
 
@@ -404,7 +490,13 @@ void Application::end() {
     models.clear();
 }
 
+
 /**  CREATE METHODEN  **/
+/**                   **/
+/**                   **/
+/**                   **/
+
+
 void Application::createMonster(Matrix m, Matrix o, ConstantShader *pConstShader) {
     for (int i = 0; i < 10; i++) {
         std::cout << i << ". Monster wird erstellt." << std::endl;
@@ -426,12 +518,12 @@ void Application::createMonster(Matrix m, Matrix o, ConstantShader *pConstShader
         hitboxListMonster.push_back(hitboxModel);
     }
 }
-void Application::createBoss(Matrix m, Matrix o, ConstantShader *pConstShader){
+
+void Application::createBoss(Matrix m, Matrix o, ConstantShader *pConstShader) {
     pBoss = new Enemy();
     m.translation(0, -70, 0);
     o.rotationY(AI_DEG_TO_RAD(180.0f));
     pBoss->getEnemy()->transform(m * o);
-
     models.push_back(pBoss->getEnemy());
 }
 
@@ -472,6 +564,11 @@ void Application::createItems(int modelsNumber, Matrix m, Matrix o, ConstantShad
 
 
 void Application::createScene() {
+
+
+    /** init **/
+
+
     Matrix m, n, o;
     float rad;
     PhongShader *pPhongShader;
@@ -485,6 +582,9 @@ void Application::createScene() {
     monsterTimer = 3;
     score = 0;
 
+
+    /** Skybox **/
+
     pModel = new Model(ASSET_DIRECTORY "skybox.obj", false);
     pModel->shader(new PhongShader(), true);
     pModel->shadowCaster(false);
@@ -493,7 +593,10 @@ void Application::createScene() {
     models.push_back(pModel);
     pPhongShader = new PhongShader();
 
+
     /** Player **/
+
+
     pSpaceship = new Spaceship(ASSET_DIRECTORY "woodenObje.obj");
     models.push_back(pSpaceship->getTop());
     Vector v1 = pSpaceship->getTop()->transform().translation();
@@ -502,6 +605,7 @@ void Application::createScene() {
     //v1.Z -= 30;
     v1.X -= 25;
     cam.setPosition(v1);
+    camUrsprung = cam.position();
     ConstantShader *pConstShader;
     spaceship = new LineBoxModel(pSpaceship->getTop()->getBlockModel()->boundingBox().Min,
                                  pSpaceship->getTop()->getBlockModel()->boundingBox().Max);
@@ -512,6 +616,8 @@ void Application::createScene() {
 
 
     /** Planeten **/
+
+
     venus = new Model(ASSET_DIRECTORY "Venus_1K.obj", false);
     venus->shader(new PhongShader(), true);
     m.translation(50, 0, 0);
@@ -528,11 +634,14 @@ void Application::createScene() {
     earth->transform(m * n);
     models.push_back(earth);
 
+
     /**Erstell einige Laser, Item und Monster Objekte **/
+
+
     createLaser(modelsNumber, m, pConstShader);
     createMonster(m, o, pConstShader);
     createItems(modelsNumber, m, o, pConstShader);
-    createBoss(m,o,pConstShader);
+    createBoss(m, o, pConstShader);
 
     // directional lights
     DirectionalLight *dl = new DirectionalLight();
@@ -541,3 +650,5 @@ void Application::createScene() {
     dl->castShadows(true);
     ShaderLightMapper::instance().addLight(dl);
 }
+
+
