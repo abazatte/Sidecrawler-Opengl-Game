@@ -36,6 +36,7 @@
 
 //freetype
 #include <ft2build.h>
+#include <utils/Utils.h>
 #include FT_FREETYPE_H
 #include "../include/Enemy.h"
 
@@ -49,6 +50,7 @@
 Application::Application(GLFWwindow *pWin) : pWindow(pWin), cam(pWin), pModel(NULL), shadowGenerator(2048, 2048) {
 
     createScene();
+
 
     //glfwSetKeyCallback(pWindow, key_callback);
     //createNormalTestScene();
@@ -260,7 +262,7 @@ void Application::updateMonster(float dtime) {
             monsterModels.at(i)->update(dtime);
         }
         if (pBoss->isBossStatus()) {
-            std::cout << "LOL" << std::endl;
+            //std::cout << "LOL" << std::endl;
             TM.translation(0, -50, 0);
             monsterModels.at(i)->getEnemy()->transform(TM);
         }
@@ -291,12 +293,23 @@ void Application::updateBoss(float dtime) {
     }
 
     if (bossTimerMovement < 0) {
-        std::cout << "YOOO" << std::endl;
+        //std::cout << "YOOO" << std::endl;
         randomMonsterMovement = randomFloat(-5, 5);
         bossTimerMovement = 1.5f;
     }
     if (pBoss->getEnemy()->transform().translation().Y > -13 &&
         pBoss->getEnemy()->transform().translation().Y < 14) {
+        if (pBoss->getEnemy()->transform().translation().Y < -11){
+            if (randomMonsterMovement < 0){
+                randomMonsterMovement *= -1;
+                //std::cout << randomMonsterMovement << std::endl;
+            }
+        }
+        if (pBoss->getEnemy()->transform().translation().Y > 12){
+            if (randomMonsterMovement > 0){
+                randomMonsterMovement *= -1;
+            }
+        }
         CP = pBoss->getEnemy()->transform();
         TM.translation(0, randomMonsterMovement * dtime, 0);
         pBoss->getEnemy()->transform(CP * TM);
