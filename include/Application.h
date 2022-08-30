@@ -32,6 +32,7 @@ public:
     typedef std::vector<Items*> ItemsVector;
     typedef std::list<BaseModel*> ModelList;
     typedef std::vector<BaseModel*> LaserVector;
+    typedef std::vector<BaseModel*> LaserBossVector;
     Application(GLFWwindow* pWin);
     void start();
     void update(float dtime);
@@ -44,6 +45,7 @@ protected:
     int pCurrentItem;
     int score = 0;
     int pCurrentLaser;
+    int pCurrentBossLaser;
     int bossHit = 0;
     bool item1 = false;
     bool item2 = false;
@@ -54,6 +56,7 @@ protected:
     float laserTimer;
     float monsterTimer;
     float bossTimer = 5.0f;
+    float laserBossTimer = 1.5f;
     float bossTimerMovement = 1.5f;
     float itemTime = 3.0f;
     float item2Time = 3.0f;
@@ -72,6 +75,7 @@ protected:
     HitboxVectorMonster hitboxListMonster;
     HitboxVectorLaser hitboxListLaser;
     LaserVector laserModels;
+    LaserBossVector laserBossModels;
     GLFWwindow* pWindow;
     BaseModel* pModel;
     BaseModel* earth;
@@ -100,6 +104,8 @@ protected:
     void isBossHit();
 
     void shake(float deltaTime);
+
+    void createBossLaser(Matrix m, Matrix o, ConstantShader *pConstShader);
 };
 
 #endif /* Application_hpp */

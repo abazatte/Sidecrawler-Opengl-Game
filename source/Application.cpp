@@ -36,7 +36,6 @@
 
 //freetype
 #include <ft2build.h>
-#include <utils/Utils.h>
 #include FT_FREETYPE_H
 #include "../include/Enemy.h"
 
@@ -70,6 +69,11 @@ void Application::start() {
 
 void Application::update(float dtime) {
 
+    /** Init              **/
+    /**                   **/
+    /**                   **/
+    /**                   **/
+
     int upState = glfwGetKey(pWindow, GLFW_KEY_W);
     int downState = glfwGetKey(pWindow, GLFW_KEY_S);
     int positionState = glfwGetKey(pWindow, GLFW_KEY_P);
@@ -82,12 +86,14 @@ void Application::update(float dtime) {
     // std::cout << dtime << std::endl;
 
     float f = pSpaceship->getTop()->transform().translation().Y;
-    //std::cout << f << std:: endl;
+
 
     /** User input        **/
     /**                   **/
     /**                   **/
     /**                   **/
+
+
     if (f < 13.5 && upState == GLFW_PRESS && downState == GLFW_RELEASE) {
         if (item1) {
             upDown = 25.0f;
@@ -128,7 +134,22 @@ void Application::update(float dtime) {
     /**                   **/
     /**                   **/
     /**                   **/
-
+    if (laserBossTimer < 0) {
+        Matrix CP, S;
+        laserBossTimer = 2;
+        CP = pBoss->getEnemy()->transform();
+        S.scale(0.5);
+        //std::cout << pCurrentLaser << std::endl;
+        if (pCurrentBossLaser >= laserBossModels.size() - 1) {
+            pCurrentBossLaser = 0;
+            laserBossModels.at(pCurrentBossLaser)->transform(CP * S);
+            //hitboxListLaser.at(pCurrentLaser)->transform(CP);
+        } else {
+            pCurrentBossLaser++;
+            laserBossModels.at(pCurrentBossLaser)->transform(CP * S);
+            //hitboxListLaser.at(pCurrentLaser)->transform(CP);
+        }
+    }
 
     //Monster werden nach 10 Zeiteinheiten am rechten Rand platziert
     if (monsterTimer <= 0) {
@@ -155,7 +176,10 @@ void Application::update(float dtime) {
     pSpaceship->update(dtime);
     spaceship->transform(pSpaceship->getTop()->transform());
 
-    //FPS Anzeigen und Score
+
+    /** FPS Anzeigen und Score */
+
+
     crntTime = glfwGetTime();
     timeDiff = crntTime - prevTime;
     counter++;
@@ -176,6 +200,8 @@ void Application::update(float dtime) {
     if (bossHit == 100) {
         pBoss->setBossStatus(false);
     }
+
+
     /** Update alle Spielmodels **/
 
 
@@ -184,12 +210,12 @@ void Application::update(float dtime) {
         updateBoss(dtime);
         shake(dtime);
     }
+
     updateMonster(dtime);
     updateLaser(dtime);
     updateItem(dtime);
     updatePlanet(dtime);
     collisionItem(dtime);
-
     loopCollision();
     cam.update();
     if (laserTimer > -1000 && !item2) {
@@ -206,6 +232,9 @@ void Application::update(float dtime) {
     if (bossTimerMovement > -1) {
         bossTimerMovement -= dtime;
     }
+    if (laserBossTimer > -1) {
+        laserBossTimer -= dtime;
+    }
     //std::cout << laserTimer << std::endl;
 }
 
@@ -214,12 +243,13 @@ void Application::update(float dtime) {
 void Application::shake(float deltaTime) {
     Vector v, CP;
     v.X = 1;
-    v.Y = randomFloat(0.1, -0.1);
-    v.Z = randomFloat(0.1, -0.1);
+    //0.1 -0.1 sweet spot ohne DTime
+    v.Y = randomFloat(35, -35);
+    v.Z = randomFloat(35, -35);
     CP = camUrsprung;
     CP.X *= v.X;
-    CP.Y += v.Y;
-    CP.Z += v.Z;
+    CP.Y += v.Y * deltaTime;
+    CP.Z += v.Z * deltaTime;
     cam.setPosition(CP);
 
 }
@@ -240,7 +270,6 @@ void Application::updateLaser(float dtime) {
             TM.translation(0, 0, 20.0f * dtime);
             laserModels.at(i)->transform(CP * TM);
             //hitboxListLaser.at(i)->transform(CP * TM);
-
             //std::cout << "Posi Laser:" << laserModels.at(i)->transform().translation().Z << std::endl;
 
         }
@@ -255,20 +284,14 @@ void Application::updateLaser(float dtime) {
 
 void Application::updateMonster(float dtime) {
     Matrix TM, CP;
-
     for (int i = 0; i < monsterModels.size(); ++i) {
-        //TM.translation(0, 0, -10.0f * dtime * pGeschwindigkeit.at(i)); //1.0f * dtime
         if (!pBoss->isBossStatus()) {
             monsterModels.at(i)->update(dtime);
         }
         if (pBoss->isBossStatus()) {
-            //std::cout << "LOL" << std::endl;
             TM.translation(0, -50, 0);
             monsterModels.at(i)->getEnemy()->transform(TM);
         }
-        //std::cout << "Posi Monster:" << monsterModels.at(i)->transform().translation().Z << std::endl;
-        //hitboxListMonster.at(i)->transform(monsterModels.at(i)->getBlockModel()->transform());
-        //std::cout << "Posi Laser:" << laserModels.at(i)->transform().translation().Z << std::endl;
     }
 }
 
@@ -299,14 +322,14 @@ void Application::updateBoss(float dtime) {
     }
     if (pBoss->getEnemy()->transform().translation().Y > -13 &&
         pBoss->getEnemy()->transform().translation().Y < 14) {
-        if (pBoss->getEnemy()->transform().translation().Y < -11){
-            if (randomMonsterMovement < 0){
+        if (pBoss->getEnemy()->transform().translation().Y < -11) {
+            if (randomMonsterMovement < 0) {
                 randomMonsterMovement *= -1;
                 //std::cout << randomMonsterMovement << std::endl;
             }
         }
-        if (pBoss->getEnemy()->transform().translation().Y > 12){
-            if (randomMonsterMovement > 0){
+        if (pBoss->getEnemy()->transform().translation().Y > 12) {
+            if (randomMonsterMovement > 0) {
                 randomMonsterMovement *= -1;
             }
         }
@@ -314,9 +337,22 @@ void Application::updateBoss(float dtime) {
         TM.translation(0, randomMonsterMovement * dtime, 0);
         pBoss->getEnemy()->transform(CP * TM);
     }
-
-
+    if(pBoss->transform().translation().Z < 61){
+        for (int i = 0; i < laserBossModels.size(); ++i) {
+            CP = laserBossModels.at(i)->transform();
+            if (laserBossModels.at(i)->transform().translation().Y > -13 &&
+                laserBossModels.at(i)->transform().translation().Y < 14) {
+                TM.translation(0, 0, -20.0f * dtime);
+                laserBossModels.at(i)->transform(CP * TM);
+            }
+            if (laserBossModels.at(i)->transform().translation().Z < -20) {
+                TM.translation(0, -80, 0);
+                laserBossModels.at(i)->transform(CP * TM);
+            }
+        }
+    }
 }
+
 
 void Application::updatePlanet(float dtime) {
     Matrix TM, CP, CP2, N, R;
@@ -510,6 +546,7 @@ void Application::end() {
 /**                   **/
 
 
+
 void Application::createMonster(Matrix m, Matrix o, ConstantShader *pConstShader) {
     for (int i = 0; i < 10; i++) {
         std::cout << i << ". Monster wird erstellt." << std::endl;
@@ -540,6 +577,17 @@ void Application::createBoss(Matrix m, Matrix o, ConstantShader *pConstShader) {
     models.push_back(pBoss->getEnemy());
 }
 
+void Application::createBossLaser(Matrix m, Matrix o, ConstantShader *pConstShader) {
+    for (int i = 0; i < 10; i++) {
+        pModel = new Model(ASSET_DIRECTORY "sol.obj", false);
+        pModel->shader(new PhongShader(), true);
+        m.translation(0, -80, 0);
+        pModel->transform(m);
+        models.push_back(pModel);
+        laserBossModels.push_back(pModel);
+    }
+}
+
 void Application::createLaser(int modelsNumber, Matrix m, ConstantShader *pConstShader) {
     for (int i = 0; i < modelsNumber; i++) {
         std::cout << i << " wird erstellt." << std::endl;
@@ -550,7 +598,7 @@ void Application::createLaser(int modelsNumber, Matrix m, ConstantShader *pConst
         pModel->transform(m);
         models.push_back(pModel);
         laserModels.push_back(pModel);
-
+        /*
         hitboxModel = new LineBoxModel(pModel->getBlockModel()->boundingBox().Max,
                                        pModel->getBlockModel()->boundingBox().Min);
         pConstShader = new ConstantShader();
@@ -559,6 +607,7 @@ void Application::createLaser(int modelsNumber, Matrix m, ConstantShader *pConst
         hitboxModel->transform(m);
         models.push_back(hitboxModel);
         hitboxListLaser.push_back(hitboxModel);
+         */
     }
 }
 
@@ -597,6 +646,7 @@ void Application::createScene() {
 
 
     /** Skybox **/
+
 
     pModel = new Model(ASSET_DIRECTORY "skybox.obj", false);
     pModel->shader(new PhongShader(), true);
@@ -655,6 +705,7 @@ void Application::createScene() {
     createMonster(m, o, pConstShader);
     createItems(modelsNumber, m, o, pConstShader);
     createBoss(m, o, pConstShader);
+    createBossLaser(m, o, pConstShader);
 
     // directional lights
     DirectionalLight *dl = new DirectionalLight();
