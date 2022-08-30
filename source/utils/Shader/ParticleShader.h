@@ -5,10 +5,10 @@
 #ifndef CGPRAKT6_CLION_PARTICLESHADER_H
 #define CGPRAKT6_CLION_PARTICLESHADER_H
 
-#include <utils/YourClasses/color.h>
-#include <GL/glew.h>
-#include <utils/Shader/BaseShader.h>
-#include <utils/YourClasses/ColorA.h>
+#include "utils/YourClasses/color.h"
+#include "GL/glew.h"
+#include "BaseShader.h"
+#include "utils/YourClasses/ColorA.h"
 
 #define PARTICLE_ANZAHL 200
 

@@ -35,7 +35,7 @@ public:
     typedef std::list<BaseModel*> ModelList;
     typedef std::vector<BaseModel*> LaserVector;
     typedef std::vector<BaseModel*> LaserBossVector;
-    Application(GLFWwindow* pWin);
+    explicit Application(GLFWwindow* pWin);
     void start();
     void update(float dtime);
     static float randomFloat(float a, float b);

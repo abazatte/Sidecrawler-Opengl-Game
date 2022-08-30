@@ -38,6 +38,7 @@
 #include <ft2build.h>
 #include FT_FREETYPE_H
 #include "../include/Enemy.h"
+#include "utils/Shader/ParticleShader.h"
 
 #ifdef WIN32
 #define ASSET_DIRECTORY "../assets/"
@@ -77,14 +78,8 @@ void Application::update(float dtime) {
     int upState = glfwGetKey(pWindow, GLFW_KEY_W);
     int downState = glfwGetKey(pWindow, GLFW_KEY_S);
     int positionState = glfwGetKey(pWindow, GLFW_KEY_P);
-    int fireState = glfwGetKey(pWindow, GLFW_KEY_SPACE);
     int shot = glfwGetKey(pWindow, GLFW_KEY_SPACE);
-    //int forwardStat = glfwGetKey(pWindow, GLFW_KEY_D);
-    //int backward = glfwGetKey(pWindow, GLFW_KEY_A);
     float upDown = 0.0f;
-    //float forwardBackward = 0.0f;
-    // std::cout << dtime << std::endl;
-
     float f = pSpaceship->getTop()->transform().translation().Y;
 
 
@@ -108,24 +103,16 @@ void Application::update(float dtime) {
             upDown = -17.5f;
         }
     }
-    if (positionState == GLFW_PRESS) {
-        //std::cout << "x: " << pSpaceship->getTop()->transform().translation().X << "y: " << pSpaceship->getTop()->transform().translation().Y << "z: " << pSpaceship->getTop()->transform().translation().Z << std::endl;
-    }
     if (shot == GLFW_PRESS && laserTimer <= 0) {
         Matrix CP;
         laserTimer = 1;
         CP = pSpaceship->getTop()->transform();
-        //std::cout << pCurrentLaser << std::endl;
         if (pCurrentLaser >= laserModels.size() - 1) {
             pCurrentLaser = 0;
             laserModels.at(pCurrentLaser)->transform(CP);
-            //hitboxListLaser.at(pCurrentLaser)->transform(CP);
-
-
         } else {
             pCurrentLaser++;
             laserModels.at(pCurrentLaser)->transform(CP);
-            //hitboxListLaser.at(pCurrentLaser)->transform(CP);
         }
     }
 
@@ -139,15 +126,12 @@ void Application::update(float dtime) {
         laserBossTimer = 2;
         CP = pBoss->getEnemy()->transform();
         S.scale(0.5);
-        //std::cout << pCurrentLaser << std::endl;
         if (pCurrentBossLaser >= laserBossModels.size() - 1) {
             pCurrentBossLaser = 0;
             laserBossModels.at(pCurrentBossLaser)->transform(CP * S);
-            //hitboxListLaser.at(pCurrentLaser)->transform(CP);
         } else {
             pCurrentBossLaser++;
             laserBossModels.at(pCurrentBossLaser)->transform(CP * S);
-            //hitboxListLaser.at(pCurrentLaser)->transform(CP);
         }
     }
 
@@ -216,7 +200,8 @@ void Application::update(float dtime) {
     updateItem(dtime);
     updatePlanet(dtime);
     collisionItem(dtime);
-    loopCollision();
+    updateParticle(dtime);
+    loopCollision(dtime);
     cam.update();
     if (laserTimer > -1000 && !item2) {
         laserTimer = laserTimer - (dtime * 4);
@@ -259,7 +244,9 @@ void Application::shake(float deltaTime) {
 /**                   **/
 /**                   **/
 /**                   **/
-
+void Application::updateParticle(float dtime) {
+    particleSystem->update(dtime);
+}
 
 void Application::updateLaser(float dtime) {
     Matrix TM, CP;
@@ -337,7 +324,7 @@ void Application::updateBoss(float dtime) {
         TM.translation(0, randomMonsterMovement * dtime, 0);
         pBoss->getEnemy()->transform(CP * TM);
     }
-    if(pBoss->transform().translation().Z < 61){
+    if (pBoss->transform().translation().Z < 61) {
         for (int i = 0; i < laserBossModels.size(); ++i) {
             CP = laserBossModels.at(i)->transform();
             if (laserBossModels.at(i)->transform().translation().Y > -13 &&
@@ -380,7 +367,7 @@ void Application::updatePlanet(float dtime) {
 /**                   **/
 
 
-void Application::loopCollision() {
+void Application::loopCollision(float dtime) {
     Matrix TM, CP, CP2, CP3;
     for (int i = 0; i < laserModels.size(); ++i) {
         for (int j = 0; j < monsterModels.size(); ++j) {
@@ -398,6 +385,13 @@ void Application::loopCollision() {
             if (AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
                                 monsterModels.at(j)->getEnemy()->boundingBox().transform(CP2))) {
                 if (monsterModels.at(j)->getPLeben() == 0) {
+                    particleProps = ParticleProps();
+                    particleProps.position = monsterModels.at(j)->getEnemy()->transform().translation();
+                    particleProps.sizeBegin = 1;
+                    for (int k = 0; k < 10; ++k) {
+                        particleSystem->emit(particleProps);
+                    }
+
                     TM.translation(0, -40, 0);
                     laserModels.at(i)->transform(TM);
                     //hitboxListLaser.at(i)->transform(TM);
@@ -486,6 +480,7 @@ void Application::collisionItem(float dtime) {
 
 }
 
+
 void Application::isBossHit() {
     Matrix TM, CP, CP2;
     for (int i = 0; i < laserModels.size(); ++i) {
@@ -493,10 +488,19 @@ void Application::isBossHit() {
         CP2 = pBoss->getEnemy()->transform();
         if (AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
                             pBoss->getEnemy()->boundingBox().transform(CP2))) {
+
             bossHit++;
             TM.translation(0, -40, 0);
             laserModels.at(i)->transform(TM);
             if (bossHit == 100) {
+                /** Wenn boss gestorben dann particle */
+                particleProps = ParticleProps();
+                particleProps.position = CP2.translation();
+                particleProps.sizeBegin = 5;
+                particleProps.sizeEnd = 2;
+                for (int k = 0; k < 25; ++k) {
+                    particleSystem->emit(particleProps);
+                }
                 TM.translation(0, -60, 0);
                 pBoss->getEnemy()->transform(TM);
                 this->score += 10;
@@ -530,6 +534,8 @@ void Application::draw() {
     // 3. check once per frame for opengl errors
     GLenum Error = glGetError();
     assert(Error == 0);
+
+    particleSystem->draw(cam);
 }
 
 void Application::end() {
@@ -579,7 +585,7 @@ void Application::createBoss(Matrix m, Matrix o, ConstantShader *pConstShader) {
 
 void Application::createBossLaser(Matrix m, Matrix o, ConstantShader *pConstShader) {
     for (int i = 0; i < 10; i++) {
-        pModel = new Model(ASSET_DIRECTORY "sol.obj", false);
+        pModel = new Model(ASSET_DIRECTORY "Earth_2K.obj", false);
         pModel->shader(new PhongShader(), true);
         m.translation(0, -80, 0);
         pModel->transform(m);
@@ -713,6 +719,10 @@ void Application::createScene() {
     dl->color(Color(1, 1, 1));
     dl->castShadows(true);
     ShaderLightMapper::instance().addLight(dl);
+
+    particleProps = ParticleProps();
+    particleSystem = new ParticleSystem();
+    particleSystem->shader(new ParticleShader(), true);
 }
 
 

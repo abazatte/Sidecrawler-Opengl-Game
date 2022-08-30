@@ -3,7 +3,7 @@
 //
 
 #include <utils/Models/BaseModel.h>
-#include <utils/ParticleShader.h>
+#include "utils/Shader/ParticleShader.h"
 #include "../include/ParticleSystem.h"
 #include "../include/Application.h"
 
