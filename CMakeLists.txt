@@ -54,7 +54,7 @@ add_executable(${CMAKE_PROJECT_NAME}
         include/VertexBuffer.h
         source/VertexBuffer.cpp
         source/main.cpp
-        source/Spaceship.cpp include/Spaceship.h source/Text.h source/Enemy.cpp include/Enemy.h source/Items.cpp source/Items.h source/ParticleSystem.cpp include/ParticleSystem.h source/utils/Utils.cpp source/utils/Utils.h source/utils/YourClasses/ColorA.cpp source/utils/YourClasses/ColorA.h source/utils/ParticleShader.cpp source/utils/ParticleShader.h source/ParticleProps.cpp source/ParticleProps.h)
+        source/Spaceship.cpp include/Spaceship.h source/Text.h source/Enemy.cpp include/Enemy.h source/Items.cpp source/Items.h source/ParticleSystem.cpp include/ParticleSystem.h source/utils/Utils.cpp source/utils/Utils.h source/utils/YourClasses/ColorA.cpp source/utils/YourClasses/ColorA.h source/utils/Shader/ParticleShader.cpp source/utils/Shader/ParticleShader.h source/ParticleProps.cpp source/ParticleProps.h)
 
 include_directories(
         source
