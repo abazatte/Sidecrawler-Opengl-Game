@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <list>
+#include <ParticleProps.h>
 #include "camera.h"
 
 #include "utils/Shader/ConstantShader.h"
@@ -22,6 +23,7 @@
 #include "utils/Models/LineBoxModel.h"
 #include "Enemy.h"
 #include "Items.h"
+#include "ParticleSystem.h"
 
 class Application
 {
@@ -83,13 +85,16 @@ protected:
     Spaceship* pSpaceship;
     Enemy* pEnemy;
     Enemy* pBoss;
+
+    ParticleProps particleProps;
+    ParticleSystem* particleSystem;
 public:
     Enemy *getPBoss() const;
 
 protected:
     Items* pItem;
     ShadowMapGenerator shadowGenerator;
-    void loopCollision();
+    void loopCollision(float dtime);
     void updatePlanet(float dtime);
     void createMonster(Matrix m,Matrix o,ConstantShader *pConstShader);
     void createLaser(int modelsNumber, Matrix m,ConstantShader *pConstShader);
@@ -101,6 +106,7 @@ protected:
     void createScene();
     void updateLaser(float dtime);
     void updateBoss(float dtime);
+    void updateParticle(float dtime);
     void isBossHit();
 
     void shake(float deltaTime);
