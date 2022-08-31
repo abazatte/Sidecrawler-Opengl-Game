@@ -116,6 +116,27 @@ void Application::update(float dtime) {
         }
     }
 
+    /**  Particle    **/
+    /**  Effects für **/
+    /**  Raumschiff  **/
+    /**              **/
+    if (particleSchubTimer < 0) {
+        Vector pos = pSpaceship->getTop()->transform().translation();
+        pos.Z = pSpaceship->getTop()->transform().translation().Z - 2;
+        particleProps = ParticleProps();
+        particleProps.position = pos;
+        particleProps.velocity = Vector(0,0,-15);
+        particleProps.sizeBegin = 1;
+        particleProps.sizeVariation = 0.5f;
+        particleProps.sizeEnd = 0.001f;
+        particleProps.lifeTime = 1;
+
+        particleSystem->emit(particleProps);
+
+        particleSchubTimer = 0.05f;
+    }
+
+
 
     /**  DTIME METHODEN   **/
     /**                   **/
@@ -181,7 +202,7 @@ void Application::update(float dtime) {
     if (score == 2) {
         pBoss->setBossStatus(true);
     }
-    if (bossHit == 100) {
+    if (bossHit == 10) {
         pBoss->setBossStatus(false);
     }
 
@@ -219,6 +240,9 @@ void Application::update(float dtime) {
     }
     if (laserBossTimer > -1) {
         laserBossTimer -= dtime;
+    }
+    if (particleSchubTimer >= 0) {
+        particleSchubTimer -= dtime;
     }
     //std::cout << laserTimer << std::endl;
 }
@@ -492,13 +516,23 @@ void Application::isBossHit() {
             bossHit++;
             TM.translation(0, -40, 0);
             laserModels.at(i)->transform(TM);
-            if (bossHit == 100) {
+            if (bossHit == 10) {
                 /** Wenn boss gestorben dann particle */
                 particleProps = ParticleProps();
                 particleProps.position = CP2.translation();
-                particleProps.sizeBegin = 5;
-                particleProps.sizeEnd = 2;
-                for (int k = 0; k < 25; ++k) {
+                particleProps.velocity = Vector(-2, 0.6f, 0.6f);
+                particleProps.velocityVariation = Vector(1, 0.3f, 0.3f);
+                particleProps.rotation = Vector(0, 0, 0);
+                particleProps.rotationSpeed = Vector(2.0f*3.14f, 2.0f*3.14f, 2.0f*3.14f);
+                particleProps.colorBegin = ColorA(1,0,0,1);
+
+
+                particleProps.sizeBegin = 3;
+                particleProps.sizeEnd = 0.001f;
+                particleProps.sizeVariation = 1;
+
+                particleProps.lifeTime = 1.0f;
+                for (int k = 0; k < 15; ++k) {
                     particleSystem->emit(particleProps);
                 }
                 TM.translation(0, -60, 0);
