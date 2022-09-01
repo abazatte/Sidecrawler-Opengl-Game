@@ -125,7 +125,7 @@ void Application::update(float dtime) {
         pos.Z = pSpaceship->getTop()->transform().translation().Z - 2;
         particleProps = ParticleProps();
         particleProps.position = pos;
-        particleProps.velocity = Vector(0,0,-15);
+        particleProps.velocity = Vector(0, 0, -15);
         particleProps.sizeBegin = 1;
         particleProps.sizeVariation = 0.5f;
         particleProps.sizeEnd = 0.001f;
@@ -169,6 +169,13 @@ void Application::update(float dtime) {
             pCurrentMonster++;
             monsterModels.at(pCurrentMonster)->getEnemy()->transform(CP);
         }
+
+    }
+    if(itemTimer <= 0){
+        Matrix CP;
+        itemTimer = 20;
+        float tmp = randomFloat(12, -12);
+        CP.translation(0, tmp, 90);
         if (pCurrentItem >= itemsModels.size() - 1) {
             pCurrentItem = 0;
             itemsModels.at(pCurrentItem)->getItem()->transform(CP);
@@ -177,6 +184,7 @@ void Application::update(float dtime) {
             itemsModels.at(pCurrentItem)->getItem()->transform(CP);
         }
     }
+
     pSpaceship->steer(upDown);
     pSpaceship->update(dtime);
     spaceship->transform(pSpaceship->getTop()->transform());
@@ -204,6 +212,11 @@ void Application::update(float dtime) {
     }
     if (bossHit == 10) {
         pBoss->setBossStatus(false);
+        Matrix TM;
+        for (int i = 0; i < laserBossModels.size(); ++i) {
+            TM.translation(0, -80, 0);
+            laserBossModels.at(i)->transform(TM);
+        }
     }
 
 
@@ -213,7 +226,7 @@ void Application::update(float dtime) {
     if (pBoss->isBossStatus() && bossTimer < 0) {
         isBossHit();
         updateBoss(dtime);
-        shake(dtime);
+        shake(dtime,35,35);
     }
 
     updateMonster(dtime);
@@ -221,9 +234,12 @@ void Application::update(float dtime) {
     updateItem(dtime);
     updatePlanet(dtime);
     collisionItem(dtime);
+    collisionPlayer(dtime);
     updateParticle(dtime);
     loopCollision(dtime);
     cam.update();
+
+    /** TIMER UPDATE  */
     if (laserTimer > -1000 && !item2) {
         laserTimer = laserTimer - (dtime * 4);
     } else if (laserTimer > -1000 && item2) {
@@ -244,21 +260,23 @@ void Application::update(float dtime) {
     if (particleSchubTimer >= 0) {
         particleSchubTimer -= dtime;
     }
-    //std::cout << laserTimer << std::endl;
+    if(itemTimer > -1){
+        itemTimer -= dtime;
+    }
 }
 
 /** Dance til your dead **/
 
-void Application::shake(float deltaTime) {
+void Application::shake(float dtime, int a, int b) {
     Vector v, CP;
     v.X = 1;
     //0.1 -0.1 sweet spot ohne DTime
-    v.Y = randomFloat(35, -35);
-    v.Z = randomFloat(35, -35);
+    v.Y = randomFloat(a, -b);
+    v.Z = randomFloat(a, -b);
     CP = camUrsprung;
     CP.X *= v.X;
-    CP.Y += v.Y * deltaTime;
-    CP.Z += v.Z * deltaTime;
+    CP.Y += v.Y * dtime;
+    CP.Z += v.Z * dtime;
     cam.setPosition(CP);
 
 }
@@ -360,10 +378,10 @@ void Application::updateBoss(float dtime) {
                 TM.translation(0, -80, 0);
                 laserBossModels.at(i)->transform(CP * TM);
             }
+
         }
     }
 }
-
 
 void Application::updatePlanet(float dtime) {
     Matrix TM, CP, CP2, N, R;
@@ -389,6 +407,18 @@ void Application::updatePlanet(float dtime) {
 /**                   **/
 /**                   **/
 /**                   **/
+void Application::collisionPlayer(float dtime){
+    Matrix TM, CP, CP2, CP3;
+    for (int i = 0; i < laserBossModels.size(); ++i) {
+        CP = laserBossModels.at(i)->transform();
+        CP2 = pSpaceship->getTop()->transform();
+        if (AABB::collision(pSpaceship->boundingBox().transform(CP2),
+                            laserBossModels.at(i)->boundingBox().transform(CP))) {
+            TM.translation(0, -80, 0);
+            laserBossModels.at(i)->transform(TM);
+        }
+    }
+}
 
 
 void Application::loopCollision(float dtime) {
@@ -403,7 +433,9 @@ void Application::loopCollision(float dtime) {
                 TM.translation(0, -50, 0);
                 monsterModels.at(j)->getEnemy()->transform(TM);
                 //std::cout<< "du wurdest getroffen von Monster Nummer: " << j << std::endl;
-                score -= 1;
+                if (score > 1) {
+                    score -= 1;
+                }
 
             }
             if (AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
@@ -523,8 +555,8 @@ void Application::isBossHit() {
                 particleProps.velocity = Vector(-2, 0.6f, 0.6f);
                 particleProps.velocityVariation = Vector(1, 0.3f, 0.3f);
                 particleProps.rotation = Vector(0, 0, 0);
-                particleProps.rotationSpeed = Vector(2.0f*3.14f, 2.0f*3.14f, 2.0f*3.14f);
-                particleProps.colorBegin = ColorA(1,0,0,1);
+                particleProps.rotationSpeed = Vector(2.0f * 3.14f, 2.0f * 3.14f, 2.0f * 3.14f);
+                particleProps.colorBegin = ColorA(1, 0, 0, 1);
 
 
                 particleProps.sizeBegin = 3;
@@ -682,6 +714,7 @@ void Application::createScene() {
     pCurrentItem = 0;
     laserTimer = 0;
     monsterTimer = 3;
+    itemTimer = 6;
     score = 0;
 
 

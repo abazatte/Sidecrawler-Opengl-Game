@@ -55,6 +55,7 @@ protected:
     float randomMonsterMovement = 1.0f;
     float adjustAmplitudePerSecond = -10.0f;
     float timeElapsed = 0.0f;
+    float itemTimer;
     float laserTimer;
     float monsterTimer;
     float bossTimer = 5.0f;
@@ -110,9 +111,10 @@ protected:
     void updateParticle(float dtime);
     void isBossHit();
 
-    void shake(float deltaTime);
+    void shake(float dtime, int a, int b);
 
     void createBossLaser(Matrix m, Matrix o, ConstantShader *pConstShader);
+    void collisionPlayer(float dtime);
 };
 
 #endif /* Application_hpp */
