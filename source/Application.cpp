@@ -414,6 +414,12 @@ void Application::collisionPlayer(float dtime){
         CP2 = pSpaceship->getTop()->transform();
         if (AABB::collision(pSpaceship->boundingBox().transform(CP2),
                             laserBossModels.at(i)->boundingBox().transform(CP))) {
+            particleProps = ParticleProps();
+            particleProps.position = laserBossModels.at(i)->transform().translation();
+            particleProps.sizeBegin = 2;
+            for (int k = 0; k < 10; ++k) {
+                particleSystem->emit(particleProps);
+            }
             TM.translation(0, -80, 0);
             laserBossModels.at(i)->transform(TM);
         }
