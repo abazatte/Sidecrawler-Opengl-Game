@@ -147,6 +147,7 @@ void Application::update(float dtime) {
         particleProps.sizeVariation = 0.5f;
         particleProps.sizeEnd = 0.001f;
         particleProps.lifeTime = 1;
+
         particleSystem->emit(particleProps);
 
         particleSchubTimer = 0.05f;
@@ -450,38 +451,38 @@ void Application::collisionPlayer(float dtime) {
             particleProps.sizeBegin = 2;
 
             for (int j = 0; j < 3; ++j) {
-                float speed = Application::randomFloat(-4,4);
+                float speed = Application::randomFloat(-4, 4);
                 particleProps.velocity = Vector(0, speed, 0);
                 particleSystem->emit(particleProps);
             }
             for (int j = 0; j < 3; ++j) {
-                float speed = Application::randomFloat(-4,4);
+                float speed = Application::randomFloat(-4, 4);
                 particleProps.velocity = Vector(speed, speed, 0);
                 particleSystem->emit(particleProps);
             }
             for (int k = 0; k < 3; ++k) {
-                float speed = Application::randomFloat(-4,4);
+                float speed = Application::randomFloat(-4, 4);
                 particleProps.velocity = Vector(speed, 0, 0);
                 particleSystem->emit(particleProps);
             }
             for (int k = 0; k < 3; ++k) {
-                float speed = Application::randomFloat(-4,4);
+                float speed = Application::randomFloat(-4, 4);
                 particleProps.velocity = Vector(speed, 0, speed);
                 particleSystem->emit(particleProps);
             }
             for (int j = 0; j < 3; ++j) {
-                float speed = Application::randomFloat(-4,4);
+                float speed = Application::randomFloat(-4, 4);
                 particleProps.velocity = Vector(0, 0, speed);
                 particleSystem->emit(particleProps);
             }
             for (int j = 0; j < 3; ++j) {
-                float speed = Application::randomFloat(-4,4);
+                float speed = Application::randomFloat(-4, 4);
                 particleProps.velocity = Vector(0, speed, speed);
                 particleSystem->emit(particleProps);
             }
 
             for (int j = 0; j < 3; ++j) {
-                float speed = Application::randomFloat(-4,4);
+                float speed = Application::randomFloat(-4, 4);
                 particleProps.velocity = Vector(speed, speed, speed);
                 particleSystem->emit(particleProps);
             }
@@ -517,38 +518,38 @@ void Application::loopCollision(float dtime) {
                     particleProps.sizeBegin = 1;
 
                     for (int j = 0; j < 3; ++j) {
-                        float speed = Application::randomFloat(-4,4);
+                        float speed = Application::randomFloat(-4, 4);
                         particleProps.velocity = Vector(0, speed, 0);
                         particleSystem->emit(particleProps);
                     }
                     for (int j = 0; j < 3; ++j) {
-                        float speed = Application::randomFloat(-4,4);
+                        float speed = Application::randomFloat(-4, 4);
                         particleProps.velocity = Vector(speed, speed, 0);
                         particleSystem->emit(particleProps);
                     }
                     for (int k = 0; k < 3; ++k) {
-                        float speed = Application::randomFloat(-4,4);
+                        float speed = Application::randomFloat(-4, 4);
                         particleProps.velocity = Vector(speed, 0, 0);
                         particleSystem->emit(particleProps);
                     }
                     for (int k = 0; k < 3; ++k) {
-                        float speed = Application::randomFloat(-4,4);
+                        float speed = Application::randomFloat(-4, 4);
                         particleProps.velocity = Vector(speed, 0, speed);
                         particleSystem->emit(particleProps);
                     }
                     for (int j = 0; j < 3; ++j) {
-                        float speed = Application::randomFloat(-4,4);
+                        float speed = Application::randomFloat(-4, 4);
                         particleProps.velocity = Vector(0, 0, speed);
                         particleSystem->emit(particleProps);
                     }
                     for (int j = 0; j < 3; ++j) {
-                        float speed = Application::randomFloat(-4,4);
+                        float speed = Application::randomFloat(-4, 4);
                         particleProps.velocity = Vector(0, speed, speed);
                         particleSystem->emit(particleProps);
                     }
 
                     for (int j = 0; j < 3; ++j) {
-                        float speed = Application::randomFloat(-4,4);
+                        float speed = Application::randomFloat(-4, 4);
                         particleProps.velocity = Vector(speed, speed, speed);
                         particleSystem->emit(particleProps);
                     }
@@ -563,6 +564,7 @@ void Application::loopCollision(float dtime) {
                     } else {
                         score++;
                     }
+
 
                 } else {
                     TM.translation(0, -40, 0);
@@ -643,7 +645,7 @@ void Application::collisionItem(float dtime) {
 
 
 void Application::isBossHit() {
-    Matrix TM, CP, CP2;
+    Matrix TM, CP, CP2, CP3;
     for (int i = 0; i < laserModels.size(); ++i) {
         CP = laserModels.at(i)->transform();
         CP2 = pBoss->getEnemy()->transform();
@@ -661,38 +663,38 @@ void Application::isBossHit() {
                 particleProps.lifeTime = 1.0f;
 
                 for (int j = 0; j < 3; ++j) {
-                    float speed = Application::randomFloat(-8,8);
+                    float speed = Application::randomFloat(-8, 8);
                     particleProps.velocity = Vector(0, speed, 0);
                     particleSystem->emit(particleProps);
                 }
                 for (int j = 0; j < 3; ++j) {
-                    float speed = Application::randomFloat(-8,8);
+                    float speed = Application::randomFloat(-8, 8);
                     particleProps.velocity = Vector(speed, speed, 0);
                     particleSystem->emit(particleProps);
                 }
                 for (int k = 0; k < 3; ++k) {
-                    float speed = Application::randomFloat(-8,8);
+                    float speed = Application::randomFloat(-8, 8);
                     particleProps.velocity = Vector(speed, 0, 0);
                     particleSystem->emit(particleProps);
                 }
                 for (int k = 0; k < 3; ++k) {
-                    float speed = Application::randomFloat(-8,8);
+                    float speed = Application::randomFloat(-8, 8);
                     particleProps.velocity = Vector(speed, 0, speed);
                     particleSystem->emit(particleProps);
                 }
                 for (int j = 0; j < 3; ++j) {
-                    float speed = Application::randomFloat(-8,8);
+                    float speed = Application::randomFloat(-8, 8);
                     particleProps.velocity = Vector(0, 0, speed);
                     particleSystem->emit(particleProps);
                 }
                 for (int j = 0; j < 3; ++j) {
-                    float speed = Application::randomFloat(-8,8);
+                    float speed = Application::randomFloat(-8, 8);
                     particleProps.velocity = Vector(0, speed, speed);
                     particleSystem->emit(particleProps);
                 }
 
                 for (int j = 0; j < 3; ++j) {
-                    float speed = Application::randomFloat(-8,8);
+                    float speed = Application::randomFloat(-8, 8);
                     particleProps.velocity = Vector(speed, speed, speed);
                     particleSystem->emit(particleProps);
                 }
@@ -700,6 +702,19 @@ void Application::isBossHit() {
                 TM.translation(0, -60, 0);
                 pBoss->getEnemy()->transform(TM);
                 this->score += 10;
+            }
+        }
+        for (int j = 0; j < laserBossModels.size(); ++j) {
+            CP3 = laserBossModels.at(j)->transform();
+            if (AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
+                                laserBossModels.at(j)->boundingBox().transform(CP3))) {
+                if (laserBossModels.at(j)->isHitBefore()) {
+                    TM.translation(0, -80, 0);
+                    laserBossModels.at(j)->transform(TM);
+                }
+                TM.translation(0, -40, 0);
+                laserModels.at(i)->transform(TM);
+                laserBossModels.at(j)->setHitBefore(true);
             }
         }
     }

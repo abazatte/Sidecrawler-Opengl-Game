@@ -42,3 +42,11 @@ BaseModel* BaseModel::getBlockModel(){
     return this;
 }
 
+bool BaseModel::isHitBefore() {
+    return hitBefore;
+}
+
+void BaseModel::setHitBefore(bool hitBefore) {
+    BaseModel::hitBefore = hitBefore;
+}
+

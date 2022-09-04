@@ -27,6 +27,7 @@ public:
     virtual BaseShader* shader() const { return pShader; }
     virtual const AABB& boundingBox() const { return AABB::unitBox(); }
 	bool shadowCaster() const { return ShadowCaster; }
+    bool isHitBefore();
 	void shadowCaster(bool sc) { ShadowCaster = sc; }
     BaseModel* getBlockModel();
 protected:
@@ -34,7 +35,9 @@ protected:
     BaseShader* pShader;
     bool DeleteShader;
 	bool ShadowCaster;
-        
+    bool hitBefore = false;
+public:
+    void setHitBefore(bool hitBefore);
 };
 
 
