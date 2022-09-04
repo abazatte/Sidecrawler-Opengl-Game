@@ -147,7 +147,6 @@ void Application::update(float dtime) {
         particleProps.sizeVariation = 0.5f;
         particleProps.sizeEnd = 0.001f;
         particleProps.lifeTime = 1;
-
         particleSystem->emit(particleProps);
 
         particleSchubTimer = 0.05f;
@@ -449,7 +448,41 @@ void Application::collisionPlayer(float dtime) {
             particleProps = ParticleProps();
             particleProps.position = laserBossModels.at(i)->transform().translation();
             particleProps.sizeBegin = 2;
-            for (int k = 0; k < 10; ++k) {
+
+            for (int j = 0; j < 3; ++j) {
+                float speed = Application::randomFloat(-4,4);
+                particleProps.velocity = Vector(0, speed, 0);
+                particleSystem->emit(particleProps);
+            }
+            for (int j = 0; j < 3; ++j) {
+                float speed = Application::randomFloat(-4,4);
+                particleProps.velocity = Vector(speed, speed, 0);
+                particleSystem->emit(particleProps);
+            }
+            for (int k = 0; k < 3; ++k) {
+                float speed = Application::randomFloat(-4,4);
+                particleProps.velocity = Vector(speed, 0, 0);
+                particleSystem->emit(particleProps);
+            }
+            for (int k = 0; k < 3; ++k) {
+                float speed = Application::randomFloat(-4,4);
+                particleProps.velocity = Vector(speed, 0, speed);
+                particleSystem->emit(particleProps);
+            }
+            for (int j = 0; j < 3; ++j) {
+                float speed = Application::randomFloat(-4,4);
+                particleProps.velocity = Vector(0, 0, speed);
+                particleSystem->emit(particleProps);
+            }
+            for (int j = 0; j < 3; ++j) {
+                float speed = Application::randomFloat(-4,4);
+                particleProps.velocity = Vector(0, speed, speed);
+                particleSystem->emit(particleProps);
+            }
+
+            for (int j = 0; j < 3; ++j) {
+                float speed = Application::randomFloat(-4,4);
+                particleProps.velocity = Vector(speed, speed, speed);
                 particleSystem->emit(particleProps);
             }
             TM.translation(0, -80, 0);
@@ -482,7 +515,41 @@ void Application::loopCollision(float dtime) {
                     particleProps = ParticleProps();
                     particleProps.position = monsterModels.at(j)->getEnemy()->transform().translation();
                     particleProps.sizeBegin = 1;
-                    for (int k = 0; k < 10; ++k) {
+
+                    for (int j = 0; j < 3; ++j) {
+                        float speed = Application::randomFloat(-4,4);
+                        particleProps.velocity = Vector(0, speed, 0);
+                        particleSystem->emit(particleProps);
+                    }
+                    for (int j = 0; j < 3; ++j) {
+                        float speed = Application::randomFloat(-4,4);
+                        particleProps.velocity = Vector(speed, speed, 0);
+                        particleSystem->emit(particleProps);
+                    }
+                    for (int k = 0; k < 3; ++k) {
+                        float speed = Application::randomFloat(-4,4);
+                        particleProps.velocity = Vector(speed, 0, 0);
+                        particleSystem->emit(particleProps);
+                    }
+                    for (int k = 0; k < 3; ++k) {
+                        float speed = Application::randomFloat(-4,4);
+                        particleProps.velocity = Vector(speed, 0, speed);
+                        particleSystem->emit(particleProps);
+                    }
+                    for (int j = 0; j < 3; ++j) {
+                        float speed = Application::randomFloat(-4,4);
+                        particleProps.velocity = Vector(0, 0, speed);
+                        particleSystem->emit(particleProps);
+                    }
+                    for (int j = 0; j < 3; ++j) {
+                        float speed = Application::randomFloat(-4,4);
+                        particleProps.velocity = Vector(0, speed, speed);
+                        particleSystem->emit(particleProps);
+                    }
+
+                    for (int j = 0; j < 3; ++j) {
+                        float speed = Application::randomFloat(-4,4);
+                        particleProps.velocity = Vector(speed, speed, speed);
                         particleSystem->emit(particleProps);
                     }
 
@@ -590,21 +657,46 @@ void Application::isBossHit() {
                 /** Wenn boss gestorben dann particle */
                 particleProps = ParticleProps();
                 particleProps.position = CP2.translation();
-                particleProps.velocity = Vector(-2, 0.6f, 0.6f);
-                particleProps.velocityVariation = Vector(1, 0.3f, 0.3f);
-                particleProps.rotation = Vector(0, 0, 0);
-                particleProps.rotationSpeed = Vector(2.0f * 3.14f, 2.0f * 3.14f, 2.0f * 3.14f);
-                particleProps.colorBegin = ColorA(1, 0, 0, 1);
-
-
                 particleProps.sizeBegin = 3;
-                particleProps.sizeEnd = 0.001f;
-                particleProps.sizeVariation = 1;
-
                 particleProps.lifeTime = 1.0f;
-                for (int k = 0; k < 15; ++k) {
+
+                for (int j = 0; j < 3; ++j) {
+                    float speed = Application::randomFloat(-8,8);
+                    particleProps.velocity = Vector(0, speed, 0);
                     particleSystem->emit(particleProps);
                 }
+                for (int j = 0; j < 3; ++j) {
+                    float speed = Application::randomFloat(-8,8);
+                    particleProps.velocity = Vector(speed, speed, 0);
+                    particleSystem->emit(particleProps);
+                }
+                for (int k = 0; k < 3; ++k) {
+                    float speed = Application::randomFloat(-8,8);
+                    particleProps.velocity = Vector(speed, 0, 0);
+                    particleSystem->emit(particleProps);
+                }
+                for (int k = 0; k < 3; ++k) {
+                    float speed = Application::randomFloat(-8,8);
+                    particleProps.velocity = Vector(speed, 0, speed);
+                    particleSystem->emit(particleProps);
+                }
+                for (int j = 0; j < 3; ++j) {
+                    float speed = Application::randomFloat(-8,8);
+                    particleProps.velocity = Vector(0, 0, speed);
+                    particleSystem->emit(particleProps);
+                }
+                for (int j = 0; j < 3; ++j) {
+                    float speed = Application::randomFloat(-8,8);
+                    particleProps.velocity = Vector(0, speed, speed);
+                    particleSystem->emit(particleProps);
+                }
+
+                for (int j = 0; j < 3; ++j) {
+                    float speed = Application::randomFloat(-8,8);
+                    particleProps.velocity = Vector(speed, speed, speed);
+                    particleSystem->emit(particleProps);
+                }
+
                 TM.translation(0, -60, 0);
                 pBoss->getEnemy()->transform(TM);
                 this->score += 10;
