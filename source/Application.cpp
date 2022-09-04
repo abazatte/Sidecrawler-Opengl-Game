@@ -69,6 +69,23 @@ void Application::start() {
 }
 
 void Application::update(float dtime) {
+    /**     Camfahrt      **/
+    /**                   **/
+    /**                   **/
+    /**                   **/
+    /*if (!game) {
+        if (cam.position().X <= -25) {
+            Vector v1 = pSpaceship->getTop()->transform().translation();
+            v1.Z += 30;
+            cam.setTarget(v1);
+            cam.setPosition(camUrsprung);
+            game = true;
+        } else {
+            Vector trans(cam.position().X - (dtime),0,cam.position().Z);
+            cam.setPosition(trans);
+        }
+    } else {
+*/
 
     /** Init              **/
     /**                   **/
@@ -171,7 +188,7 @@ void Application::update(float dtime) {
         }
 
     }
-    if(itemTimer <= 0){
+    if (itemTimer <= 0) {
         Matrix CP;
         itemTimer = 20;
         float tmp = randomFloat(12, -12);
@@ -224,9 +241,23 @@ void Application::update(float dtime) {
 
 
     if (pBoss->isBossStatus() && bossTimer < 0) {
+        if (camTimer > 0) {
+            cam.setTarget(pBoss->getEnemy()->transform().translation());
+            camTimer -= dtime;
+        } else {
+            //Vector v1 = pSpaceship->getTop()->transform().translation();
+            //v1.Z += 30;
+            v1.X += 25;
+            cam.setTarget(v1);
+            v1.X -= 25;
+            cam.setPosition(camUrsprung);
+        }
+
+
         isBossHit();
         updateBoss(dtime);
-        shake(dtime,35,35);
+
+        shake(dtime, 35, 35);
     }
 
     updateMonster(dtime);
@@ -260,9 +291,10 @@ void Application::update(float dtime) {
     if (particleSchubTimer >= 0) {
         particleSchubTimer -= dtime;
     }
-    if(itemTimer > -1){
+    if (itemTimer > -1) {
         itemTimer -= dtime;
     }
+    // }
 }
 
 /** Dance til your dead **/
@@ -407,7 +439,7 @@ void Application::updatePlanet(float dtime) {
 /**                   **/
 /**                   **/
 /**                   **/
-void Application::collisionPlayer(float dtime){
+void Application::collisionPlayer(float dtime) {
     Matrix TM, CP, CP2, CP3;
     for (int i = 0; i < laserBossModels.size(); ++i) {
         CP = laserBossModels.at(i)->transform();
@@ -485,7 +517,7 @@ void Application::collisionItem(float dtime) {
         CP2 = pSpaceship->getTop()->transform();
         if (AABB::collision(pSpaceship->boundingBox().transform(CP2),
                             itemsModels.at(i)->getItem()->boundingBox().transform(CP))) {
-            std::cout << "Item hittet" << std::endl;
+            //std::cout << "Item hittet" << std::endl;
             //Schneller Bewegen Buff
             if (itemsModels.at(i)->getType() == 0) {
                 //Falls Item doppelt eingesammelt wird
@@ -517,7 +549,7 @@ void Application::collisionItem(float dtime) {
     if (item1) {
         itemTime -= dtime;
         if (itemTime <= 0) {
-            std::cout << itemTime << "HOCHRUNTER" << std::endl;
+            //std::cout << itemTime << "HOCHRUNTER" << std::endl;
             item1 = false;
             itemTime = 3;
         }
@@ -526,7 +558,7 @@ void Application::collisionItem(float dtime) {
     if (item2) {
         item2Time -= dtime;
         if (item2Time <= 0) {
-            std::cout << item2Time << "FAST" << std::endl;
+            //std::cout << item2Time << "FAST" << std::endl;
             item2 = false;
             item2Time = 3;
         }
@@ -534,7 +566,7 @@ void Application::collisionItem(float dtime) {
     if (item3) {
         item3Time -= dtime;
         if (item3Time <= 0) {
-            std::cout << item3Time << "FAST" << std::endl;
+            //std::cout << item3Time << "FAST" << std::endl;
             item3 = false;
             item3Time = 3;
         }
@@ -627,7 +659,7 @@ void Application::end() {
 
 void Application::createMonster(Matrix m, Matrix o, ConstantShader *pConstShader) {
     for (int i = 0; i < 10; i++) {
-        std::cout << i << ". Monster wird erstellt." << std::endl;
+        //std::cout << i << ". Monster wird erstellt." << std::endl;
         pEnemy = new Enemy(ASSET_DIRECTORY "enemy.obj");
         m.translation(0, -50, 0);
         o.rotationY(AI_DEG_TO_RAD(180.0f));
@@ -668,7 +700,7 @@ void Application::createBossLaser(Matrix m, Matrix o, ConstantShader *pConstShad
 
 void Application::createLaser(int modelsNumber, Matrix m, ConstantShader *pConstShader) {
     for (int i = 0; i < modelsNumber; i++) {
-        std::cout << i << " wird erstellt." << std::endl;
+        //std::cout << i << " wird erstellt." << std::endl;
         pModel = new Model(ASSET_DIRECTORY "LaserTry.obj", false);
         pModel->shader(new PhongShader(), true);
         //pModel->shadowCaster(false);
@@ -691,7 +723,7 @@ void Application::createLaser(int modelsNumber, Matrix m, ConstantShader *pConst
 
 void Application::createItems(int modelsNumber, Matrix m, Matrix o, ConstantShader *pConstShader) {
     for (int i = 0; i < 5; i++) {
-        std::cout << i << " Item wird erstellt." << std::endl;
+        //std::cout << i << " Item wird erstellt." << std::endl;
         pItem = new Items();
         m.translation(0, -60, 0);
         o.rotationY(AI_DEG_TO_RAD(180.0f));
@@ -741,7 +773,7 @@ void Application::createScene() {
 
     pSpaceship = new Spaceship(ASSET_DIRECTORY "woodenObje.obj");
     models.push_back(pSpaceship->getTop());
-    Vector v1 = pSpaceship->getTop()->transform().translation();
+    v1 = pSpaceship->getTop()->transform().translation();
     v1.Z += 30;
     cam.setTarget(v1);
     //v1.Z -= 30;

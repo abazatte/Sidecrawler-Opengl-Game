@@ -52,6 +52,7 @@ protected:
     bool item1 = false;
     bool item2 = false;
     bool item3 = false;
+    bool game = false;
     float randomMonsterMovement = 1.0f;
     float adjustAmplitudePerSecond = -10.0f;
     float timeElapsed = 0.0f;
@@ -64,12 +65,14 @@ protected:
     float itemTime = 3.0f;
     float item2Time = 3.0f;
     float item3Time = 3.0f;
+    float camTimer = 2.0f;
     float particleSchubTimer = 0.05f;
     double prevTime = 0.0;
     double crntTime = 0.0;
     double timeDiff;
     unsigned int counter = 0;
     Vector camUrsprung;
+    Vector v1;
     Camera cam;
     ModelList models;
     MonsterVector monsterModels;
