@@ -257,7 +257,7 @@ void Application::update(float dtime) {
         isBossHit();
         updateBoss(dtime);
 
-        shake(dtime, 35, 35);
+        shake(dtime, 15, 15);
     }
 
     updateMonster(dtime);
@@ -398,11 +398,14 @@ void Application::updateBoss(float dtime) {
         TM.translation(0, randomMonsterMovement * dtime, 0);
         pBoss->getEnemy()->transform(CP * TM);
     }
+    Matrix R, RI;
     if (pBoss->transform().translation().Z < 61) {
         for (int i = 0; i < laserBossModels.size(); ++i) {
             CP = laserBossModels.at(i)->transform();
             if (laserBossModels.at(i)->transform().translation().Y > -13 &&
                 laserBossModels.at(i)->transform().translation().Y < 14) {
+                //R.rotationY(AI_DEG_TO_RAD(25) * dtime);
+                //RI = R.invert();
                 TM.translation(0, 0, -20.0f * dtime);
                 laserBossModels.at(i)->transform(CP * TM);
             }
@@ -708,7 +711,48 @@ void Application::isBossHit() {
             CP3 = laserBossModels.at(j)->transform();
             if (AABB::collision(laserModels.at(i)->boundingBox().transform(CP),
                                 laserBossModels.at(j)->boundingBox().transform(CP3))) {
+
                 if (laserBossModels.at(j)->isHitBefore()) {
+                    particleProps = ParticleProps();
+                    particleProps.position = CP3.translation();
+                    particleProps.sizeBegin = 2;
+                    particleProps.lifeTime = 1.0f;
+                    for (int j = 0; j < 3; ++j) {
+                        float speed = Application::randomFloat(-4, 4);
+                        particleProps.velocity = Vector(0, speed, 0);
+                        particleSystem->emit(particleProps);
+                    }
+                    for (int j = 0; j < 3; ++j) {
+                        float speed = Application::randomFloat(-4, 4);
+                        particleProps.velocity = Vector(speed, speed, 0);
+                        particleSystem->emit(particleProps);
+                    }
+                    for (int k = 0; k < 3; ++k) {
+                        float speed = Application::randomFloat(-4, 4);
+                        particleProps.velocity = Vector(speed, 0, 0);
+                        particleSystem->emit(particleProps);
+                    }
+                    for (int k = 0; k < 3; ++k) {
+                        float speed = Application::randomFloat(-4, 4);
+                        particleProps.velocity = Vector(speed, 0, speed);
+                        particleSystem->emit(particleProps);
+                    }
+                    for (int j = 0; j < 3; ++j) {
+                        float speed = Application::randomFloat(-4, 4);
+                        particleProps.velocity = Vector(0, 0, speed);
+                        particleSystem->emit(particleProps);
+                    }
+                    for (int j = 0; j < 3; ++j) {
+                        float speed = Application::randomFloat(-4, 4);
+                        particleProps.velocity = Vector(0, speed, speed);
+                        particleSystem->emit(particleProps);
+                    }
+
+                    for (int j = 0; j < 3; ++j) {
+                        float speed = Application::randomFloat(-4, 4);
+                        particleProps.velocity = Vector(speed, speed, speed);
+                        particleSystem->emit(particleProps);
+                    }
                     TM.translation(0, -80, 0);
                     laserBossModels.at(j)->transform(TM);
                 }
