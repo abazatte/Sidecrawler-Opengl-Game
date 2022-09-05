@@ -12,6 +12,7 @@ ParticleSystem::ParticleSystem() {
     pParticlePool.resize(1000);
 }
 
+
 void ParticleSystem::update(float dtime) {
     // diese methode geht durch alle partikel und zieht von der verbleibenden lebenszeit ab
 
@@ -34,6 +35,7 @@ void ParticleSystem::draw(const BaseCamera &Cam) {
     for (auto& particle : pParticlePool) {
         if (particle.lifeRemaining > 0.0f) {
             Matrix ModelMat, TransMat, RotMat, ScaleMat;
+            ColorA a = randomColor();
             TransMat.translation(particle.position);
             RotMat.rotationYawPitchRoll(particle.rotation);
             ScaleMat.scale(particle.sizeEnd + ((particle.lifeRemaining / particle.lifeTime) * (particle.sizeBegin - particle.sizeEnd)));
@@ -50,6 +52,38 @@ void ParticleSystem::draw(const BaseCamera &Cam) {
         IB.deactivate();
         VB.deactivate();
     }
+}
+
+ColorA& ParticleSystem::randomColor() {
+    ColorA a;
+    int h = Application::randomFloat(0,4);
+
+    //Gelb
+    if(h == 0){
+        a.R = 1;
+        a.G = 1;
+        a.B = 0;
+        a.A = 0;
+        //ROT
+    }else if( h == 1){
+        a.R = 1;
+        a.G = 0;
+        a.B = 0;
+        a.A = 0;
+        //SCHWARZ
+    }else if(h == 2){
+        a.R = 0;
+        a.G = 0;
+        a.B = 0;
+        a.A = 0;
+        //ORANGE
+    }else {
+        a.R = 1;
+        a.G = 0.65;
+        a.B = 0;
+        a.A = 0;
+    }
+    return a;
 }
 
 void ParticleSystem::emit(const ParticleProps &particleProps) {
@@ -295,3 +329,4 @@ void ParticleSystem::createParticleModel()
 
     IB.end();
 }
+

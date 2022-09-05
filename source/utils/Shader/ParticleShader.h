@@ -17,6 +17,7 @@ class ParticleShader : public BaseShader
 public:
     ParticleShader();
     void addMatrix(Matrix& mat, int index);
+
     void setColorA(const ColorA& color) { this->colorA = ColorA(color); }
     const ColorA& getColorA() { return colorA; }
     virtual void activate(const BaseCamera& Cam) const;
@@ -32,6 +33,7 @@ private:
     //bevor es an den glsl shader übergeben werden kann
     float modelTransforms[PARTICLE_ANZAHL * 16];
     //man könnte auch ein color array machen für jedes partikel
+
 };
 
 #endif //CGPRAKT6_CLION_PARTICLESHADER_H

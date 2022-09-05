@@ -24,6 +24,8 @@ ParticleShader::ParticleShader() : colorA(1, 0, 0, 1) {
     Matrix mat;
     mat.identity();
 
+
+
     for (size_t i = 0; i < PARTICLE_ANZAHL; i++) {
         for (size_t j = 0; j < 16; j++) {
             //i * 16 ist der offset, 0 ist das erste partikel, 16 das zweite etc.
@@ -37,7 +39,6 @@ void ParticleShader::addMatrix(Matrix &mat, int index) {
         modelTransforms[index * 16 + i] = mat.m[i];
     }
 }
-
 void ParticleShader::activate(const BaseCamera &Cam) const {
     BaseShader::activate(Cam);
     glUniform4f(ColorLoc, colorA.R, colorA.G, colorA.B, colorA.A);
@@ -45,7 +46,5 @@ void ParticleShader::activate(const BaseCamera &Cam) const {
     //wir multiplizieren den transform später dran, deswegen wird hier bei der view proj mat nicht dranmultiplizeiret
     Matrix ModelViewProj = Cam.getProjectionMatrix() * Cam.getViewMatrix();
     glUniformMatrix4fv(ViewProjLoc, 1, GL_FALSE, ModelViewProj.m);
-
     glUniformMatrix4fv(ModelMatLoc, PARTICLE_ANZAHL, GL_FALSE, modelTransforms);
-
 }

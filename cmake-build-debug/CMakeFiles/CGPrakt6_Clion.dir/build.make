@@ -598,6 +598,86 @@ CMakeFiles\CGPrakt6_Clion.dir\source\Items.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\Items.cpp.s /c C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\source\Items.cpp
 <<
 
+CMakeFiles\CGPrakt6_Clion.dir\source\ParticleSystem.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
+CMakeFiles\CGPrakt6_Clion.dir\source\ParticleSystem.cpp.obj: ..\source\ParticleSystem.cpp
+CMakeFiles\CGPrakt6_Clion.dir\source\ParticleSystem.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/ParticleSystem.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CGPrakt6_Clion.dir\source\ParticleSystem.cpp.obj.d --working-dir=C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug --filter-prefix="Hinweis: Einlesen der Datei: " -- C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CGPrakt6_Clion.dir\source\ParticleSystem.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\source\ParticleSystem.cpp
+<<
+
+CMakeFiles\CGPrakt6_Clion.dir\source\ParticleSystem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/ParticleSystem.cpp.i"
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\ParticleSystem.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\source\ParticleSystem.cpp
+<<
+
+CMakeFiles\CGPrakt6_Clion.dir\source\ParticleSystem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/ParticleSystem.cpp.s"
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\ParticleSystem.cpp.s /c C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\source\ParticleSystem.cpp
+<<
+
+CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\ColorA.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
+CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\ColorA.cpp.obj: ..\source\utils\YourClasses\ColorA.cpp
+CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\ColorA.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/ColorA.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\ColorA.cpp.obj.d --working-dir=C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug --filter-prefix="Hinweis: Einlesen der Datei: " -- C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\ColorA.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\source\utils\YourClasses\ColorA.cpp
+<<
+
+CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\ColorA.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/ColorA.cpp.i"
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\ColorA.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\source\utils\YourClasses\ColorA.cpp
+<<
+
+CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\ColorA.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/YourClasses/ColorA.cpp.s"
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\ColorA.cpp.s /c C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\source\utils\YourClasses\ColorA.cpp
+<<
+
+CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ParticleShader.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
+CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ParticleShader.cpp.obj: ..\source\utils\Shader\ParticleShader.cpp
+CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ParticleShader.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/ParticleShader.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ParticleShader.cpp.obj.d --working-dir=C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug --filter-prefix="Hinweis: Einlesen der Datei: " -- C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ParticleShader.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\source\utils\Shader\ParticleShader.cpp
+<<
+
+CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ParticleShader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/ParticleShader.cpp.i"
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ParticleShader.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\source\utils\Shader\ParticleShader.cpp
+<<
+
+CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ParticleShader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/utils/Shader/ParticleShader.cpp.s"
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ParticleShader.cpp.s /c C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\source\utils\Shader\ParticleShader.cpp
+<<
+
+CMakeFiles\CGPrakt6_Clion.dir\source\ParticleProps.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\flags.make
+CMakeFiles\CGPrakt6_Clion.dir\source\ParticleProps.cpp.obj: ..\source\ParticleProps.cpp
+CMakeFiles\CGPrakt6_Clion.dir\source\ParticleProps.cpp.obj: CMakeFiles\CGPrakt6_Clion.dir\compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/CGPrakt6_Clion.dir/source/ParticleProps.cpp.obj"
+	$(CMAKE_COMMAND) -E cmake_cl_compile_depends --dep-file=CMakeFiles\CGPrakt6_Clion.dir\source\ParticleProps.cpp.obj.d --working-dir=C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug --filter-prefix="Hinweis: Einlesen der Datei: " -- C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /showIncludes /FoCMakeFiles\CGPrakt6_Clion.dir\source\ParticleProps.cpp.obj /FdCMakeFiles\CGPrakt6_Clion.dir\ /FS -c C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\source\ParticleProps.cpp
+<<
+
+CMakeFiles\CGPrakt6_Clion.dir\source\ParticleProps.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CGPrakt6_Clion.dir/source/ParticleProps.cpp.i"
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe > CMakeFiles\CGPrakt6_Clion.dir\source\ParticleProps.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\source\ParticleProps.cpp
+<<
+
+CMakeFiles\CGPrakt6_Clion.dir\source\ParticleProps.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CGPrakt6_Clion.dir/source/ParticleProps.cpp.s"
+	C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\CGPrakt6_Clion.dir\source\ParticleProps.cpp.s /c C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\source\ParticleProps.cpp
+<<
+
 # Object files for target CGPrakt6_Clion
 CGPrakt6_Clion_OBJECTS = \
 "CMakeFiles\CGPrakt6_Clion.dir\source\utils\Lights\ShadowMapGenerator.cpp.obj" \
@@ -626,7 +706,11 @@ CGPrakt6_Clion_OBJECTS = \
 "CMakeFiles\CGPrakt6_Clion.dir\source\main.cpp.obj" \
 "CMakeFiles\CGPrakt6_Clion.dir\source\Spaceship.cpp.obj" \
 "CMakeFiles\CGPrakt6_Clion.dir\source\Enemy.cpp.obj" \
-"CMakeFiles\CGPrakt6_Clion.dir\source\Items.cpp.obj"
+"CMakeFiles\CGPrakt6_Clion.dir\source\Items.cpp.obj" \
+"CMakeFiles\CGPrakt6_Clion.dir\source\ParticleSystem.cpp.obj" \
+"CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\ColorA.cpp.obj" \
+"CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ParticleShader.cpp.obj" \
+"CMakeFiles\CGPrakt6_Clion.dir\source\ParticleProps.cpp.obj"
 
 # External object files for target CGPrakt6_Clion
 CGPrakt6_Clion_EXTERNAL_OBJECTS =
@@ -658,9 +742,13 @@ CGPrakt6_Clion.exe: CMakeFiles\CGPrakt6_Clion.dir\source\main.cpp.obj
 CGPrakt6_Clion.exe: CMakeFiles\CGPrakt6_Clion.dir\source\Spaceship.cpp.obj
 CGPrakt6_Clion.exe: CMakeFiles\CGPrakt6_Clion.dir\source\Enemy.cpp.obj
 CGPrakt6_Clion.exe: CMakeFiles\CGPrakt6_Clion.dir\source\Items.cpp.obj
+CGPrakt6_Clion.exe: CMakeFiles\CGPrakt6_Clion.dir\source\ParticleSystem.cpp.obj
+CGPrakt6_Clion.exe: CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\ColorA.cpp.obj
+CGPrakt6_Clion.exe: CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ParticleShader.cpp.obj
+CGPrakt6_Clion.exe: CMakeFiles\CGPrakt6_Clion.dir\source\ParticleProps.cpp.obj
 CGPrakt6_Clion.exe: CMakeFiles\CGPrakt6_Clion.dir\build.make
 CGPrakt6_Clion.exe: CMakeFiles\CGPrakt6_Clion.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable CGPrakt6_Clion.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Linking CXX executable CGPrakt6_Clion.exe"
 	"C:\Program Files\JetBrains\CLion 2022.2.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\CGPrakt6_Clion.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100190~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MICROS~2\2019\COMMUN~1\VC\Tools\MSVC\1429~1.301\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\CGPrakt6_Clion.dir\objects1.rsp @<<
  /out:CGPrakt6_Clion.exe /implib:CGPrakt6_Clion.lib /pdb:C:\Users\TimCirksena\CLionProjects\newCG_tcirksena_abazatte\cmake-build-debug\CGPrakt6_Clion.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console  opengl32.lib glu32.lib ../libraries/glfw/lib/glfw3.lib ../libraries/glew/lib/glew32.lib ../libraries/freeimage/lib/FreeImage.lib ../libraries/assimp/lib/assimp-vc140-mt.lib opengl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

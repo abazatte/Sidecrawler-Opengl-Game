@@ -263,7 +263,7 @@ void Application::update(float dtime) {
     updateMonster(dtime);
     updateLaser(dtime);
     updateItem(dtime);
-    updatePlanet(dtime);
+    //updatePlanet(dtime);
     collisionItem(dtime);
     collisionPlayer(dtime);
     updateParticle(dtime);
@@ -417,7 +417,7 @@ void Application::updateBoss(float dtime) {
         }
     }
 }
-
+/*
 void Application::updatePlanet(float dtime) {
     Matrix TM, CP, CP2, N, R;
     N.scale(2);
@@ -436,7 +436,7 @@ void Application::updatePlanet(float dtime) {
         earth->transform(R * TM * N * R);
     }
 }
-
+*/
 
 /**COLLISION METHODEN **/
 /**                   **/
@@ -452,7 +452,9 @@ void Application::collisionPlayer(float dtime) {
             particleProps = ParticleProps();
             particleProps.position = laserBossModels.at(i)->transform().translation();
             particleProps.sizeBegin = 2;
-
+            if(score > 0){
+                score--;
+            }
             for (int j = 0; j < 3; ++j) {
                 float speed = Application::randomFloat(-4, 4);
                 particleProps.velocity = Vector(0, speed, 0);
@@ -942,23 +944,13 @@ void Application::createScene() {
 
 
     /** Planeten **/
-
-
     venus = new Model(ASSET_DIRECTORY "Venus_1K.obj", false);
     venus->shader(new PhongShader(), true);
-    m.translation(50, 0, 0);
-    n.scale(10);
+    n.scale(30);
+    m.translation(50, 20, 70);
     venus->shadowCaster(false);
     venus->transform(m * n);
     models.push_back(venus);
-
-    earth = new Model(ASSET_DIRECTORY "Earth_2K.obj", false);
-    earth->shader(new PhongShader(), true);
-    m.translation(60, 10, 40);
-    n.scale(10);
-    earth->shadowCaster(false);
-    earth->transform(m * n);
-    models.push_back(earth);
 
 
     /**Erstell einige Laser, Item und Monster Objekte **/

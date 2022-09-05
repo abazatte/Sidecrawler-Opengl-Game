@@ -24,6 +24,8 @@ public:
 
     void emit(const ParticleProps &particleProps);
 
+    static ColorA& randomColor();
+
     ParticleProps createExampleProps();
 
 protected:
@@ -36,7 +38,6 @@ protected:
         Vector rotationSpeed;
 
         float sizeBegin, sizeEnd;
-
         float lifeTime = 1.0f;
         float lifeRemaining = 0.0f;
     };

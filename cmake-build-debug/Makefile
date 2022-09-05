@@ -286,6 +286,54 @@ source\Matrix.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CGPrakt6_Clion.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CGPrakt6_Clion.dir\source\Matrix.cpp.s
 .PHONY : source\Matrix.cpp.s
 
+source\ParticleProps.obj: source\ParticleProps.cpp.obj
+.PHONY : source\ParticleProps.obj
+
+# target to build an object file
+source\ParticleProps.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CGPrakt6_Clion.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CGPrakt6_Clion.dir\source\ParticleProps.cpp.obj
+.PHONY : source\ParticleProps.cpp.obj
+
+source\ParticleProps.i: source\ParticleProps.cpp.i
+.PHONY : source\ParticleProps.i
+
+# target to preprocess a source file
+source\ParticleProps.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CGPrakt6_Clion.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CGPrakt6_Clion.dir\source\ParticleProps.cpp.i
+.PHONY : source\ParticleProps.cpp.i
+
+source\ParticleProps.s: source\ParticleProps.cpp.s
+.PHONY : source\ParticleProps.s
+
+# target to generate assembly for a file
+source\ParticleProps.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CGPrakt6_Clion.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CGPrakt6_Clion.dir\source\ParticleProps.cpp.s
+.PHONY : source\ParticleProps.cpp.s
+
+source\ParticleSystem.obj: source\ParticleSystem.cpp.obj
+.PHONY : source\ParticleSystem.obj
+
+# target to build an object file
+source\ParticleSystem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CGPrakt6_Clion.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CGPrakt6_Clion.dir\source\ParticleSystem.cpp.obj
+.PHONY : source\ParticleSystem.cpp.obj
+
+source\ParticleSystem.i: source\ParticleSystem.cpp.i
+.PHONY : source\ParticleSystem.i
+
+# target to preprocess a source file
+source\ParticleSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CGPrakt6_Clion.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CGPrakt6_Clion.dir\source\ParticleSystem.cpp.i
+.PHONY : source\ParticleSystem.cpp.i
+
+source\ParticleSystem.s: source\ParticleSystem.cpp.s
+.PHONY : source\ParticleSystem.s
+
+# target to generate assembly for a file
+source\ParticleSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CGPrakt6_Clion.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CGPrakt6_Clion.dir\source\ParticleSystem.cpp.s
+.PHONY : source\ParticleSystem.cpp.s
+
 source\Spaceship.obj: source\Spaceship.cpp.obj
 .PHONY : source\Spaceship.obj
 
@@ -670,6 +718,30 @@ source\utils\Shader\ConstantShader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CGPrakt6_Clion.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ConstantShader.cpp.s
 .PHONY : source\utils\Shader\ConstantShader.cpp.s
 
+source\utils\Shader\ParticleShader.obj: source\utils\Shader\ParticleShader.cpp.obj
+.PHONY : source\utils\Shader\ParticleShader.obj
+
+# target to build an object file
+source\utils\Shader\ParticleShader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CGPrakt6_Clion.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ParticleShader.cpp.obj
+.PHONY : source\utils\Shader\ParticleShader.cpp.obj
+
+source\utils\Shader\ParticleShader.i: source\utils\Shader\ParticleShader.cpp.i
+.PHONY : source\utils\Shader\ParticleShader.i
+
+# target to preprocess a source file
+source\utils\Shader\ParticleShader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CGPrakt6_Clion.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ParticleShader.cpp.i
+.PHONY : source\utils\Shader\ParticleShader.cpp.i
+
+source\utils\Shader\ParticleShader.s: source\utils\Shader\ParticleShader.cpp.s
+.PHONY : source\utils\Shader\ParticleShader.s
+
+# target to generate assembly for a file
+source\utils\Shader\ParticleShader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CGPrakt6_Clion.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\ParticleShader.cpp.s
+.PHONY : source\utils\Shader\ParticleShader.cpp.s
+
 source\utils\Shader\PhongShader.obj: source\utils\Shader\PhongShader.cpp.obj
 .PHONY : source\utils\Shader\PhongShader.obj
 
@@ -693,6 +765,30 @@ source\utils\Shader\PhongShader.s: source\utils\Shader\PhongShader.cpp.s
 source\utils\Shader\PhongShader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CGPrakt6_Clion.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CGPrakt6_Clion.dir\source\utils\Shader\PhongShader.cpp.s
 .PHONY : source\utils\Shader\PhongShader.cpp.s
+
+source\utils\YourClasses\ColorA.obj: source\utils\YourClasses\ColorA.cpp.obj
+.PHONY : source\utils\YourClasses\ColorA.obj
+
+# target to build an object file
+source\utils\YourClasses\ColorA.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CGPrakt6_Clion.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\ColorA.cpp.obj
+.PHONY : source\utils\YourClasses\ColorA.cpp.obj
+
+source\utils\YourClasses\ColorA.i: source\utils\YourClasses\ColorA.cpp.i
+.PHONY : source\utils\YourClasses\ColorA.i
+
+# target to preprocess a source file
+source\utils\YourClasses\ColorA.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CGPrakt6_Clion.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\ColorA.cpp.i
+.PHONY : source\utils\YourClasses\ColorA.cpp.i
+
+source\utils\YourClasses\ColorA.s: source\utils\YourClasses\ColorA.cpp.s
+.PHONY : source\utils\YourClasses\ColorA.s
+
+# target to generate assembly for a file
+source\utils\YourClasses\ColorA.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CGPrakt6_Clion.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\CGPrakt6_Clion.dir\source\utils\YourClasses\ColorA.cpp.s
+.PHONY : source\utils\YourClasses\ColorA.cpp.s
 
 source\utils\YourClasses\color.obj: source\utils\YourClasses\color.cpp.obj
 .PHONY : source\utils\YourClasses\color.obj
@@ -796,6 +892,12 @@ help:
 	@echo ... source/Matrix.obj
 	@echo ... source/Matrix.i
 	@echo ... source/Matrix.s
+	@echo ... source/ParticleProps.obj
+	@echo ... source/ParticleProps.i
+	@echo ... source/ParticleProps.s
+	@echo ... source/ParticleSystem.obj
+	@echo ... source/ParticleSystem.i
+	@echo ... source/ParticleSystem.s
 	@echo ... source/Spaceship.obj
 	@echo ... source/Spaceship.i
 	@echo ... source/Spaceship.s
@@ -844,9 +946,15 @@ help:
 	@echo ... source/utils/Shader/ConstantShader.obj
 	@echo ... source/utils/Shader/ConstantShader.i
 	@echo ... source/utils/Shader/ConstantShader.s
+	@echo ... source/utils/Shader/ParticleShader.obj
+	@echo ... source/utils/Shader/ParticleShader.i
+	@echo ... source/utils/Shader/ParticleShader.s
 	@echo ... source/utils/Shader/PhongShader.obj
 	@echo ... source/utils/Shader/PhongShader.i
 	@echo ... source/utils/Shader/PhongShader.s
+	@echo ... source/utils/YourClasses/ColorA.obj
+	@echo ... source/utils/YourClasses/ColorA.i
+	@echo ... source/utils/YourClasses/ColorA.s
 	@echo ... source/utils/YourClasses/color.obj
 	@echo ... source/utils/YourClasses/color.i
 	@echo ... source/utils/YourClasses/color.s
