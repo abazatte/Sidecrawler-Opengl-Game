@@ -291,9 +291,6 @@ void Application::update(float dtime) {
     if (particleSchubTimer >= 0) {
         particleSchubTimer -= dtime;
     }
-    if (particleEnemySchub >= 0) {
-        particleEnemySchub -= dtime;
-    }
     if (itemTimer > -1) {
         itemTimer -= dtime;
     }
@@ -350,13 +347,15 @@ void Application::updateMonster(float dtime) {
     Matrix TM, CP;
     for (int i = 0; i < monsterModels.size(); ++i) {
         if (!pBoss->isBossStatus()) {
-            monsterModels.at(i)->update(dtime);
+            if (monsterModels.at(i)->getEnemy()->transform().translation().Y > -13 &&
+                monsterModels.at(i)->getEnemy()->transform().translation().Y < 14) {
+                monsterModels.at(i)->update(dtime);
 
                 Vector pos = monsterModels.at(i)->getEnemy()->transform().translation();
                 pos.Z = monsterModels.at(i)->getEnemy()->transform().translation().Z + 1;
                 particleProps = ParticleProps();
                 particleProps.position = pos;
-                particleProps.velocity = Vector(0, 0, 7.5f * dtime);
+                particleProps.velocity = Vector(0, 0, 7.5f);
                 particleProps.sizeBegin = 1;
                 particleProps.sizeVariation = 0.5f;
                 particleProps.sizeEnd = 0.001f;
@@ -364,7 +363,11 @@ void Application::updateMonster(float dtime) {
 
                 particleSystem->emit(particleProps);
 
-
+            }
+            if (monsterModels.at(i)->getEnemy()->transform().translation().Z < -20){
+                TM.translation(0, -50, 0);
+                monsterModels.at(i)->getEnemy()->transform(TM);
+            }
         }
         if (pBoss->isBossStatus()) {
             TM.translation(0, -50, 0);
@@ -469,7 +472,7 @@ void Application::collisionPlayer(float dtime) {
             particleProps = ParticleProps();
             particleProps.position = laserBossModels.at(i)->transform().translation();
             particleProps.sizeBegin = 2;
-            if(score > 0){
+            if (score > 0) {
                 score--;
             }
             for (int j = 0; j < 3; ++j) {
