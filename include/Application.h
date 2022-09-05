@@ -67,6 +67,7 @@ protected:
     float item3Time = 3.0f;
     float camTimer = 4.0f;
     float particleSchubTimer = 0.05f;
+    float particleEnemySchub = 0.05f;
     double prevTime = 0.0;
     double crntTime = 0.0;
     double timeDiff;

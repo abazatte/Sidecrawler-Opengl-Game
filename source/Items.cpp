@@ -10,20 +10,29 @@
 Items::Items() {
     this->setItemType((int) Application::randomFloat(0.0f,4.0f));
     std::cout << getType() << std::endl;
+    Matrix RY, TM;
     if(getType() == 0){
         pItem = new Model("../assets/item1.obj", false);
         pItem->shader(new PhongShader(), true);
         pItem->shadowCaster(false);
+        TM.translation(0, -60, 0);
+        RY.rotationY(AI_DEG_TO_RAD(180.0f));
+        pItem->transform(TM * RY);
     }else if(getType() == 1){
         pItem = new Model("../assets/item2.obj", false);
         pItem->shader(new PhongShader(), true);
         pItem->shadowCaster(false);
+        TM.translation(0, -60, 0);
+        RY.rotationY(AI_DEG_TO_RAD(180.0f));
+        pItem->transform(TM * RY);
     }else{
         pItem = new Model("../assets/item3.obj", false);
         pItem->shader(new PhongShader(), true);
         pItem->shadowCaster(false);
+        TM.translation(0, -60, 0);
+        RY.rotationY(AI_DEG_TO_RAD(180.0f));
+        pItem->transform(TM * RY);
     }
-
 
 
 }
