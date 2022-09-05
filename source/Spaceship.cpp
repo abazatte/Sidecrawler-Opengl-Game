@@ -5,13 +5,22 @@
 #include <utils/Shader/PhongShader.h>
 #include "../include/Spaceship.h"
 
-Spaceship::Spaceship(const char* spaceshipFile)
+Spaceship::Spaceship(const char* spaceshipFile, const char* boundingFile)
 {
-    Model* gModel = new Model(spaceshipFile, false);
-    gModel->shader(new PhongShader(), true);
-    gModel->shadowCaster(false);
+    pSpaceship = new Model(spaceshipFile, false);
+    pSpaceship->shader(new PhongShader(), true);
+    pSpaceship->shadowCaster(false);
 
-    pSpaceship = gModel;
+    bounding = new Model(boundingFile, false);
+    bounding->shader(new PhongShader(), true);
+    bounding->shadowCaster(false);
+
+    //die Bounding bisschen nach vorne bringen
+    Matrix TM, CP, S;
+    CP = bounding->transform();
+    TM.translation(Vector(0,0.5f,2.5f));
+    S.scale(Vector(1,1,1.5f));
+    bounding->transform(CP * TM * S);
 }
 
 Spaceship::~Spaceship()
@@ -41,13 +50,16 @@ void Spaceship::aim(const Vector& Target)
 
 void Spaceship::update(float dtime)
 {
-    Matrix TM, CP;
+    Matrix TM, CP, CP1;
     CP = pSpaceship->transform(); //Current Position
     //std::cout << dtime <<std::endl;
     //std::cout << m_upDown << std::endl;
     TM.translation(0, m_upDown * dtime,0);
 
     pSpaceship->transform(CP * TM);
+    //S.scale(Vector(1,1,3));
+    CP1 = bounding->transform();
+    bounding->transform(CP1 * TM);
     /*
     // Zur ausrichung an MausCoords
     top.lookAt(this->t, bottom.up(), bottom.translation());
@@ -65,6 +77,10 @@ void Spaceship::draw(const BaseCamera& Cam)
     pSpaceship->draw(Cam);
 }
 
-Model* Spaceship::getTop() {
+Model* Spaceship::getBounding() {
+    return bounding;
+}
+
+Model *Spaceship::getSpaceShip() {
     return pSpaceship;
 }

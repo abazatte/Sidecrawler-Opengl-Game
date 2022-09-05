@@ -97,7 +97,7 @@ void Application::update(float dtime) {
     int positionState = glfwGetKey(pWindow, GLFW_KEY_P);
     int shot = glfwGetKey(pWindow, GLFW_KEY_SPACE);
     float upDown = 0.0f;
-    float f = pSpaceship->getTop()->transform().translation().Y;
+    float f = pSpaceship->getBounding()->transform().translation().Y;
 
 
     /** User input        **/
@@ -123,7 +123,7 @@ void Application::update(float dtime) {
     if (shot == GLFW_PRESS && laserTimer <= 0) {
         Matrix CP;
         laserTimer = 1;
-        CP = pSpaceship->getTop()->transform();
+        CP = pSpaceship->getBounding()->transform();
         if (pCurrentLaser >= laserModels.size() - 1) {
             pCurrentLaser = 0;
             laserModels.at(pCurrentLaser)->transform(CP);
@@ -138,8 +138,8 @@ void Application::update(float dtime) {
     /**  Raumschiff  **/
     /**              **/
     if (particleSchubTimer < 0) {
-        Vector pos = pSpaceship->getTop()->transform().translation();
-        pos.Z = pSpaceship->getTop()->transform().translation().Z - 2;
+        Vector pos = pSpaceship->getBounding()->transform().translation();
+        pos.Z = pSpaceship->getBounding()->transform().translation().Z - 3;
         particleProps = ParticleProps();
         particleProps.position = pos;
         particleProps.velocity = Vector(0, 0, -15);
@@ -204,7 +204,7 @@ void Application::update(float dtime) {
 
     pSpaceship->steer(upDown);
     pSpaceship->update(dtime);
-    spaceship->transform(pSpaceship->getTop()->transform());
+    spaceship->transform(pSpaceship->getBounding()->transform());
 
 
     /** FPS Anzeigen und Score */
@@ -446,7 +446,7 @@ void Application::collisionPlayer(float dtime) {
     Matrix TM, CP, CP2, CP3;
     for (int i = 0; i < laserBossModels.size(); ++i) {
         CP = laserBossModels.at(i)->transform();
-        CP2 = pSpaceship->getTop()->transform();
+        CP2 = pSpaceship->getBounding()->transform();
         if (AABB::collision(pSpaceship->boundingBox().transform(CP2),
                             laserBossModels.at(i)->boundingBox().transform(CP))) {
             particleProps = ParticleProps();
@@ -502,7 +502,7 @@ void Application::loopCollision(float dtime) {
         for (int j = 0; j < monsterModels.size(); ++j) {
             CP = laserModels.at(i)->transform();
             CP2 = monsterModels.at(j)->getEnemy()->transform();
-            CP3 = pSpaceship->getTop()->transform();
+            CP3 = pSpaceship->getBounding()->transform();
             if (AABB::collision(pSpaceship->boundingBox().transform(CP3),
                                 monsterModels.at(j)->getEnemy()->boundingBox().transform(CP2))) {
                 TM.translation(0, -50, 0);
@@ -586,7 +586,7 @@ void Application::collisionItem(float dtime) {
     Matrix TM, CP, CP2, o;
     for (int i = 0; i < itemsModels.size(); ++i) {
         CP = itemsModels.at(i)->getItem()->transform();
-        CP2 = pSpaceship->getTop()->transform();
+        CP2 = pSpaceship->getBounding()->transform();
         if (AABB::collision(pSpaceship->boundingBox().transform(CP2),
                             itemsModels.at(i)->getItem()->boundingBox().transform(CP))) {
             //std::cout << "Item hittet" << std::endl;
@@ -922,9 +922,10 @@ void Application::createScene() {
     /** Player **/
 
 
-    pSpaceship = new Spaceship(ASSET_DIRECTORY "woodenObje.obj");
-    models.push_back(pSpaceship->getTop());
-    v1 = pSpaceship->getTop()->transform().translation();
+    pSpaceship = new Spaceship(ASSET_DIRECTORY "SpaceShip.obj", ASSET_DIRECTORY "woodenObje.obj");
+    models.push_back(pSpaceship->getSpaceShip());
+    //models.push_back(pSpaceship->getBounding());
+    v1 = pSpaceship->getBounding()->transform().translation();
     v1.Z += 30;
     cam.setTarget(v1);
     //v1.Z -= 30;
@@ -932,12 +933,12 @@ void Application::createScene() {
     cam.setPosition(v1);
     camUrsprung = cam.position();
     ConstantShader *pConstShader;
-    spaceship = new LineBoxModel(pSpaceship->getTop()->getBlockModel()->boundingBox().Min,
-                                 pSpaceship->getTop()->getBlockModel()->boundingBox().Max);
+    spaceship = new LineBoxModel(pSpaceship->getBounding()->getBlockModel()->boundingBox().Min,
+                                 pSpaceship->getBounding()->getBlockModel()->boundingBox().Max);
     pConstShader = new ConstantShader();
     pConstShader->color(Color(0, 1, 0));
     spaceship->shader(pConstShader, true);
-    models.push_back(spaceship);
+    //models.push_back(spaceship);
 
 
     /** Planeten **/
