@@ -356,7 +356,7 @@ void Application::updateMonster(float dtime) {
                 pos.Z = monsterModels.at(i)->getEnemy()->transform().translation().Z + 1;
                 particleProps = ParticleProps();
                 particleProps.position = pos;
-                particleProps.velocity = Vector(0, 0, 7.5f);
+                particleProps.velocity = Vector(0, 0, 7.5f * dtime);
                 particleProps.sizeBegin = 1;
                 particleProps.sizeVariation = 0.5f;
                 particleProps.sizeEnd = 0.001f;
